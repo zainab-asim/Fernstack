@@ -1,9 +1,14 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { ClientSite } from "@/data/sampleWebsitesData";
 
 export default function MiniSiteCanvas({ site }: { site: ClientSite }) {
+  // Local state for micro-interactions inside canvas
+  const [apexScope, setApexScope] = useState<string>("Second Storey");
+  const [dentalTreatment, setDentalTreatment] = useState<string>("Porcelain Veneers");
+  const [coffeeGrind, setCoffeeGrind] = useState<string>("Whole Bean");
+
   return (
     <div
       className={`mini-site-canvas mini-site-${site.id}`}
@@ -18,20 +23,21 @@ export default function MiniSiteCanvas({ site }: { site: ClientSite }) {
     >
       {/* =========================================================================
           1. APEX BUILD & RENOVATIONS
-          Layout: Editorial Magazine Split — dark stony bg, oversized headline
-                  left side, floating cost card right, gold accent bar at top
+          Layout: Editorial Magazine Split — dark architectural slate, gold accents,
+                  blueprint grid, instant project cost calculator
          ========================================================================= */}
       {site.id === "apex-renovations" && (
         <div className="apex-mini-root">
-          {/* Gold accent line */}
+          {/* Subtle blueprint grid coordinates watermark */}
+          <div className="apex-blueprint-grid" />
           <div className="apex-gold-line" />
 
-          {/* Top Nav */}
+          {/* Top Editorial Nav */}
           <nav className="apex-mini-nav">
             <div className="apex-mini-brand">
               <span className="apex-brand-mark">A</span>
               <div>
-                <strong>APEX BUILD & RENOVATIONS</strong>
+                <strong>APEX BUILD &amp; RENOVATIONS</strong>
                 <span>Master Builders · Adelaide SA · Lic #BLD291038</span>
               </div>
             </div>
@@ -39,7 +45,7 @@ export default function MiniSiteCanvas({ site }: { site: ClientSite }) {
               <span>Extensions</span>
               <span>Second Storey</span>
               <span>Kitchens</span>
-              <span className="apex-nav-cta">Free Estimate</span>
+              <span className="apex-nav-cta">Free Feasibility</span>
             </div>
             <span className="apex-phone-tag">☎ (08) 8234 5678</span>
           </nav>
@@ -50,7 +56,7 @@ export default function MiniSiteCanvas({ site }: { site: ClientSite }) {
             <div className="apex-mini-left">
               <div className="apex-award-pill">
                 <span className="apex-gold-dot" />
-                <span>Master Builders SA 2026 Excellence Winner</span>
+                <span>Master Builders SA · 2026 Excellence Winner</span>
               </div>
               <h3 className="apex-display-h">
                 Architectural
@@ -60,9 +66,17 @@ export default function MiniSiteCanvas({ site }: { site: ClientSite }) {
                 Built for Generations.
               </h3>
               <p className="apex-mini-sub">
-                Luxury extensions, second-storey additions &amp; bespoke
-                renovations across Adelaide &amp; Eastern Suburbs.
+                Bespoke second-storey extensions, luxury pavilions &amp; architectural
+                transformations across Adelaide &amp; the Eastern Suburbs.
               </p>
+
+              {/* Material Honesty Pills */}
+              <div className="apex-materials-row">
+                <span className="apex-mat-chip">🏛️ 3D BIM Modeling</span>
+                <span className="apex-mat-chip">📐 Fixed-Price Contract</span>
+                <span className="apex-mat-chip">🛡️ 10-Yr Structural Warranty</span>
+              </div>
+
               <div className="apex-stat-row">
                 <div className="apex-stat">
                   <strong>$45M+</strong>
@@ -75,8 +89,8 @@ export default function MiniSiteCanvas({ site }: { site: ClientSite }) {
                 </div>
                 <div className="apex-stat-div" />
                 <div className="apex-stat">
-                  <strong>10-Year</strong>
-                  <span>Warranty</span>
+                  <strong>5.0★</strong>
+                  <span>48 Reviews</span>
                 </div>
               </div>
             </div>
@@ -88,38 +102,60 @@ export default function MiniSiteCanvas({ site }: { site: ClientSite }) {
                   <span>📐</span>
                   <span>Instant Project Cost Guide</span>
                 </div>
+
+                {/* Scope selector tags */}
+                <div className="apex-scope-tags">
+                  {["Second Storey", "Pavilion", "Full Rebuild"].map((scope) => (
+                    <button
+                      key={scope}
+                      type="button"
+                      className={`apex-scope-tag ${apexScope === scope ? "active" : ""}`}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setApexScope(scope);
+                      }}
+                    >
+                      {scope}
+                    </button>
+                  ))}
+                </div>
+
                 <div className="apex-cost-row">
-                  <span>Scope</span>
-                  <strong>Second-Storey Extension</strong>
+                  <span>Selected Scope</span>
+                  <strong>{apexScope} Extension</strong>
                 </div>
                 <div className="apex-cost-row">
-                  <span>Size</span>
-                  <strong>140 m² · Architectural Grade</strong>
+                  <span>Timeline</span>
+                  <strong>18 – 22 Wks Handover</strong>
                 </div>
                 <div className="apex-cost-price">
                   <span>Guaranteed Fixed-Price Range</span>
-                  <strong>$580,000 – $640,000</strong>
+                  <strong>
+                    {apexScope === "Second Storey"
+                      ? "$580,000 – $640,000"
+                      : apexScope === "Pavilion"
+                      ? "$240,000 – $310,000"
+                      : "$890,000 – $1,250,000"}
+                  </strong>
                 </div>
                 <div className="apex-cost-checks">
                   <span>✔ Zero variation fees</span>
-                  <span>✔ On-site supervisor daily</span>
+                  <span>✔ Dedicated daily supervisor</span>
                 </div>
-                <button className="apex-cost-btn">Get My Free Quote</button>
+                <button className="apex-cost-btn">Request Feasibility Study →</button>
               </div>
               <div className="apex-stars-badge">
                 <span className="apex-stars">★★★★★</span>
-                <span>5.0 · 48 Google Reviews</span>
+                <span>5.0 · Adelaide Master Builder of the Year</span>
               </div>
             </div>
           </div>
 
           {/* Bottom Bar */}
           <div className="apex-mini-footer">
-            <span>3D BIM Modeling</span>
-            <span className="apex-foot-div">·</span>
-            <span>Full Council Approval Managed</span>
-            <span className="apex-foot-div">·</span>
             <span>Architectural Grade Materials</span>
+            <span className="apex-foot-div">·</span>
+            <span>Full Council Approval Handled</span>
             <span className="apex-foot-div">·</span>
             <span className="apex-foot-gold">apexbuildrenovations.com.au</span>
           </div>
@@ -134,12 +170,11 @@ export default function MiniSiteCanvas({ site }: { site: ClientSite }) {
 
       {/* =========================================================================
           2. BONDI CLEAN COMMERCIAL
-          Layout: Dark tech command center — full-width operations header, live
-                  status grid, metrics dashboard feel, cyan accent
+          Layout: Dark tech command center — radar ping, Barangaroo live audit log,
+                  HEPA particle index, ISO certification badges
          ========================================================================= */}
       {site.id === "bondi-clean" && (
         <div className="bondi-mini-root">
-          {/* Background photo */}
           <div
             className="bondi-mini-photo"
             style={{ backgroundImage: `url(${site.image})` }}
@@ -149,8 +184,11 @@ export default function MiniSiteCanvas({ site }: { site: ClientSite }) {
           {/* Command Header */}
           <nav className="bondi-mini-nav">
             <div className="bondi-nav-left">
-              <span className="bondi-live-dot" />
-              <span className="bondi-live-label">LIVE</span>
+              <span className="bondi-radar-ping">
+                <span className="bondi-ping-core" />
+                <span className="bondi-ping-ring" />
+              </span>
+              <span className="bondi-live-label">LIVE TELEMETRY</span>
               <span className="bondi-brand-name">BONDI CLEAN FACILITIES</span>
               <span className="bondi-brand-sep">|</span>
               <span className="bondi-brand-sub">Sydney CBD High-Rises</span>
@@ -166,14 +204,14 @@ export default function MiniSiteCanvas({ site }: { site: ClientSite }) {
           <div className="bondi-mini-body">
             {/* Left Stats Panel */}
             <div className="bondi-mini-left">
-              <p className="bondi-eyebrow">Enterprise Facility Management · Sydney CBD</p>
+              <p className="bondi-eyebrow">Enterprise Facility &amp; Asset Management · Sydney CBD</p>
               <h3 className="bondi-display-h">
-                Immaculate Spaces.
+                Immaculate High-Rises.
                 <br />
-                <span className="bondi-cyan">Zero Downtime.</span>
+                <span className="bondi-cyan">Zero Operational Downtime.</span>
               </h3>
               <p className="bondi-sub">
-                Hospital-grade terminal cleaning &amp; botanical sanitation for 140+ commercial high-rises.
+                Hospital-grade terminal cleaning &amp; botanical sanitation for 140+ premium commercial towers across Sydney.
               </p>
 
               <div className="bondi-metric-grid">
@@ -190,8 +228,8 @@ export default function MiniSiteCanvas({ site }: { site: ClientSite }) {
                   <span>Emergency SLA</span>
                 </div>
                 <div className="bondi-metric">
-                  <strong>5.0★</strong>
-                  <span>Google Rating</span>
+                  <strong>100%</strong>
+                  <span>Botanical Seal</span>
                 </div>
               </div>
             </div>
@@ -202,28 +240,24 @@ export default function MiniSiteCanvas({ site }: { site: ClientSite }) {
                 <div className="bondi-terminal-header">
                   <div className="bondi-terminal-title">
                     <span className="bondi-terminal-dot" />
-                    <span>LIVE AUDIT REPORT</span>
+                    <span>BARANGAROO TOWER 1 · L38</span>
                   </div>
-                  <span className="bondi-time-badge">01:44 AEST</span>
-                </div>
-                <div className="bondi-terminal-row">
-                  <span>Location</span>
-                  <strong>Barangaroo Tower 1 · L38</strong>
+                  <span className="bondi-time-badge">STATUS: OPTIMAL</span>
                 </div>
                 <div className="bondi-terminal-row">
                   <span>Terminal Clean</span>
-                  <strong className="bondi-green">✓ Passed (100% Botanical)</strong>
+                  <strong className="bondi-green">✓ 100% Botanical Disinfected</strong>
                 </div>
                 <div className="bondi-terminal-row">
-                  <span>HEPA Air Index</span>
+                  <span>HEPA Air Particle</span>
                   <strong>0.02 ppm (Clean Room)</strong>
                 </div>
                 <div className="bondi-terminal-bar">
-                  <span>Compliance</span>
+                  <span>SLA Compliance</span>
                   <div className="bondi-bar-track">
-                    <div className="bondi-bar-fill" style={{ width: "97%" }} />
+                    <div className="bondi-bar-fill" style={{ width: "98.4%" }} />
                   </div>
-                  <span className="bondi-green">97%</span>
+                  <span className="bondi-green">98.4%</span>
                 </div>
                 <div className="bondi-terminal-footer">
                   <span>✔ Police-cleared teams</span>
@@ -237,12 +271,11 @@ export default function MiniSiteCanvas({ site }: { site: ClientSite }) {
 
       {/* =========================================================================
           3. TRUENORTH PRIVATE WEALTH
-          Layout: Minimalist private bank — centered serif hero with marble texture
-                  overlay, horizontal feature cards below, deep navy + gold
+          Layout: Quiet luxury family office — deep obsidian + champagne gold,
+                  multi-generational asset preservation strategy cards
          ========================================================================= */}
       {site.id === "truenorth-wealth" && (
         <div className="wealth-mini-root">
-          {/* Background */}
           <div
             className="wealth-mini-photo"
             style={{ backgroundImage: `url(${site.image})` }}
@@ -259,10 +292,8 @@ export default function MiniSiteCanvas({ site }: { site: ClientSite }) {
               </div>
             </div>
             <div className="wealth-nav-links">
-              <span>Family Office</span>
-              <span>Investments</span>
-              <span>Estate Planning</span>
-              <span className="wealth-consult-btn">Private Consultation</span>
+              <span>Sydney · Melbourne · Singapore</span>
+              <span className="wealth-consult-btn">Initiate Dialogue</span>
             </div>
           </nav>
 
@@ -279,7 +310,7 @@ export default function MiniSiteCanvas({ site }: { site: ClientSite }) {
               <em className="wealth-gold-em">With Absolute Discretion.</em>
             </h3>
             <p className="wealth-sub">
-              Comprehensive fiduciary wealth management for ultra-high-net-worth
+              Comprehensive fiduciary wealth stewardship &amp; private equity allocation for ultra-high-net-worth
               families &amp; estates exceeding $3M.
             </p>
 
@@ -291,13 +322,13 @@ export default function MiniSiteCanvas({ site }: { site: ClientSite }) {
                 <div className="wealth-strategy-bar" style={{ background: "linear-gradient(90deg, #fbbf24, #d97706)", width: "75%" }} />
               </div>
               <div className="wealth-strategy-card active-strategy">
-                <strong>Balanced Growth</strong>
+                <strong>Balanced Multi-Asset</strong>
                 <span>18.7% p.a. (15-yr avg)</span>
                 <div className="wealth-strategy-bar" style={{ background: "linear-gradient(90deg, #fbbf24, #f59e0b)", width: "88%" }} />
                 <span className="wealth-active-tag">Recommended</span>
               </div>
               <div className="wealth-strategy-card">
-                <strong>Aggressive Growth</strong>
+                <strong>Private Alpha Fund</strong>
                 <span>27.2% p.a. (15-yr avg)</span>
                 <div className="wealth-strategy-bar" style={{ background: "linear-gradient(90deg, #f59e0b, #ef4444)", width: "100%" }} />
               </div>
@@ -310,21 +341,20 @@ export default function MiniSiteCanvas({ site }: { site: ClientSite }) {
             <span className="wealth-foot-sep">·</span>
             <span>$2.4B Assets Under Guidance</span>
             <span className="wealth-foot-sep">·</span>
-            <span>AFSL Regulated</span>
+            <span>100% Independent Fiduciary</span>
             <span className="wealth-foot-sep">·</span>
-            <span className="wealth-foot-gold">★★★★★ 5.0 (63 Reviews)</span>
+            <span className="wealth-foot-gold">★★★★★ 5.0 (63 Private Reviews)</span>
           </div>
         </div>
       )}
 
       {/* =========================================================================
           4. PULSE DENTAL STUDIO
-          Layout: Clean healthcare — bright white/rose hero, bold booking card,
-                  treatment tabs, modern friendly clinic aesthetic
+          Layout: High-fashion aesthetic dentistry & spa — warm mocha/rose,
+                  treatment selector tabs, real-time consultation scheduler
          ========================================================================= */}
       {site.id === "pulse-dental" && (
         <div className="dental-mini-root">
-          {/* Background */}
           <div
             className="dental-mini-photo"
             style={{ backgroundImage: `url(${site.image})` }}
@@ -341,10 +371,8 @@ export default function MiniSiteCanvas({ site }: { site: ClientSite }) {
               </div>
             </div>
             <div className="dental-nav-links">
-              <span>Veneers</span>
-              <span>Invisalign</span>
-              <span>Whitening</span>
-              <span className="dental-book-btn">Book Online</span>
+              <span>Instant Gap Claims</span>
+              <span className="dental-book-btn">Book VIP Consult</span>
             </div>
           </nav>
 
@@ -353,24 +381,32 @@ export default function MiniSiteCanvas({ site }: { site: ClientSite }) {
             <div className="dental-mini-left">
               <div className="dental-badge">
                 <span className="dental-pink-dot" />
-                <span>Sydney&#39;s #1 Cosmetic Dental Studio · 5.0★ 156 Reviews</span>
+                <span>Sydney&#39;s Premier Cosmetic Studio · 5.0★ 156 Reviews</span>
               </div>
               <h3 className="dental-display-h">
-                Your Dream Smile
+                Artistry for Your Smile.
                 <br />
-                <span className="dental-pink">Starts Today.</span>
+                <span className="dental-pink">Painless. Flawless.</span>
               </h3>
               <p className="dental-sub">
-                Award-winning cosmetic dentistry — veneers, Invisalign, whitening
-                &amp; full-mouth restoration in Surry Hills.
+                World-class porcelain veneers, Invisalign Pro &amp; full smile reconstruction in a serene, spa-like studio.
               </p>
 
               {/* Treatment Buttons */}
               <div className="dental-treatment-row">
-                <button className="dental-treat-btn active-treat">Veneers</button>
-                <button className="dental-treat-btn">Invisalign</button>
-                <button className="dental-treat-btn">Whitening</button>
-                <button className="dental-treat-btn">Implants</button>
+                {["Porcelain Veneers", "Invisalign Pro", "Laser Whitening", "Implants"].map((treat) => (
+                  <button
+                    key={treat}
+                    type="button"
+                    className={`dental-treat-btn ${dentalTreatment === treat ? "active-treat" : ""}`}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setDentalTreatment(treat);
+                    }}
+                  >
+                    {treat}
+                  </button>
+                ))}
               </div>
             </div>
 
@@ -379,21 +415,33 @@ export default function MiniSiteCanvas({ site }: { site: ClientSite }) {
               <div className="dental-book-card">
                 <div className="dental-book-header">
                   <span>📅</span>
-                  <span>Book a Free Smile Consult</span>
+                  <span>Book Free 3D Smile Simulation</span>
                 </div>
                 <div className="dental-price-highlight">
-                  <span>Porcelain Veneers from</span>
-                  <strong>$790 / tooth</strong>
+                  <span>
+                    {dentalTreatment === "Porcelain Veneers"
+                      ? "Porcelain Veneers from"
+                      : dentalTreatment === "Invisalign Pro"
+                      ? "Invisalign Pro from"
+                      : "Laser Whitening from"}
+                  </span>
+                  <strong>
+                    {dentalTreatment === "Porcelain Veneers"
+                      ? "$790 / tooth"
+                      : dentalTreatment === "Invisalign Pro"
+                      ? "$4,900 Full Course"
+                      : "$590 Same-Day"}
+                  </strong>
                   <span className="dental-pay-tag">or $49/wk interest-free</span>
                 </div>
                 <div className="dental-slot-grid">
-                  <div className="dental-slot active-slot">Thu 10:30</div>
-                  <div className="dental-slot">Fri 9:00</div>
-                  <div className="dental-slot">Fri 2:00</div>
-                  <div className="dental-slot">Sat 10:00</div>
+                  <div className="dental-slot active-slot">Thu 10:30 AM</div>
+                  <div className="dental-slot">Fri 9:00 AM</div>
+                  <div className="dental-slot">Fri 2:15 PM</div>
+                  <div className="dental-slot">Sat 10:00 AM</div>
                 </div>
-                <button className="dental-confirm-btn">Confirm Booking</button>
-                <span className="dental-gap-note">★ HICAPS gap claims processed same-day</span>
+                <button className="dental-confirm-btn">Reserve Appointment →</button>
+                <span className="dental-gap-note">★ HICAPS same-day gap claims processed</span>
               </div>
             </div>
           </div>
@@ -402,12 +450,11 @@ export default function MiniSiteCanvas({ site }: { site: ClientSite }) {
 
       {/* =========================================================================
           5. ROASTCRAFT COFFEE
-          Layout: Warm artisan e-commerce — dark espresso bg, textured warmth,
-                  product card right, earthy typography
+          Layout: Sensory direct-to-consumer specialty roaster — tactile espresso,
+                  tasting notes bubbles, micro-lot batch specs, grind picker
          ========================================================================= */}
       {site.id === "roastcraft-coffee" && (
         <div className="coffee-mini-root">
-          {/* Background */}
           <div
             className="coffee-mini-photo"
             style={{ backgroundImage: `url(${site.image})` }}
@@ -420,14 +467,12 @@ export default function MiniSiteCanvas({ site }: { site: ClientSite }) {
               <span className="coffee-brand-icon">☕</span>
               <div>
                 <strong>ROASTCRAFT COFFEE ROASTERS</strong>
-                <span>Melbourne · Specialty Single-Origin · Cup Score 91+</span>
+                <span>Melbourne · Small Batch Specialty · Cup Score 91.5+</span>
               </div>
             </div>
             <div className="coffee-nav-links">
-              <span>Single Origins</span>
-              <span>Blends</span>
-              <span>Subscriptions</span>
-              <span className="coffee-shop-btn">Shop Now</span>
+              <span>Direct Trade Only</span>
+              <span className="coffee-shop-btn">Shop Fresh Roasts</span>
             </div>
           </nav>
 
@@ -439,30 +484,39 @@ export default function MiniSiteCanvas({ site }: { site: ClientSite }) {
                 <span>Roasted to Order · Dispatched Within 24hrs</span>
               </div>
               <h3 className="coffee-display-h">
-                Ethiopia Yirgacheffe
+                Ethiopia Yirgacheffe G1
                 <br />
                 <span className="coffee-orange">Micro-Lot Batch #88.</span>
               </h3>
               <p className="coffee-sub">
-                Cup Score 91. Tasting notes of jasmine, candied peach &amp; wild honey.
-                Natural process, shade grown, farmer direct.
+                Cup Score 91.5. Tasting notes of candied peach, jasmine florals &amp; wild orange blossom honey. Shade-ripened at 2,150m.
               </p>
 
-              {/* Flavour Tags */}
+              {/* Sensory Flavour Tags */}
               <div className="coffee-flavour-row">
-                <span className="coffee-tag">🌸 Jasmine</span>
-                <span className="coffee-tag">🍑 Candied Peach</span>
-                <span className="coffee-tag">🍯 Wild Honey</span>
+                <span className="coffee-tag">🌸 Jasmine Blossom No. 04</span>
+                <span className="coffee-tag">🍑 White Peach No. 11</span>
+                <span className="coffee-tag">🍯 Wild Honey No. 22</span>
               </div>
 
-              {/* Grind + Size Picker */}
+              {/* Grind Selector */}
               <div className="coffee-options-row">
                 <div className="coffee-option-group">
-                  <span>Grind</span>
+                  <span>Grind Profile:</span>
                   <div className="coffee-option-btns">
-                    <button className="coffee-opt active-opt">Whole Bean</button>
-                    <button className="coffee-opt">Espresso</button>
-                    <button className="coffee-opt">Filter</button>
+                    {["Whole Bean", "Espresso", "Filter / V60"].map((g) => (
+                      <button
+                        key={g}
+                        type="button"
+                        className={`coffee-opt ${coffeeGrind === g ? "active-opt" : ""}`}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setCoffeeGrind(g);
+                        }}
+                      >
+                        {g}
+                      </button>
+                    ))}
                   </div>
                 </div>
               </div>
@@ -473,29 +527,29 @@ export default function MiniSiteCanvas({ site }: { site: ClientSite }) {
               <div className="coffee-product-card">
                 <div className="coffee-product-header">
                   <span className="coffee-batch-tag">MICRO-LOT BATCH #88</span>
-                  <span className="coffee-roast-tag">Roasted 2 Days Ago</span>
+                  <span className="coffee-roast-tag">Roasted 48h Ago</span>
                 </div>
                 <div className="coffee-product-row">
-                  <span>Origin</span>
-                  <strong>Ethiopia Yirgacheffe G1</strong>
+                  <span>Origin &amp; Altitude</span>
+                  <strong>Yirgacheffe G1 · 2,150m</strong>
                 </div>
                 <div className="coffee-product-row">
                   <span>Process</span>
-                  <strong>Natural — Shade Grown</strong>
+                  <strong>Natural Shade Grown</strong>
                 </div>
                 <div className="coffee-price-box">
                   <div>
-                    <span className="coffee-price-label">Whole Bean 250g Pouch</span>
+                    <span className="coffee-price-label">250g Artisan Valve Bag</span>
                     <strong className="coffee-price">$24.00 AUD</strong>
                   </div>
                   <div className="coffee-sub-price">
-                    <span>Sub price: <strong className="coffee-orange-txt">$20.40</strong></span>
+                    <span>Subscribe: <strong className="coffee-orange-txt">$20.40 AUD (-15%)</strong></span>
                   </div>
                 </div>
-                <button className="coffee-add-btn">☕ Add to Cart</button>
+                <button className="coffee-add-btn">☕ Add to Coffee Bag</button>
                 <div className="coffee-guarantees">
-                  <span>✔ Compostable pouch</span>
-                  <span>✔ Free over $60</span>
+                  <span>✔ 100% Home compostable</span>
+                  <span>✔ Free express &gt; $60</span>
                 </div>
               </div>
             </div>
@@ -503,25 +557,24 @@ export default function MiniSiteCanvas({ site }: { site: ClientSite }) {
 
           {/* Trust Strip */}
           <div className="coffee-mini-footer">
-            <span><strong>18,000kg+</strong> Roasted</span>
+            <span><strong>18,000kg+</strong> Specialty Roasted</span>
             <span className="coffee-foot-sep">·</span>
-            <span><strong>Cup Score 91+</strong> Specialty Grade</span>
+            <span><strong>Cup Score 91.5+</strong></span>
             <span className="coffee-foot-sep">·</span>
             <span>Australia-Wide Express</span>
             <span className="coffee-foot-sep">·</span>
-            <span className="coffee-foot-orange">★★★★★ 5.0 (410+ Reviews)</span>
+            <span className="coffee-foot-orange">★★★★★ 5.0 (410+ Verified Reviews)</span>
           </div>
         </div>
       )}
 
       {/* =========================================================================
           6. TRADIETRACK MOBILE OS
-          Layout: Bold SaaS green/dark — app phone mockup center, feature list
-                  left, metric chips right, energetic tech startup feel
+          Layout: Next-gen field trade software — smartphone hardware frame,
+                  Apple Pay Tap-to-Pay live receipt, 6,500+ Aussie tradies
          ========================================================================= */}
       {site.id === "tradietrack-mobile" && (
         <div className="tradie-mini-root">
-          {/* Background */}
           <div
             className="tradie-mini-photo"
             style={{ backgroundImage: `url(${site.image})` }}
@@ -532,16 +585,14 @@ export default function MiniSiteCanvas({ site }: { site: ClientSite }) {
           <nav className="tradie-mini-nav">
             <div className="tradie-nav-brand">
               <span className="tradie-bolt">⚡</span>
-              <strong>TradieTrack</strong>
-              <span className="tradie-nav-sub">Field OS for Aussie Tradies</span>
+              <strong>TradieTrack OS</strong>
+              <span className="tradie-nav-sub">Field Software for Aussie Tradies</span>
             </div>
             <div className="tradie-nav-links">
-              <span>Features</span>
-              <span>Pricing</span>
-              <span>Reviews</span>
-              <span className="tradie-trial-btn">Free Trial</span>
+              <span>Xero &amp; MYOB Two-Way Sync</span>
+              <span className="tradie-trial-btn">Start 30-Day Free Trial</span>
             </div>
-            <span className="tradie-rating-chip">⭐ 4.9 App Store · 1,400+ Tradies</span>
+            <span className="tradie-rating-chip">⭐ 4.9 App Store · 6,500+ Tradies</span>
           </nav>
 
           {/* Three-column SaaS Layout */}
@@ -550,29 +601,29 @@ export default function MiniSiteCanvas({ site }: { site: ClientSite }) {
             <div className="tradie-mini-left">
               <div className="tradie-badge">
                 <span className="tradie-green-dot" />
-                <span>60-Second Invoicing · Tap-to-Pay · Live GPS</span>
+                <span>60-Second Invoicing · Tap-to-Pay · Live Van GPS</span>
               </div>
               <h3 className="tradie-display-h">
                 Run Your Trade
                 <br />
-                <span className="tradie-green">From Your Phone.</span>
+                <span className="tradie-green">From Your Pocket.</span>
               </h3>
               <ul className="tradie-feature-list">
                 <li>
                   <span className="tradie-check">✓</span>
-                  <span>60-sec PDF quotes sent to client instantly</span>
+                  <span>Instant PDF quotes &amp; contracts signed on doorstep</span>
                 </li>
                 <li>
                   <span className="tradie-check">✓</span>
-                  <span>Tap-to-Pay on iPhone (no terminal needed)</span>
+                  <span>Tap-to-Pay on iPhone (no card terminal needed)</span>
                 </li>
                 <li>
                   <span className="tradie-check">✓</span>
-                  <span>Live van fleet GPS tracking &amp; dispatch</span>
+                  <span>Live van GPS tracking &amp; instant client arrival SMS</span>
                 </li>
                 <li>
                   <span className="tradie-check">✓</span>
-                  <span>Auto-sync to Xero, MYOB &amp; Jobber</span>
+                  <span>Auto-sync invoices &amp; receipts to Xero &amp; MYOB</span>
                 </li>
               </ul>
             </div>
@@ -591,17 +642,17 @@ export default function MiniSiteCanvas({ site }: { site: ClientSite }) {
                     <strong>James H. · North Adelaide</strong>
                   </div>
                   <div className="tradie-screen-row">
-                    <span>Work</span>
-                    <strong>Emergency Gas Hot Water</strong>
+                    <span>Work Scope</span>
+                    <strong>Emergency Gas Hot Water Repair</strong>
                   </div>
                   <div className="tradie-screen-amount">
                     <span>Total Collected</span>
-                    <strong>$840.00</strong>
-                    <span className="tradie-pay-method">via Apple Pay ✓</span>
+                    <strong>$840.00 AUD</strong>
+                    <span className="tradie-pay-method">via Apple Pay Tap-to-Pay ✓</span>
                   </div>
                   <div className="tradie-screen-actions">
                     <button className="tradie-action-btn green-btn">Send Invoice</button>
-                    <button className="tradie-action-btn grey-btn">Next Job</button>
+                    <button className="tradie-action-btn grey-btn">Next Job GPS</button>
                   </div>
                 </div>
               </div>
@@ -612,16 +663,16 @@ export default function MiniSiteCanvas({ site }: { site: ClientSite }) {
               <div className="tradie-metric-stack">
                 <div className="tradie-metric-card">
                   <strong>6,500+</strong>
-                  <span>Aussie Tradies</span>
+                  <span>Active Aussie Tradies</span>
                 </div>
                 <div className="tradie-metric-card">
                   <strong>14 hrs</strong>
-                  <span>Saved / Week</span>
+                  <span>Saved on Admin / Wk</span>
                 </div>
                 <div className="tradie-metric-card highlight-card">
                   <strong>30-Day</strong>
-                  <span>Free Trial</span>
-                  <span className="tradie-no-cc">No Credit Card</span>
+                  <span>Risk-Free Trial</span>
+                  <span className="tradie-no-cc">No Credit Card Needed</span>
                 </div>
               </div>
             </div>

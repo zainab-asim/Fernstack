@@ -186,7 +186,6 @@ const serviceOptions = [
 export default function Home() {
   const [city, setCity] = useState<string | null>(null);
   const [selectedPlan, setSelectedPlan] = useState<string>("multi-page-949");
-  const [workViewMode, setWorkViewMode] = useState<"slide" | "grid">("slide");
   const [currentSlideIndex, setCurrentSlideIndex] = useState<number>(0);
   const [previewSite, setPreviewSite] = useState<ClientSite | null>(null);
   const [previewDevice, setPreviewDevice] = useState<"desktop" | "tablet" | "mobile">(
@@ -1068,7 +1067,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 4. Recent work (Interactive Slide View for small landing pages) */}
+        {/* 4. Recent work (Interactive Cinema Slide Showcase) */}
         <section className="sec" id="work" aria-labelledby="work-h">
           <div className="wrap">
             <div className="work-header-row">
@@ -1078,171 +1077,135 @@ export default function Home() {
                   Real sites for <em>real Australian businesses.</em>
                 </h2>
                 <p className="lede">
-                  Explore our small business landing pages below. Switch between <strong>Slide View</strong> and{" "}
-                  <strong>Grid View</strong>, or click any website to launch its entire interactive live draft.
+                  Slide through our bespoke business flagships below. Every platform is hand-crafted with distinct art direction, custom micro-interactions, and conversion engineering.
                 </p>
               </div>
 
-              {/* View Mode Toggle: Slide View vs Grid View */}
-              <div className="work-view-toggle-bar">
-                <button
-                  type="button"
-                  className={`view-mode-toggle-btn ${workViewMode === "slide" ? "active" : ""}`}
-                  onClick={() => setWorkViewMode("slide")}
-                  aria-label="Switch to Slide View"
-                >
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.3">
-                    <rect x="2" y="3" width="20" height="14" rx="2" />
-                    <line x1="8" y1="21" x2="16" y2="21" />
-                    <line x1="12" y1="17" x2="12" y2="21" />
-                  </svg>
-                  <span>Slide View</span>
-                </button>
-                <button
-                  type="button"
-                  className={`view-mode-toggle-btn ${workViewMode === "grid" ? "active" : ""}`}
-                  onClick={() => setWorkViewMode("grid")}
-                  aria-label="Switch to Grid View"
-                >
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.3">
-                    <rect x="3" y="3" width="7" height="7" />
-                    <rect x="14" y="3" width="7" height="7" />
-                    <rect x="14" y="14" width="7" height="7" />
-                    <rect x="3" y="14" width="7" height="7" />
-                  </svg>
-                  <span>Grid View</span>
-                </button>
+              {/* Site Quick-Pill Navigation Tabs */}
+              <div className="site-pill-nav" role="tablist" aria-label="Select website showcase">
+                {sampleWebsites.map((site, idx) => (
+                  <button
+                    key={site.id}
+                    type="button"
+                    role="tab"
+                    aria-selected={currentSlideIndex === idx}
+                    className={`site-pill-tab ${currentSlideIndex === idx ? "active" : ""}`}
+                    onClick={() => setCurrentSlideIndex(idx)}
+                    title={`Slide to ${site.name}`}
+                  >
+                    <span className="pill-index">0{idx + 1}</span>
+                    <span className="pill-label">{site.name.split(" ")[0]}</span>
+                  </button>
+                ))}
               </div>
             </div>
 
+            {/* CINEMA SLIDE VIEW ONLY (No Grid View) */}
+            <div className="slide-view-container">
+              <div className="slide-showcase-stage">
+                {/* Previous Arrow */}
+                <button
+                  type="button"
+                  className="slide-nav-arrow prev"
+                  onClick={handlePrevSlide}
+                  aria-label="Previous landing page slide"
+                  title="Previous Slide (or Left Arrow Key)"
+                >
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                    <polyline points="15 18 9 12 15 6" />
+                  </svg>
+                </button>
 
-            {/* SLIDE VIEW MODE */}
-            {workViewMode === "slide" ? (
-              <div className="slide-view-container">
-                <div className="slide-showcase-stage">
-                  {/* Previous Arrow */}
-                  <button
-                    type="button"
-                    className="slide-nav-arrow prev"
-                    onClick={handlePrevSlide}
-                    aria-label="Previous landing page slide"
-                    title="Previous Slide"
-                  >
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                      <polyline points="15 18 9 12 15 6" />
-                    </svg>
-                  </button>
-
-                  {/* Active Featured Slide */}
-                  <div className="slide-stage-card-wrap">
-                    <figure
-                      className="site slide-featured-card"
-                      onClick={() => openClientPreview(sampleWebsites[currentSlideIndex])}
-                      title={`Click to open full interactive landing page for ${sampleWebsites[currentSlideIndex].name}`}
-                    >
-                      <div className="chrome" aria-hidden="true">
-                        <i />
-                        <i />
-                        <i />
-                        <span className="chrome-url">https://{sampleWebsites[currentSlideIndex].domain}</span>
-                      </div>
-
-                      <div className="slide-canvas-viewport">
-                        <MiniSiteCanvas site={sampleWebsites[currentSlideIndex]} />
-                      </div>
-
-                      <figcaption className="slide-card-caption">
-                        <div className="slide-caption-meta">
-                          <div className="caption-client-title">
-                            <b>{sampleWebsites[currentSlideIndex].name}</b>
-                            <span className="caption-client-badge">
-                              {sampleWebsites[currentSlideIndex].badge}
-                            </span>
-                          </div>
-                          <span className="caption-client-concept">
-                            {sampleWebsites[currentSlideIndex].concept}
-                          </span>
-                        </div>
-
-                        <div className="slide-caption-actions">
-                          <Link
-                            href="/case-studies"
-                            className="btn btn-ghost"
-                            onClick={(e) => e.stopPropagation()}
-                            style={{ minHeight: 42, padding: "9px 18px", fontSize: 13.5 }}
-                          >
-                            <span>Sales Case Study</span>
-                          </Link>
-                          <button
-                            type="button"
-                            className="btn btn-grad"
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              openClientPreview(sampleWebsites[currentSlideIndex]);
-                            }}
-                            style={{ minHeight: 42, padding: "9px 20px", fontSize: 13.5 }}
-                          >
-                            <span>Launch Live Draft ↗</span>
-                          </button>
-                        </div>
-                      </figcaption>
-                    </figure>
-                  </div>
-
-                  {/* Next Arrow */}
-                  <button
-                    type="button"
-                    className="slide-nav-arrow next"
-                    onClick={handleNextSlide}
-                    aria-label="Next landing page slide"
-                    title="Next Slide"
-                  >
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                      <polyline points="9 18 15 12 9 6" />
-                    </svg>
-                  </button>
-                </div>
-
-                {/* Slide Pagination Dots */}
-                <div className="slide-dots-pagination">
-                  {sampleWebsites.map((site, dIdx) => (
-                    <button
-                      key={site.id}
-                      type="button"
-                      className={`slide-dot-btn ${currentSlideIndex === dIdx ? "active" : ""}`}
-                      onClick={() => setCurrentSlideIndex(dIdx)}
-                      aria-label={`Jump to slide ${dIdx + 1}: ${site.name}`}
-                    >
-                      <span className="dot-fill" />
-                    </button>
-                  ))}
-                </div>
-              </div>
-            ) : (
-              /* GRID VIEW MODE */
-              <div className="work">
-                {sampleWebsites.map((site) => (
+                {/* Active Featured Slide */}
+                <div className="slide-stage-card-wrap">
                   <figure
-                    key={site.id}
-                    className="site"
-                    onClick={() => openClientPreview(site)}
-                    title={`Click to view entire landing page for ${site.name}`}
+                    className="site slide-featured-card"
+                    onClick={() => openClientPreview(sampleWebsites[currentSlideIndex])}
+                    title={`Click to open full interactive landing page for ${sampleWebsites[currentSlideIndex].name}`}
                   >
                     <div className="chrome" aria-hidden="true">
-                      <i />
-                      <i />
-                      <i />
-                      <span>{site.domain}</span>
+                      <div className="chrome-dots">
+                        <i />
+                        <i />
+                        <i />
+                      </div>
+                      <span className="chrome-url">https://{sampleWebsites[currentSlideIndex].domain}</span>
+                      <span className="chrome-slide-badge">
+                        0{currentSlideIndex + 1} / 0{sampleWebsites.length}
+                      </span>
                     </div>
-                    <MiniSiteCanvas site={site} />
-                    <figcaption>
-                      <b>{site.name}</b>
-                      <span>{site.concept}</span>
+
+                    <div className="slide-canvas-viewport">
+                      <MiniSiteCanvas site={sampleWebsites[currentSlideIndex]} />
+                    </div>
+
+                    <figcaption className="slide-card-caption">
+                      <div className="slide-caption-meta">
+                        <div className="caption-client-title">
+                          <b>{sampleWebsites[currentSlideIndex].name}</b>
+                          <span className="caption-client-badge">
+                            {sampleWebsites[currentSlideIndex].badge}
+                          </span>
+                        </div>
+                        <span className="caption-client-concept">
+                          {sampleWebsites[currentSlideIndex].concept}
+                        </span>
+                      </div>
+
+                      <div className="slide-caption-actions">
+                        <Link
+                          href="/case-studies"
+                          className="btn btn-ghost"
+                          onClick={(e) => e.stopPropagation()}
+                          style={{ minHeight: 42, padding: "9px 18px", fontSize: 13.5 }}
+                        >
+                          <span>Sales Case Study</span>
+                        </Link>
+                        <button
+                          type="button"
+                          className="btn btn-grad"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            openClientPreview(sampleWebsites[currentSlideIndex]);
+                          }}
+                          style={{ minHeight: 42, padding: "9px 20px", fontSize: 13.5 }}
+                        >
+                          <span>Launch Live Draft ↗</span>
+                        </button>
+                      </div>
                     </figcaption>
                   </figure>
+                </div>
+
+                {/* Next Arrow */}
+                <button
+                  type="button"
+                  className="slide-nav-arrow next"
+                  onClick={handleNextSlide}
+                  aria-label="Next landing page slide"
+                  title="Next Slide (or Right Arrow Key)"
+                >
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                    <polyline points="9 18 15 12 9 6" />
+                  </svg>
+                </button>
+              </div>
+
+              {/* Slide Pagination Dots */}
+              <div className="slide-dots-pagination">
+                {sampleWebsites.map((site, dIdx) => (
+                  <button
+                    key={site.id}
+                    type="button"
+                    className={`slide-dot-btn ${currentSlideIndex === dIdx ? "active" : ""}`}
+                    onClick={() => setCurrentSlideIndex(dIdx)}
+                    aria-label={`Jump to slide ${dIdx + 1}: ${site.name}`}
+                  >
+                    <span className="dot-fill" />
+                  </button>
                 ))}
               </div>
-            )}
+            </div>
           </div>
         </section>
 
@@ -1923,14 +1886,27 @@ export default function Home() {
                   onClick={handleModalPrevSite}
                   title="Slide to Previous Site (or press Left Arrow)"
                 >
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                     <polyline points="15 18 9 12 15 6" />
                   </svg>
                   <span>Prev</span>
                 </button>
-                <span className="modal-slide-count-tag">
-                  Site {sampleWebsites.findIndex((s) => s.id === previewSite.id) + 1} of {sampleWebsites.length}
-                </span>
+                <div className="modal-slide-pill-list">
+                  {sampleWebsites.map((s, idx) => (
+                    <button
+                      key={s.id}
+                      type="button"
+                      className={`modal-slide-pill-btn ${previewSite.id === s.id ? "active" : ""}`}
+                      onClick={() => {
+                        setPreviewSite(s);
+                        setSimBookingSubmitted(false);
+                      }}
+                      title={`Slide to ${s.name}`}
+                    >
+                      <span>0{idx + 1}</span>
+                    </button>
+                  ))}
+                </div>
                 <button
                   type="button"
                   className="modal-slide-nav-btn"
@@ -1938,7 +1914,7 @@ export default function Home() {
                   title="Slide to Next Site (or press Right Arrow)"
                 >
                   <span>Next</span>
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                     <polyline points="9 18 15 12 9 6" />
                   </svg>
                 </button>
