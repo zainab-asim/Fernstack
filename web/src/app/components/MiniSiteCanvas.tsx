@@ -6,7 +6,7 @@ import { ClientSite } from "@/data/sampleWebsitesData";
 export default function MiniSiteCanvas({ site }: { site: ClientSite }) {
   return (
     <div
-      className={`mini-site-canvas mini-site-bespoke mini-site-${site.id}`}
+      className={`mini-site-canvas mini-site-${site.id}`}
       style={
         {
           "--mc-bg": site.theme.bg,
@@ -16,508 +16,615 @@ export default function MiniSiteCanvas({ site }: { site: ClientSite }) {
         } as React.CSSProperties
       }
     >
-      {/* Photorealistic Background Layer */}
-      <div
-        className="mini-site-photo-layer"
-        style={{ backgroundImage: `url(${site.image})` }}
-      />
-      {/* Adaptive Theme Scrim */}
-      <div className={`mini-site-scrim-layer scrim-${site.id}`} />
-
       {/* =========================================================================
-          1. APEX BUILD & RENOVATIONS (BESPOKE LUXURY ARCHITECTURAL LANDING)
+          1. APEX BUILD & RENOVATIONS
+          Layout: Editorial Magazine Split — dark stony bg, oversized headline
+                  left side, floating cost card right, gold accent bar at top
          ========================================================================= */}
       {site.id === "apex-renovations" && (
-        <div className="mini-bespoke-container mini-apex-theme">
-          {/* Architectural Top Bar */}
-          <div className="mini-bespoke-nav">
-            <div className="mini-nav-brand">
-              <span className="mini-brand-icon">📐</span>
+        <div className="apex-mini-root">
+          {/* Gold accent line */}
+          <div className="apex-gold-line" />
+
+          {/* Top Nav */}
+          <nav className="apex-mini-nav">
+            <div className="apex-mini-brand">
+              <span className="apex-brand-mark">A</span>
               <div>
-                <strong className="mini-brand-name">APEX ARCHITECTURAL BUILDERS</strong>
-                <span className="mini-brand-sub">Adelaide CBD &amp; Eastern Suburbs · Lic #BLD291038</span>
+                <strong>APEX BUILD & RENOVATIONS</strong>
+                <span>Master Builders · Adelaide SA · Lic #BLD291038</span>
               </div>
             </div>
-            <div className="mini-nav-pill-group">
-              <span className="mini-nav-tag">Extensions</span>
-              <span className="mini-nav-tag">Second Storey</span>
-              <span className="mini-nav-tag">Kitchen Suites</span>
+            <div className="apex-mini-nav-links">
+              <span>Extensions</span>
+              <span>Second Storey</span>
+              <span>Kitchens</span>
+              <span className="apex-nav-cta">Free Estimate</span>
             </div>
-            <div className="mini-nav-phone-chip gold-phone">
-              <span>Direct Architect: (08) 8234 5678</span>
-            </div>
-          </div>
+            <span className="apex-phone-tag">☎ (08) 8234 5678</span>
+          </nav>
 
-          {/* Asymmetric Studio Hero Body */}
-          <div className="mini-bespoke-body">
-            <div className="mini-bespoke-left">
-              <div className="mini-hero-badge gold-badge">
-                <span className="gold-dot" /> Master Builders SA · 2026 Excellence Winner
+          {/* Main Body */}
+          <div className="apex-mini-body">
+            {/* Left Editorial Content */}
+            <div className="apex-mini-left">
+              <div className="apex-award-pill">
+                <span className="apex-gold-dot" />
+                <span>Master Builders SA 2026 Excellence Winner</span>
               </div>
-              <h3 className="mini-bespoke-h1">
-                Architectural Perfection. <br />
-                <em className="gold-shimmer">Built For Generations.</em>
+              <h3 className="apex-display-h">
+                Architectural
+                <br />
+                <em className="apex-gold-em">Perfection.</em>
+                <br />
+                Built for Generations.
               </h3>
-              <p className="mini-bespoke-lead">
-                Luxury second-storey extensions, bespoke architectural reconfigurations, and mastercraft renovations across Adelaide and the Eastern Suburbs.
+              <p className="apex-mini-sub">
+                Luxury extensions, second-storey additions &amp; bespoke
+                renovations across Adelaide &amp; Eastern Suburbs.
               </p>
-              <div className="mini-bespoke-chip-row">
-                <span className="mini-spec-chip">📐 3D BIM Modeling</span>
-                <span className="mini-spec-chip">💎 Natural Travertine &amp; Stone</span>
-                <span className="mini-spec-chip gold-highlight">🔒 10-Yr Structural Guarantee</span>
+              <div className="apex-stat-row">
+                <div className="apex-stat">
+                  <strong>$45M+</strong>
+                  <span>Delivered</span>
+                </div>
+                <div className="apex-stat-div" />
+                <div className="apex-stat">
+                  <strong>100%</strong>
+                  <span>On-Time</span>
+                </div>
+                <div className="apex-stat-div" />
+                <div className="apex-stat">
+                  <strong>10-Year</strong>
+                  <span>Warranty</span>
+                </div>
               </div>
             </div>
 
-            {/* Floating Architectural Cost Calculator Card */}
-            <div className="mini-bespoke-right">
-              <div className="mini-interactive-card apex-card">
-                <div className="mini-card-badge">📐 Project Cost Guide</div>
-                <div className="mini-card-row">
-                  <span>Build Scope:</span>
+            {/* Right Floating Cost Card */}
+            <div className="apex-mini-right">
+              <div className="apex-cost-card">
+                <div className="apex-cost-card-header">
+                  <span>📐</span>
+                  <span>Instant Project Cost Guide</span>
+                </div>
+                <div className="apex-cost-row">
+                  <span>Scope</span>
                   <strong>Second-Storey Extension</strong>
                 </div>
-                <div className="mini-card-row">
-                  <span>Target Area:</span>
-                  <strong>140 m² Architectural</strong>
+                <div className="apex-cost-row">
+                  <span>Size</span>
+                  <strong>140 m² · Architectural Grade</strong>
                 </div>
-                <div className="mini-card-price-box">
-                  <span className="price-lbl">Fixed-Price Guaranteed Range</span>
-                  <strong className="price-val">$580,000 to $640,000</strong>
+                <div className="apex-cost-price">
+                  <span>Guaranteed Fixed-Price Range</span>
+                  <strong>$580,000 – $640,000</strong>
                 </div>
-                <div className="mini-card-guarantee">
-                  <span>✔ Zero variation fees guarantee</span>
-                  <span>✔ On-site supervisor everyday</span>
+                <div className="apex-cost-checks">
+                  <span>✔ Zero variation fees</span>
+                  <span>✔ On-site supervisor daily</span>
                 </div>
+                <button className="apex-cost-btn">Get My Free Quote</button>
+              </div>
+              <div className="apex-stars-badge">
+                <span className="apex-stars">★★★★★</span>
+                <span>5.0 · 48 Google Reviews</span>
               </div>
             </div>
           </div>
 
-          {/* Architectural Bottom Trust Strip */}
-          <div className="mini-bespoke-footer">
-            <span className="mini-foot-item"><strong>$45M+</strong> Residential Builds</span>
-            <span className="mini-foot-sep">·</span>
-            <span className="mini-foot-item"><strong>18</strong> Design Awards</span>
-            <span className="mini-foot-sep">·</span>
-            <span className="mini-foot-item"><strong>100%</strong> On-Time Handover</span>
-            <span className="mini-foot-sep">·</span>
-            <span className="mini-foot-item gold-text">★★★★★ 5.0 Google Rating (48 Reviews)</span>
+          {/* Bottom Bar */}
+          <div className="apex-mini-footer">
+            <span>3D BIM Modeling</span>
+            <span className="apex-foot-div">·</span>
+            <span>Full Council Approval Managed</span>
+            <span className="apex-foot-div">·</span>
+            <span>Architectural Grade Materials</span>
+            <span className="apex-foot-div">·</span>
+            <span className="apex-foot-gold">apexbuildrenovations.com.au</span>
           </div>
+
+          {/* Background Photo */}
+          <div
+            className="apex-mini-photo"
+            style={{ backgroundImage: `url(${site.image})` }}
+          />
         </div>
       )}
 
       {/* =========================================================================
-          2. BONDI CLEAN (HIGH-TECH ENTERPRISE FACILITY OPERATIONS LANDING)
+          2. BONDI CLEAN COMMERCIAL
+          Layout: Dark tech command center — full-width operations header, live
+                  status grid, metrics dashboard feel, cyan accent
          ========================================================================= */}
       {site.id === "bondi-clean" && (
-        <div className="mini-bespoke-container mini-bondi-theme">
-          {/* Operations Portal Top Bar */}
-          <div className="mini-bespoke-nav">
-            <div className="mini-nav-brand">
-              <span className="mini-brand-icon cyan-icon">🛡️</span>
-              <div>
-                <strong className="mini-brand-name">BONDI CLEAN FACILITIES</strong>
-                <span className="mini-brand-sub">Barangaroo · Sydney CBD High-Rises · ISO 9001/14001</span>
-              </div>
-            </div>
-            <div className="mini-nav-pill-group">
-              <span className="mini-nav-tag">Corporate Towers</span>
-              <span className="mini-nav-tag">Clinical Deep Clean</span>
-              <span className="mini-nav-tag">Rope Facade</span>
-            </div>
-            <div className="mini-nav-phone-chip cyan-phone">
-              <span>🚨 24/7 Dispatch: (02) 9044 1188</span>
-            </div>
-          </div>
+        <div className="bondi-mini-root">
+          {/* Background photo */}
+          <div
+            className="bondi-mini-photo"
+            style={{ backgroundImage: `url(${site.image})` }}
+          />
+          <div className="bondi-mini-overlay" />
 
-          {/* Operations Command Layout */}
-          <div className="mini-bespoke-body">
-            <div className="mini-bespoke-left">
-              <div className="mini-hero-badge cyan-badge">
-                <span className="cyan-pulse-dot" /> 140+ Commercial High-Rises Active Tonight
-              </div>
-              <h3 className="mini-bespoke-h1">
-                Immaculate Workspaces. <br />
-                <em className="cyan-shimmer">Zero Downtime Facility Care.</em>
+          {/* Command Header */}
+          <nav className="bondi-mini-nav">
+            <div className="bondi-nav-left">
+              <span className="bondi-live-dot" />
+              <span className="bondi-live-label">LIVE</span>
+              <span className="bondi-brand-name">BONDI CLEAN FACILITIES</span>
+              <span className="bondi-brand-sep">|</span>
+              <span className="bondi-brand-sub">Sydney CBD High-Rises</span>
+            </div>
+            <div className="bondi-nav-right">
+              <span className="bondi-iso-tag">ISO 9001</span>
+              <span className="bondi-iso-tag">ISO 14001</span>
+              <span className="bondi-dispatch-chip">🚨 24/7 Dispatch: (02) 9044 1188</span>
+            </div>
+          </nav>
+
+          {/* Dashboard Body */}
+          <div className="bondi-mini-body">
+            {/* Left Stats Panel */}
+            <div className="bondi-mini-left">
+              <p className="bondi-eyebrow">Enterprise Facility Management · Sydney CBD</p>
+              <h3 className="bondi-display-h">
+                Immaculate Spaces.
+                <br />
+                <span className="bondi-cyan">Zero Downtime.</span>
               </h3>
-              <p className="mini-bespoke-lead">
-                Hospital-grade terminal cleaning, corporate high-rise facility care, and botanical green-star sanitation for Sydney CBD financial institutions.
+              <p className="bondi-sub">
+                Hospital-grade terminal cleaning &amp; botanical sanitation for 140+ commercial high-rises.
               </p>
-              <div className="mini-bespoke-chip-row">
-                <span className="mini-spec-chip cyan-highlight">🏆 Triple ISO Certified</span>
-                <span className="mini-spec-chip">📱 Live QR Check-in Audits</span>
-                <span className="mini-spec-chip">🏥 Clinical AS/NZS 4187</span>
+
+              <div className="bondi-metric-grid">
+                <div className="bondi-metric">
+                  <strong>140+</strong>
+                  <span>Active High-Rises</span>
+                </div>
+                <div className="bondi-metric">
+                  <strong>99.98%</strong>
+                  <span>SLA Audit Pass</span>
+                </div>
+                <div className="bondi-metric">
+                  <strong>2-Hr</strong>
+                  <span>Emergency SLA</span>
+                </div>
+                <div className="bondi-metric">
+                  <strong>5.0★</strong>
+                  <span>Google Rating</span>
+                </div>
               </div>
             </div>
 
-            {/* Floating Live Facility Audit Terminal Card */}
-            <div className="mini-bespoke-right">
-              <div className="mini-interactive-card bondi-card">
-                <div className="mini-card-header-cyan">
-                  <span className="live-tag">LIVE AUDIT</span>
-                  <span>Barangaroo Tower 1 · Level 38</span>
+            {/* Right Live Audit Terminal */}
+            <div className="bondi-mini-right">
+              <div className="bondi-terminal-card">
+                <div className="bondi-terminal-header">
+                  <div className="bondi-terminal-title">
+                    <span className="bondi-terminal-dot" />
+                    <span>LIVE AUDIT REPORT</span>
+                  </div>
+                  <span className="bondi-time-badge">01:44 AEST</span>
                 </div>
-                <div className="mini-card-row">
-                  <span>Terminal Clean:</span>
-                  <strong className="green-txt">Passed (100% Botanical)</strong>
+                <div className="bondi-terminal-row">
+                  <span>Location</span>
+                  <strong>Barangaroo Tower 1 · L38</strong>
                 </div>
-                <div className="mini-card-row">
-                  <span>HEPA Air Index:</span>
+                <div className="bondi-terminal-row">
+                  <span>Terminal Clean</span>
+                  <strong className="bondi-green">✓ Passed (100% Botanical)</strong>
+                </div>
+                <div className="bondi-terminal-row">
+                  <span>HEPA Air Index</span>
                   <strong>0.02 ppm (Clean Room)</strong>
                 </div>
-                <div className="mini-card-price-box cyan-box">
-                  <span className="price-lbl">Commercial Facility Retainer</span>
-                  <strong className="price-val">99.98% Audit Pass SLA</strong>
+                <div className="bondi-terminal-bar">
+                  <span>Compliance</span>
+                  <div className="bondi-bar-track">
+                    <div className="bondi-bar-fill" style={{ width: "97%" }} />
+                  </div>
+                  <span className="bondi-green">97%</span>
                 </div>
-                <div className="mini-card-guarantee">
-                  <span>✔ Police-cleared security teams</span>
-                  <span>✔ $20M Public liability</span>
+                <div className="bondi-terminal-footer">
+                  <span>✔ Police-cleared teams</span>
+                  <span>✔ $20M Public Liability</span>
                 </div>
               </div>
             </div>
-          </div>
-
-          {/* Enterprise Bottom Trust Strip */}
-          <div className="mini-bespoke-footer">
-            <span className="mini-foot-item"><strong>140+</strong> Corporate Towers</span>
-            <span className="mini-foot-sep">·</span>
-            <span className="mini-foot-item"><strong>100%</strong> Plant-Based Sanitizers</span>
-            <span className="mini-foot-sep">·</span>
-            <span className="mini-foot-item"><strong>2-Hour</strong> Emergency SLA</span>
-            <span className="mini-foot-sep">·</span>
-            <span className="mini-foot-item cyan-text">★★★★★ 5.0 Google Rating (112 Reviews)</span>
           </div>
         </div>
       )}
 
       {/* =========================================================================
-          3. TRUENORTH PRIVATE WEALTH (ELITE FIDUCIARY FAMILY OFFICE LANDING)
+          3. TRUENORTH PRIVATE WEALTH
+          Layout: Minimalist private bank — centered serif hero with marble texture
+                  overlay, horizontal feature cards below, deep navy + gold
          ========================================================================= */}
       {site.id === "truenorth-wealth" && (
-        <div className="mini-bespoke-container mini-truenorth-theme">
-          {/* Private Bank Top Bar */}
-          <div className="mini-bespoke-nav">
-            <div className="mini-nav-brand">
-              <span className="mini-brand-icon gold-crest">🏛️</span>
+        <div className="wealth-mini-root">
+          {/* Background */}
+          <div
+            className="wealth-mini-photo"
+            style={{ backgroundImage: `url(${site.image})` }}
+          />
+          <div className="wealth-mini-overlay" />
+
+          {/* Top Bar */}
+          <nav className="wealth-mini-nav">
+            <div className="wealth-nav-brand">
+              <span className="wealth-crest">🏛️</span>
               <div>
-                <strong className="mini-brand-name">TRUENORTH PRIVATE WEALTH</strong>
-                <span className="mini-brand-sub">Collins St, Melbourne · AFSL #482910 · Fee-Only</span>
+                <strong>TRUENORTH PRIVATE WEALTH</strong>
+                <span>Fiduciary Family Office · Est. 2009 · AFSL 482 211</span>
               </div>
             </div>
-            <div className="mini-nav-pill-group">
-              <span className="mini-nav-tag">Family Office</span>
-              <span className="mini-nav-tag">Discretionary Equities</span>
-              <span className="mini-nav-tag">Asset Shielding</span>
+            <div className="wealth-nav-links">
+              <span>Family Office</span>
+              <span>Investments</span>
+              <span>Estate Planning</span>
+              <span className="wealth-consult-btn">Private Consultation</span>
             </div>
-            <div className="mini-nav-phone-chip elite-phone">
-              <span>Private Client Desk: (03) 9122 4400</span>
-            </div>
-          </div>
+          </nav>
 
-          {/* Prestigious Editorial Wealth Layout */}
-          <div className="mini-bespoke-body">
-            <div className="mini-bespoke-left">
-              <div className="mini-hero-badge platinum-badge">
-                <span className="gold-dot" /> 100% Fiduciary Mandate · Zero Commissions
-              </div>
-              <h3 className="mini-bespoke-h1 serif-headline">
-                Preserving Generational Wealth. <br />
-                <em className="champagne-shimmer">Built to Endure Market Cycles.</em>
-              </h3>
-              <p className="mini-bespoke-lead">
-                Fiduciary wealth stewardship, direct global equities, and discretionary family office advisory for Australian founders, executives, and affluent families.
-              </p>
-              <div className="mini-bespoke-chip-row">
-                <span className="mini-spec-chip gold-highlight">📈 $680M+ Stewarded</span>
-                <span className="mini-spec-chip">🏛️ Multi-Gen Succession</span>
-                <span className="mini-spec-chip">🛡️ Private Discretionary Trust</span>
-              </div>
+          {/* Centered Hero */}
+          <div className="wealth-mini-hero">
+            <div className="wealth-discreet-badge">
+              <span className="wealth-gold-bar" />
+              By Private Introduction Only
+              <span className="wealth-gold-bar" />
             </div>
+            <h3 className="wealth-display-h">
+              Preserving Generational Wealth
+              <br />
+              <em className="wealth-gold-em">With Absolute Discretion.</em>
+            </h3>
+            <p className="wealth-sub">
+              Comprehensive fiduciary wealth management for ultra-high-net-worth
+              families &amp; estates exceeding $3M.
+            </p>
 
-            {/* Floating Wealth Projection Model Card */}
-            <div className="mini-bespoke-right">
-              <div className="mini-interactive-card truenorth-card">
-                <div className="mini-card-badge gold-pill">🏛️ Portfolio Simulation</div>
-                <div className="mini-card-row">
-                  <span>Initial Capital:</span>
-                  <strong>$3,500,000 Invested</strong>
-                </div>
-                <div className="mini-card-row">
-                  <span>15-Year Horizon:</span>
-                  <strong className="gold-txt">$11,240,000 Target</strong>
-                </div>
-                <div className="mini-card-price-box gold-box">
-                  <span className="price-lbl">Projected Annual Passive Yield</span>
-                  <strong className="price-val">$182,000 / Year</strong>
-                </div>
-                <div className="mini-card-guarantee">
-                  <span>✔ Zero hidden vendor rebates</span>
-                  <span>✔ Discretionary executive invitation</span>
-                </div>
+            {/* Wealth Strategy Cards */}
+            <div className="wealth-strategy-row">
+              <div className="wealth-strategy-card">
+                <strong>Capital Preservation</strong>
+                <span>12.4% p.a. (15-yr avg)</span>
+                <div className="wealth-strategy-bar" style={{ background: "linear-gradient(90deg, #fbbf24, #d97706)", width: "75%" }} />
+              </div>
+              <div className="wealth-strategy-card active-strategy">
+                <strong>Balanced Growth</strong>
+                <span>18.7% p.a. (15-yr avg)</span>
+                <div className="wealth-strategy-bar" style={{ background: "linear-gradient(90deg, #fbbf24, #f59e0b)", width: "88%" }} />
+                <span className="wealth-active-tag">Recommended</span>
+              </div>
+              <div className="wealth-strategy-card">
+                <strong>Aggressive Growth</strong>
+                <span>27.2% p.a. (15-yr avg)</span>
+                <div className="wealth-strategy-bar" style={{ background: "linear-gradient(90deg, #f59e0b, #ef4444)", width: "100%" }} />
               </div>
             </div>
           </div>
 
-          {/* Family Office Bottom Trust Strip */}
-          <div className="mini-bespoke-footer">
-            <span className="mini-foot-item"><strong>28 Years</strong> Private Advisory</span>
-            <span className="mini-foot-sep">·</span>
-            <span className="mini-foot-item"><strong>64</strong> Wealthy Families</span>
-            <span className="mini-foot-sep">·</span>
-            <span className="mini-foot-item"><strong>Top 1%</strong> Performance Decile</span>
-            <span className="mini-foot-sep">·</span>
-            <span className="mini-foot-item gold-text">★★★★★ 5.0 Private Client Trust</span>
+          {/* Bottom Credibility Strip */}
+          <div className="wealth-mini-footer">
+            <span>🏆 AFA Award Winner 2024</span>
+            <span className="wealth-foot-sep">·</span>
+            <span>$2.4B Assets Under Guidance</span>
+            <span className="wealth-foot-sep">·</span>
+            <span>AFSL Regulated</span>
+            <span className="wealth-foot-sep">·</span>
+            <span className="wealth-foot-gold">★★★★★ 5.0 (63 Reviews)</span>
           </div>
         </div>
       )}
 
       {/* =========================================================================
-          4. PULSE DENTAL (LUMINOUS SPA-GRADE COSMETIC CLINIC LANDING)
+          4. PULSE DENTAL STUDIO
+          Layout: Clean healthcare — bright white/rose hero, bold booking card,
+                  treatment tabs, modern friendly clinic aesthetic
          ========================================================================= */}
       {site.id === "pulse-dental" && (
-        <div className="mini-bespoke-container mini-pulse-theme">
-          {/* Aesthetic Clinic Top Bar */}
-          <div className="mini-bespoke-nav">
-            <div className="mini-nav-brand">
-              <span className="mini-brand-icon mint-icon">✨</span>
+        <div className="dental-mini-root">
+          {/* Background */}
+          <div
+            className="dental-mini-photo"
+            style={{ backgroundImage: `url(${site.image})` }}
+          />
+          <div className="dental-mini-overlay" />
+
+          {/* Clinic Nav */}
+          <nav className="dental-mini-nav">
+            <div className="dental-nav-brand">
+              <span className="dental-brand-icon">🦷</span>
               <div>
-                <strong className="mini-brand-name">PULSE COSMETIC DENTAL STUDIO</strong>
-                <span className="mini-brand-sub">Adelaide Penthouse Studio · Dr. Sophie Miller</span>
+                <strong>PULSE DENTAL STUDIO</strong>
+                <span>Surry Hills · Sydney · HICAPS · All Funds Welcome</span>
               </div>
             </div>
-            <div className="mini-nav-pill-group">
-              <span className="mini-nav-tag">Porcelain Veneers</span>
-              <span className="mini-nav-tag">Invisalign Platinum</span>
-              <span className="mini-nav-tag">Laser Whitening</span>
+            <div className="dental-nav-links">
+              <span>Veneers</span>
+              <span>Invisalign</span>
+              <span>Whitening</span>
+              <span className="dental-book-btn">Book Online</span>
             </div>
-            <div className="mini-nav-phone-chip mint-phone">
-              <span>Emergency &amp; Consult: (08) 8410 3322</span>
-            </div>
-          </div>
+          </nav>
 
-          {/* Modern Beauty & Dental Layout */}
-          <div className="mini-bespoke-body">
-            <div className="mini-bespoke-left">
-              <div className="mini-hero-badge mint-badge">
-                <span className="mint-pulse-dot" /> 3D Digital Smile Test-Drive in 15 Mins
+          {/* Hero Content */}
+          <div className="dental-mini-body">
+            <div className="dental-mini-left">
+              <div className="dental-badge">
+                <span className="dental-pink-dot" />
+                <span>Sydney&#39;s #1 Cosmetic Dental Studio · 5.0★ 156 Reviews</span>
               </div>
-              <h3 className="mini-bespoke-h1">
-                Designing Adelaide&apos;s <br />
-                <em className="mint-shimmer">Most Radiant Smiles.</em>
+              <h3 className="dental-display-h">
+                Your Dream Smile
+                <br />
+                <span className="dental-pink">Starts Today.</span>
               </h3>
-              <p className="mini-bespoke-lead">
-                Master ceramic porcelain veneers, clear aligners, and pain-free laser whitening in a relaxed, spa-grade penthouse dental suite.
+              <p className="dental-sub">
+                Award-winning cosmetic dentistry — veneers, Invisalign, whitening
+                &amp; full-mouth restoration in Surry Hills.
               </p>
-              <div className="mini-bespoke-chip-row">
-                <span className="mini-spec-chip mint-highlight">✨ 10-Yr Fracture Warranty</span>
-                <span className="mini-spec-chip">📺 Ceiling Netflix Suite</span>
-                <span className="mini-spec-chip">💳 From $49/wk (0% Interest)</span>
+
+              {/* Treatment Buttons */}
+              <div className="dental-treatment-row">
+                <button className="dental-treat-btn active-treat">Veneers</button>
+                <button className="dental-treat-btn">Invisalign</button>
+                <button className="dental-treat-btn">Whitening</button>
+                <button className="dental-treat-btn">Implants</button>
               </div>
             </div>
 
-            {/* Floating Smile Assessment Card */}
-            <div className="mini-bespoke-right">
-              <div className="mini-interactive-card pulse-card">
-                <div className="mini-card-header-mint">
-                  <span>📅 Next Available Booking</span>
-                  <strong className="green-txt">Tomorrow 10:15 AM</strong>
+            {/* Right Booking Card */}
+            <div className="dental-mini-right">
+              <div className="dental-book-card">
+                <div className="dental-book-header">
+                  <span>📅</span>
+                  <span>Book a Free Smile Consult</span>
                 </div>
-                <div className="mini-card-row">
-                  <span>Lead Clinician:</span>
-                  <strong>Dr. Sophie Miller (BDS Hons)</strong>
+                <div className="dental-price-highlight">
+                  <span>Porcelain Veneers from</span>
+                  <strong>$790 / tooth</strong>
+                  <span className="dental-pay-tag">or $49/wk interest-free</span>
                 </div>
-                <div className="mini-card-row">
-                  <span>Assessment:</span>
-                  <strong>Free 3D Smile Scan Included</strong>
+                <div className="dental-slot-grid">
+                  <div className="dental-slot active-slot">Thu 10:30</div>
+                  <div className="dental-slot">Fri 9:00</div>
+                  <div className="dental-slot">Fri 2:00</div>
+                  <div className="dental-slot">Sat 10:00</div>
                 </div>
-                <div className="mini-card-price-box mint-box">
-                  <span className="price-lbl">Porcelain Veneer Smile Design</span>
-                  <strong className="price-val">From $49 / Week</strong>
-                </div>
-                <div className="mini-card-guarantee">
-                  <span>✔ Zero impression goop (100% digital)</span>
-                  <span>✔ HICAPS on-the-spot claim</span>
-                </div>
+                <button className="dental-confirm-btn">Confirm Booking</button>
+                <span className="dental-gap-note">★ HICAPS gap claims processed same-day</span>
               </div>
             </div>
-          </div>
-
-          {/* Aesthetic Bottom Trust Strip */}
-          <div className="mini-bespoke-footer">
-            <span className="mini-foot-item"><strong>4,200+</strong> Smiles Transformed</span>
-            <span className="mini-foot-sep">·</span>
-            <span className="mini-foot-item"><strong>10-Year</strong> Ceramic Warranty</span>
-            <span className="mini-foot-sep">·</span>
-            <span className="mini-foot-item"><strong>Sleep Dentistry</strong> Available</span>
-            <span className="mini-foot-sep">·</span>
-            <span className="mini-foot-item mint-text">★★★★★ 5.0 Google Rating (320+ Reviews)</span>
           </div>
         </div>
       )}
 
       {/* =========================================================================
-          5. ROASTCRAFT COFFEE (ARTISANAL FITZROY ROASTERY ECOMMERCE LANDING)
+          5. ROASTCRAFT COFFEE
+          Layout: Warm artisan e-commerce — dark espresso bg, textured warmth,
+                  product card right, earthy typography
          ========================================================================= */}
       {site.id === "roastcraft-coffee" && (
-        <div className="mini-bespoke-container mini-roastcraft-theme">
-          {/* Artisanal Craft Top Bar */}
-          <div className="mini-bespoke-nav">
-            <div className="mini-nav-brand">
-              <span className="mini-brand-icon orange-icon">☕</span>
+        <div className="coffee-mini-root">
+          {/* Background */}
+          <div
+            className="coffee-mini-photo"
+            style={{ backgroundImage: `url(${site.image})` }}
+          />
+          <div className="coffee-mini-overlay" />
+
+          {/* Roaster Nav */}
+          <nav className="coffee-mini-nav">
+            <div className="coffee-nav-brand">
+              <span className="coffee-brand-icon">☕</span>
               <div>
-                <strong className="mini-brand-name">ROASTCRAFT COFFEE CO.</strong>
-                <span className="mini-brand-sub">Fitzroy Roastery &amp; Espresso Lab · Micro-Lots</span>
+                <strong>ROASTCRAFT COFFEE ROASTERS</strong>
+                <span>Melbourne · Specialty Single-Origin · Cup Score 91+</span>
               </div>
             </div>
-            <div className="mini-nav-pill-group">
-              <span className="mini-nav-tag">Single Origins</span>
-              <span className="mini-nav-tag">Cold Brew Kegs</span>
-              <span className="mini-nav-tag">Subscribe &amp; Save 15%</span>
+            <div className="coffee-nav-links">
+              <span>Single Origins</span>
+              <span>Blends</span>
+              <span>Subscriptions</span>
+              <span className="coffee-shop-btn">Shop Now</span>
             </div>
-            <div className="mini-nav-phone-chip orange-phone">
-              <span>📦 Shipped Within 24h of Roast</span>
-            </div>
-          </div>
+          </nav>
 
-          {/* Artisanal Editorial Roastery Layout */}
-          <div className="mini-bespoke-body">
-            <div className="mini-bespoke-left">
-              <div className="mini-hero-badge orange-badge">
-                <span className="orange-dot" /> 🥇 Golden Bean 2025 Gold Medalist
+          {/* Main Content */}
+          <div className="coffee-mini-body">
+            <div className="coffee-mini-left">
+              <div className="coffee-fresh-badge">
+                <span className="coffee-orange-dot" />
+                <span>Roasted to Order · Dispatched Within 24hrs</span>
               </div>
-              <h3 className="mini-bespoke-h1 craft-headline">
-                Obsessively Sourced. <br />
-                <em className="terracotta-shimmer">Roasted Daily in Fitzroy.</em>
+              <h3 className="coffee-display-h">
+                Ethiopia Yirgacheffe
+                <br />
+                <span className="coffee-orange">Micro-Lot Batch #88.</span>
               </h3>
-              <p className="mini-bespoke-lead">
-                Direct-trade micro-lot specialty beans sourced from high-altitude Ethiopian and Colombian washing stations. Shipped at peak degassing within 24 hours.
+              <p className="coffee-sub">
+                Cup Score 91. Tasting notes of jasmine, candied peach &amp; wild honey.
+                Natural process, shade grown, farmer direct.
               </p>
-              <div className="mini-bespoke-chip-row">
-                <span className="mini-spec-chip orange-highlight">🌿 100% Direct-Trade</span>
-                <span className="mini-spec-chip">☕ SCAA Cup Score 91.5</span>
-                <span className="mini-spec-chip">🚚 Free AU Delivery on 2+ Bags</span>
+
+              {/* Flavour Tags */}
+              <div className="coffee-flavour-row">
+                <span className="coffee-tag">🌸 Jasmine</span>
+                <span className="coffee-tag">🍑 Candied Peach</span>
+                <span className="coffee-tag">🍯 Wild Honey</span>
+              </div>
+
+              {/* Grind + Size Picker */}
+              <div className="coffee-options-row">
+                <div className="coffee-option-group">
+                  <span>Grind</span>
+                  <div className="coffee-option-btns">
+                    <button className="coffee-opt active-opt">Whole Bean</button>
+                    <button className="coffee-opt">Espresso</button>
+                    <button className="coffee-opt">Filter</button>
+                  </div>
+                </div>
               </div>
             </div>
 
-            {/* Floating Single-Origin Coffee Bag Card */}
-            <div className="mini-bespoke-right">
-              <div className="mini-interactive-card roastcraft-card">
-                <div className="mini-card-header-orange">
-                  <span className="batch-tag">MICRO-LOT BATCH #88</span>
-                  <span className="roast-badge">Roasted 2 Days Ago</span>
+            {/* Right Product Card */}
+            <div className="coffee-mini-right">
+              <div className="coffee-product-card">
+                <div className="coffee-product-header">
+                  <span className="coffee-batch-tag">MICRO-LOT BATCH #88</span>
+                  <span className="coffee-roast-tag">Roasted 2 Days Ago</span>
                 </div>
-                <div className="mini-card-row">
-                  <span>Origin / Process:</span>
-                  <strong>Ethiopia Yirgacheffe G1 (Natural)</strong>
+                <div className="coffee-product-row">
+                  <span>Origin</span>
+                  <strong>Ethiopia Yirgacheffe G1</strong>
                 </div>
-                <div className="mini-card-row">
-                  <span>Tasting Notes:</span>
-                  <strong className="orange-txt">Jasmine · Candied Peach · Wild Honey</strong>
+                <div className="coffee-product-row">
+                  <span>Process</span>
+                  <strong>Natural — Shade Grown</strong>
                 </div>
-                <div className="mini-card-price-box orange-box">
-                  <span className="price-lbl">Whole Bean 250g Roaster Pouch</span>
-                  <strong className="price-val">$24.00 AUD (Sub: $20.40)</strong>
+                <div className="coffee-price-box">
+                  <div>
+                    <span className="coffee-price-label">Whole Bean 250g Pouch</span>
+                    <strong className="coffee-price">$24.00 AUD</strong>
+                  </div>
+                  <div className="coffee-sub-price">
+                    <span>Sub price: <strong className="coffee-orange-txt">$20.40</strong></span>
+                  </div>
                 </div>
-                <div className="mini-card-guarantee">
-                  <span>✔ 100% Home-compostable barrier pouch</span>
-                  <span>✔ Freshness sealed valve</span>
+                <button className="coffee-add-btn">☕ Add to Cart</button>
+                <div className="coffee-guarantees">
+                  <span>✔ Compostable pouch</span>
+                  <span>✔ Free over $60</span>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Artisanal Bottom Trust Strip */}
-          <div className="mini-bespoke-footer">
-            <span className="mini-foot-item"><strong>18,000+ kg</strong> Roasted</span>
-            <span className="mini-foot-sep">·</span>
-            <span className="mini-foot-item"><strong>Cup Score 91+</strong> Specialty Grade</span>
-            <span className="mini-foot-sep">·</span>
-            <span className="mini-foot-item"><strong>Australia-Wide</strong> Express Delivery</span>
-            <span className="mini-foot-sep">·</span>
-            <span className="mini-foot-item orange-text">★★★★★ 5.0 Rating (410+ Coffee Drinkers)</span>
+          {/* Trust Strip */}
+          <div className="coffee-mini-footer">
+            <span><strong>18,000kg+</strong> Roasted</span>
+            <span className="coffee-foot-sep">·</span>
+            <span><strong>Cup Score 91+</strong> Specialty Grade</span>
+            <span className="coffee-foot-sep">·</span>
+            <span>Australia-Wide Express</span>
+            <span className="coffee-foot-sep">·</span>
+            <span className="coffee-foot-orange">★★★★★ 5.0 (410+ Reviews)</span>
           </div>
         </div>
       )}
 
       {/* =========================================================================
-          6. TRADIETRACK MOBILE (AUSSIE TRADIE TECH SAAS & FIELD OS LANDING)
+          6. TRADIETRACK MOBILE OS
+          Layout: Bold SaaS green/dark — app phone mockup center, feature list
+                  left, metric chips right, energetic tech startup feel
          ========================================================================= */}
       {site.id === "tradietrack-mobile" && (
-        <div className="mini-bespoke-container mini-tradietrack-theme">
-          {/* Tech App Top Bar */}
-          <div className="mini-bespoke-nav">
-            <div className="mini-nav-brand">
-              <span className="mini-brand-icon blue-icon">⚡</span>
-              <div>
-                <strong className="mini-brand-name">TRADIETRACK MOBILE OS</strong>
-                <span className="mini-brand-sub">For Aussie Sparkies, Plumbers &amp; Builders</span>
-              </div>
-            </div>
-            <div className="mini-nav-pill-group">
-              <span className="mini-nav-tag">Tap-to-Pay</span>
-              <span className="mini-nav-tag">60-Sec PDF Quotes</span>
-              <span className="mini-nav-tag">Live Fleet GPS</span>
-            </div>
-            <div className="mini-nav-phone-chip blue-phone">
-              <span>⭐ 4.9★ App Store (1,400+ Tradies)</span>
-            </div>
-          </div>
+        <div className="tradie-mini-root">
+          {/* Background */}
+          <div
+            className="tradie-mini-photo"
+            style={{ backgroundImage: `url(${site.image})` }}
+          />
+          <div className="tradie-mini-overlay" />
 
-          {/* Gritty Tech SaaS Layout */}
-          <div className="mini-bespoke-body">
-            <div className="mini-bespoke-left">
-              <div className="mini-hero-badge blue-badge">
-                <span className="blue-pulse-dot" /> ⚡ 60-Second Invoicing &amp; Tap-to-Pay
+          {/* SaaS Nav */}
+          <nav className="tradie-mini-nav">
+            <div className="tradie-nav-brand">
+              <span className="tradie-bolt">⚡</span>
+              <strong>TradieTrack</strong>
+              <span className="tradie-nav-sub">Field OS for Aussie Tradies</span>
+            </div>
+            <div className="tradie-nav-links">
+              <span>Features</span>
+              <span>Pricing</span>
+              <span>Reviews</span>
+              <span className="tradie-trial-btn">Free Trial</span>
+            </div>
+            <span className="tradie-rating-chip">⭐ 4.9 App Store · 1,400+ Tradies</span>
+          </nav>
+
+          {/* Three-column SaaS Layout */}
+          <div className="tradie-mini-body">
+            {/* Left Feature List */}
+            <div className="tradie-mini-left">
+              <div className="tradie-badge">
+                <span className="tradie-green-dot" />
+                <span>60-Second Invoicing · Tap-to-Pay · Live GPS</span>
               </div>
-              <h3 className="mini-bespoke-h1">
-                Stop Doing Invoices at Night. <br />
-                <em className="blue-shimmer">Run Your Ute From Your Phone.</em>
+              <h3 className="tradie-display-h">
+                Run Your Trade
+                <br />
+                <span className="tradie-green">From Your Phone.</span>
               </h3>
-              <p className="mini-bespoke-lead">
-                Built for Aussie sparkies, plumbers, chippies, and landscapers. Send professional quotes, track van fleets, and collect instant card payments with $0 terminal hardware.
-              </p>
-              <div className="mini-bespoke-chip-row">
-                <span className="mini-spec-chip blue-highlight">💳 Tap-to-Pay on iPhone</span>
-                <span className="mini-spec-chip">🧾 Instant Xero &amp; MYOB Sync</span>
-                <span className="mini-spec-chip">📍 Real-time Van GPS</span>
+              <ul className="tradie-feature-list">
+                <li>
+                  <span className="tradie-check">✓</span>
+                  <span>60-sec PDF quotes sent to client instantly</span>
+                </li>
+                <li>
+                  <span className="tradie-check">✓</span>
+                  <span>Tap-to-Pay on iPhone (no terminal needed)</span>
+                </li>
+                <li>
+                  <span className="tradie-check">✓</span>
+                  <span>Live van fleet GPS tracking &amp; dispatch</span>
+                </li>
+                <li>
+                  <span className="tradie-check">✓</span>
+                  <span>Auto-sync to Xero, MYOB &amp; Jobber</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Center App Mockup Card */}
+            <div className="tradie-mini-center">
+              <div className="tradie-phone-frame">
+                <div className="tradie-phone-notch" />
+                <div className="tradie-phone-screen">
+                  <div className="tradie-screen-header">
+                    <span>TradieTrack</span>
+                    <span className="tradie-green-txt">Job #4092 ✅</span>
+                  </div>
+                  <div className="tradie-screen-row">
+                    <span>Client</span>
+                    <strong>James H. · North Adelaide</strong>
+                  </div>
+                  <div className="tradie-screen-row">
+                    <span>Work</span>
+                    <strong>Emergency Gas Hot Water</strong>
+                  </div>
+                  <div className="tradie-screen-amount">
+                    <span>Total Collected</span>
+                    <strong>$840.00</strong>
+                    <span className="tradie-pay-method">via Apple Pay ✓</span>
+                  </div>
+                  <div className="tradie-screen-actions">
+                    <button className="tradie-action-btn green-btn">Send Invoice</button>
+                    <button className="tradie-action-btn grey-btn">Next Job</button>
+                  </div>
+                </div>
               </div>
             </div>
 
-            {/* Floating Live iPhone Tap-to-Pay Receipt Card */}
-            <div className="mini-bespoke-right">
-              <div className="mini-interactive-card tradietrack-card">
-                <div className="mini-card-header-blue">
-                  <span>📱 TradieTrack Field OS</span>
-                  <strong className="green-txt">Job #4092 Paid ✅</strong>
+            {/* Right Metric Cards */}
+            <div className="tradie-mini-right">
+              <div className="tradie-metric-stack">
+                <div className="tradie-metric-card">
+                  <strong>6,500+</strong>
+                  <span>Aussie Tradies</span>
                 </div>
-                <div className="mini-card-row">
-                  <span>Client / Address:</span>
-                  <strong>James H. · North Adelaide</strong>
+                <div className="tradie-metric-card">
+                  <strong>14 hrs</strong>
+                  <span>Saved / Week</span>
                 </div>
-                <div className="mini-card-row">
-                  <span>Work Completed:</span>
-                  <strong>Emergency Rinnai Gas Hot Water</strong>
-                </div>
-                <div className="mini-card-price-box blue-box">
-                  <span className="price-lbl">Tap-to-Pay Instant Settlement</span>
-                  <strong className="price-val">$840.00 AUD (Paid via Apple Pay)</strong>
-                </div>
-                <div className="mini-card-guarantee">
-                  <span>✔ Sent tax invoice PDF to client SMS</span>
-                  <span>✔ Automatically synced to Xero</span>
+                <div className="tradie-metric-card highlight-card">
+                  <strong>30-Day</strong>
+                  <span>Free Trial</span>
+                  <span className="tradie-no-cc">No Credit Card</span>
                 </div>
               </div>
             </div>
-          </div>
-
-          {/* Tradie Tech Bottom Trust Strip */}
-          <div className="mini-bespoke-footer">
-            <span className="mini-foot-item"><strong>6,500+</strong> Aussie Tradies</span>
-            <span className="mini-foot-sep">·</span>
-            <span className="mini-foot-item"><strong>14 Hours</strong> Saved Per Week</span>
-            <span className="mini-foot-sep">·</span>
-            <span className="mini-foot-item"><strong>30-Day</strong> Free Trial (No Credit Card)</span>
-            <span className="mini-foot-sep">·</span>
-            <span className="mini-foot-item blue-text">★★★★★ 4.9 App Store Rating</span>
           </div>
         </div>
       )}

@@ -2409,17 +2409,1803 @@ em {
   );
 }
 
-/* Bespoke Shared Container */
-.mini-bespoke-container {
+
+/* =========================================================================
+   SHARED MINI SITE CANVAS BASE
+   ========================================================================= */
+.mini-site-canvas {
   position: relative;
-  z-index: 2;
+  overflow: hidden;
+  border-radius: inherit;
+  width: 100%;
+  height: 100%;
+  min-height: 430px;
+}
+
+/* =========================================================================
+   1. APEX BUILD & RENOVATIONS — Editorial Magazine Luxury Dark
+   ========================================================================= */
+.apex-mini-root {
+  position: relative;
   width: 100%;
   height: 100%;
   min-height: 430px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  background: #0d0f14;
+  overflow: hidden;
+  font-family: inherit;
 }
+
+.apex-mini-photo {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.25) contrast(1.1) saturate(0.8);
+  z-index: 0;
+}
+
+.apex-gold-line {
+  position: relative;
+  z-index: 3;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #f59e0b 30%, #d97706 70%, transparent);
+  flex-shrink: 0;
+}
+
+.apex-mini-nav {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  background: rgba(13, 15, 20, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(245, 158, 11, 0.15);
+  flex-shrink: 0;
+  gap: 12px;
+}
+
+.apex-mini-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.apex-brand-mark {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  color: #000;
+  font-weight: 900;
+  font-size: 14px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.apex-mini-brand strong {
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: #f1f5f9;
+  display: block;
+}
+
+.apex-mini-brand span {
+  font-size: 8.5px;
+  color: #64748b;
+  display: block;
+}
+
+.apex-mini-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.apex-mini-nav-links span {
+  font-size: 9px;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+.apex-nav-cta {
+  background: linear-gradient(135deg, #f59e0b, #d97706) !important;
+  color: #000 !important;
+  font-weight: 700 !important;
+  padding: 3px 9px;
+  border-radius: 4px;
+}
+
+.apex-phone-tag {
+  font-size: 9px;
+  color: #fbbf24;
+  font-weight: 600;
+  background: rgba(245, 158, 11, 0.1);
+  padding: 3px 8px;
+  border-radius: 4px;
+  border: 1px solid rgba(245, 158, 11, 0.2);
+  white-space: nowrap;
+}
+
+.apex-mini-body {
+  position: relative;
+  z-index: 3;
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 16px;
+  padding: 16px;
+  flex: 1;
+  align-items: center;
+}
+
+.apex-mini-left {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.apex-award-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 9px;
+  font-weight: 600;
+  color: #fbbf24;
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  padding: 3px 8px;
+  border-radius: 999px;
+  width: fit-content;
+}
+
+.apex-gold-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #f59e0b;
+  box-shadow: 0 0 8px #f59e0b;
+  flex-shrink: 0;
+}
+
+.apex-display-h {
+  font-size: clamp(18px, 2.8vw, 24px);
+  font-weight: 800;
+  color: #f8fafc;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  margin: 0;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.8);
+}
+
+.apex-gold-em {
+  background: linear-gradient(135deg, #f59e0b, #d97706, #fbbf24);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-style: normal;
+}
+
+.apex-mini-sub {
+  font-size: 10px;
+  color: #94a3b8;
+  line-height: 1.5;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.apex-stat-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.apex-stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.apex-stat strong {
+  font-size: 13px;
+  font-weight: 800;
+  color: #fbbf24;
+  line-height: 1;
+}
+
+.apex-stat span {
+  font-size: 8px;
+  color: #64748b;
+  margin-top: 1px;
+}
+
+.apex-stat-div {
+  width: 1px;
+  height: 24px;
+  background: rgba(255,255,255,0.1);
+}
+
+.apex-mini-right {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.apex-cost-card {
+  background: rgba(15, 18, 26, 0.9);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  border-radius: 10px;
+  padding: 12px;
+  backdrop-filter: blur(16px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.6), 0 0 20px rgba(245,158,11,0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.apex-cost-card-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 9px;
+  font-weight: 700;
+  color: #fbbf24;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(245,158,11,0.15);
+}
+
+.apex-cost-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 9.5px;
+  color: #64748b;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  padding-bottom: 4px;
+}
+
+.apex-cost-row strong {
+  color: #f1f5f9;
+  font-weight: 600;
+}
+
+.apex-cost-price {
+  background: rgba(245,158,11,0.1);
+  border: 1px solid rgba(245,158,11,0.2);
+  border-radius: 6px;
+  padding: 6px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.apex-cost-price span {
+  font-size: 8px;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.apex-cost-price strong {
+  font-size: 14px;
+  font-weight: 800;
+  color: #fbbf24;
+}
+
+.apex-cost-checks {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 8.5px;
+  color: #64748b;
+}
+
+.apex-cost-btn {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  color: #000;
+  font-weight: 700;
+  font-size: 10px;
+  padding: 7px 12px;
+  border-radius: 6px;
+  border: 0;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
+.apex-stars-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 9px;
+  color: #64748b;
+  padding: 0 4px;
+}
+
+.apex-stars {
+  color: #f59e0b;
+  letter-spacing: 1px;
+  font-size: 10px;
+}
+
+.apex-mini-footer {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: rgba(0,0,0,0.7);
+  border-top: 1px solid rgba(245,158,11,0.1);
+  font-size: 9px;
+  color: #475569;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+}
+
+.apex-foot-div { color: rgba(255,255,255,0.15); }
+.apex-foot-gold { color: #fbbf24; font-weight: 600; }
+
+/* =========================================================================
+   2. BONDI CLEAN — Tech Command Center Dark Navy
+   ========================================================================= */
+.bondi-mini-root {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 430px;
+  display: flex;
+  flex-direction: column;
+  background: #030c1a;
+  overflow: hidden;
+  font-family: inherit;
+}
+
+.bondi-mini-photo {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.12) saturate(0.5) hue-rotate(200deg);
+  z-index: 0;
+}
+
+.bondi-mini-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(3,12,26,0.97) 0%, rgba(0,20,40,0.92) 100%);
+  z-index: 1;
+}
+
+.bondi-mini-nav {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  background: rgba(0, 15, 35, 0.9);
+  border-bottom: 1px solid rgba(6, 182, 212, 0.2);
+  flex-shrink: 0;
+  gap: 12px;
+}
+
+.bondi-nav-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.bondi-live-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #22d3ee;
+  box-shadow: 0 0 8px #22d3ee;
+  flex-shrink: 0;
+  animation: bondiPulse 2s infinite;
+}
+
+@keyframes bondiPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.bondi-live-label {
+  font-size: 9px;
+  font-weight: 800;
+  color: #22d3ee;
+  letter-spacing: 0.1em;
+  background: rgba(6,182,212,0.1);
+  padding: 1px 5px;
+  border-radius: 3px;
+  border: 1px solid rgba(6,182,212,0.3);
+}
+
+.bondi-brand-name {
+  font-size: 10px;
+  font-weight: 800;
+  color: #f1f5f9;
+  letter-spacing: 0.04em;
+}
+
+.bondi-brand-sep {
+  color: rgba(255,255,255,0.2);
+  font-size: 12px;
+}
+
+.bondi-brand-sub {
+  font-size: 9px;
+  color: #64748b;
+}
+
+.bondi-nav-right {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.bondi-iso-tag {
+  font-size: 8.5px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: rgba(6,182,212,0.1);
+  border: 1px solid rgba(6,182,212,0.25);
+  color: #22d3ee;
+  letter-spacing: 0.03em;
+}
+
+.bondi-dispatch-chip {
+  font-size: 9px;
+  font-weight: 700;
+  color: #fbbf24;
+  background: rgba(245,158,11,0.1);
+  border: 1px solid rgba(245,158,11,0.25);
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+.bondi-mini-body {
+  position: relative;
+  z-index: 3;
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 16px;
+  padding: 16px;
+  flex: 1;
+  align-items: center;
+}
+
+.bondi-mini-left { display: flex; flex-direction: column; gap: 10px; }
+
+.bondi-eyebrow {
+  font-size: 9px;
+  font-weight: 600;
+  color: #22d3ee;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 0;
+}
+
+.bondi-display-h {
+  font-size: clamp(18px, 2.6vw, 22px);
+  font-weight: 800;
+  color: #f1f5f9;
+  line-height: 1.18;
+  letter-spacing: -0.025em;
+  margin: 0;
+}
+
+.bondi-cyan { color: #22d3ee; }
+
+.bondi-sub {
+  font-size: 10px;
+  color: #64748b;
+  line-height: 1.5;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.bondi-metric-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+}
+
+.bondi-metric {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 6px;
+  padding: 6px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.bondi-metric strong {
+  font-size: 12px;
+  font-weight: 800;
+  color: #22d3ee;
+  line-height: 1;
+}
+
+.bondi-metric span {
+  font-size: 7.5px;
+  color: #475569;
+}
+
+.bondi-terminal-card {
+  background: rgba(0,10,24,0.92);
+  border: 1px solid rgba(6,182,212,0.3);
+  border-radius: 10px;
+  padding: 12px;
+  backdrop-filter: blur(16px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.7), 0 0 20px rgba(6,182,212,0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.bondi-terminal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(6,182,212,0.15);
+}
+
+.bondi-terminal-title {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 9px;
+  font-weight: 700;
+  color: #22d3ee;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.bondi-terminal-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #22d3ee;
+  animation: bondiPulse 2s infinite;
+}
+
+.bondi-time-badge {
+  font-size: 8.5px;
+  color: #475569;
+  background: rgba(255,255,255,0.04);
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+
+.bondi-terminal-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 9.5px;
+  color: #475569;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  padding-bottom: 4px;
+}
+
+.bondi-terminal-row strong { color: #cbd5e1; font-weight: 600; }
+.bondi-green { color: #34d399 !important; }
+
+.bondi-terminal-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 9px;
+  color: #475569;
+}
+
+.bondi-bar-track {
+  flex: 1;
+  height: 4px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.bondi-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #0891b2, #22d3ee);
+  border-radius: 2px;
+}
+
+.bondi-terminal-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 8.5px;
+  color: #475569;
+  margin-top: 2px;
+}
+
+/* =========================================================================
+   3. TRUENORTH PRIVATE WEALTH — Minimalist Private Bank
+   ========================================================================= */
+.wealth-mini-root {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 430px;
+  display: flex;
+  flex-direction: column;
+  background: #06091a;
+  overflow: hidden;
+  font-family: inherit;
+}
+
+.wealth-mini-photo {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center top;
+  filter: brightness(0.15) saturate(0.3);
+  z-index: 0;
+}
+
+.wealth-mini-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, rgba(6,9,26,0.98) 0%, rgba(10,14,40,0.94) 50%, rgba(6,9,26,0.98) 100%);
+  z-index: 1;
+}
+
+.wealth-mini-nav {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 18px;
+  border-bottom: 1px solid rgba(251,191,36,0.12);
+  flex-shrink: 0;
+}
+
+.wealth-nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.wealth-crest { font-size: 18px; }
+
+.wealth-nav-brand strong {
+  font-size: 10px;
+  font-weight: 800;
+  color: #f8fafc;
+  letter-spacing: 0.05em;
+  display: block;
+}
+
+.wealth-nav-brand span {
+  font-size: 8.5px;
+  color: #475569;
+  display: block;
+}
+
+.wealth-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.wealth-nav-links span {
+  font-size: 9px;
+  color: #64748b;
+}
+
+.wealth-consult-btn {
+  background: transparent !important;
+  border: 1px solid rgba(251,191,36,0.4) !important;
+  color: #fbbf24 !important;
+  padding: 3px 9px;
+  border-radius: 4px;
+  font-size: 9px !important;
+  font-weight: 600 !important;
+}
+
+.wealth-mini-hero {
+  position: relative;
+  z-index: 3;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 20px;
+  text-align: center;
+  gap: 12px;
+}
+
+.wealth-discreet-badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 9px;
+  font-weight: 600;
+  color: #fbbf24;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.wealth-gold-bar {
+  width: 24px;
+  height: 1px;
+  background: rgba(251,191,36,0.5);
+  flex-shrink: 0;
+}
+
+.wealth-display-h {
+  font-size: clamp(18px, 2.8vw, 24px);
+  font-weight: 700;
+  color: #f8fafc;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin: 0;
+  font-variant: normal;
+}
+
+.wealth-gold-em {
+  color: #fbbf24;
+  font-style: normal;
+}
+
+.wealth-sub {
+  font-size: 10px;
+  color: #64748b;
+  line-height: 1.5;
+  margin: 0;
+  max-width: 380px;
+}
+
+.wealth-strategy-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  width: 100%;
+  margin-top: 4px;
+}
+
+.wealth-strategy-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 8px;
+  padding: 8px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  position: relative;
+}
+
+.active-strategy {
+  background: rgba(251,191,36,0.07) !important;
+  border-color: rgba(251,191,36,0.25) !important;
+}
+
+.wealth-strategy-card strong {
+  font-size: 9.5px;
+  color: #f1f5f9;
+  font-weight: 700;
+}
+
+.wealth-strategy-card > span {
+  font-size: 8.5px;
+  color: #64748b;
+}
+
+.wealth-strategy-bar {
+  height: 2px;
+  border-radius: 2px;
+  margin-top: 4px;
+}
+
+.wealth-active-tag {
+  font-size: 7.5px !important;
+  color: #fbbf24 !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.04em;
+}
+
+.wealth-mini-footer {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px 16px;
+  border-top: 1px solid rgba(251,191,36,0.1);
+  font-size: 9px;
+  color: #475569;
+  flex-shrink: 0;
+}
+
+.wealth-foot-sep { color: rgba(251,191,36,0.2); }
+.wealth-foot-gold { color: #fbbf24; font-weight: 600; }
+
+/* =========================================================================
+   4. PULSE DENTAL STUDIO — Vibrant Healthcare Modern
+   ========================================================================= */
+.dental-mini-root {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 430px;
+  display: flex;
+  flex-direction: column;
+  background: #0d1520;
+  overflow: hidden;
+  font-family: inherit;
+}
+
+.dental-mini-photo {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.2) saturate(0.6);
+  z-index: 0;
+}
+
+.dental-mini-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(140deg, rgba(13,21,32,0.97) 0%, rgba(20,10,35,0.95) 100%);
+  z-index: 1;
+}
+
+.dental-mini-nav {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  background: rgba(10,15,25,0.85);
+  border-bottom: 1px solid rgba(236,72,153,0.2);
+  flex-shrink: 0;
+}
+
+.dental-nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dental-brand-icon { font-size: 18px; }
+
+.dental-nav-brand strong {
+  font-size: 10px;
+  font-weight: 800;
+  color: #f8fafc;
+  letter-spacing: 0.04em;
+  display: block;
+}
+
+.dental-nav-brand span {
+  font-size: 8.5px;
+  color: #64748b;
+  display: block;
+}
+
+.dental-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dental-nav-links span {
+  font-size: 9px;
+  color: #64748b;
+}
+
+.dental-book-btn {
+  background: linear-gradient(135deg, #ec4899, #db2777) !important;
+  color: #fff !important;
+  font-weight: 700 !important;
+  font-size: 9px !important;
+  padding: 3px 9px;
+  border-radius: 4px;
+}
+
+.dental-mini-body {
+  position: relative;
+  z-index: 3;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 14px;
+  padding: 14px 16px;
+  flex: 1;
+  align-items: center;
+}
+
+.dental-mini-left { display: flex; flex-direction: column; gap: 8px; }
+
+.dental-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 9px;
+  font-weight: 600;
+  color: #f9a8d4;
+  background: rgba(236,72,153,0.1);
+  border: 1px solid rgba(236,72,153,0.25);
+  padding: 3px 8px;
+  border-radius: 999px;
+  width: fit-content;
+}
+
+.dental-pink-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ec4899;
+  box-shadow: 0 0 6px #ec4899;
+}
+
+.dental-display-h {
+  font-size: clamp(18px, 2.8vw, 23px);
+  font-weight: 800;
+  color: #f8fafc;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  margin: 0;
+}
+
+.dental-pink { color: #f472b6; }
+
+.dental-sub {
+  font-size: 10px;
+  color: #64748b;
+  line-height: 1.5;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.dental-treatment-row {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.dental-treat-btn {
+  font-size: 9px;
+  font-weight: 600;
+  padding: 4px 9px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: #94a3b8;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.active-treat {
+  background: rgba(236,72,153,0.2) !important;
+  border-color: rgba(236,72,153,0.5) !important;
+  color: #f472b6 !important;
+}
+
+.dental-book-card {
+  background: rgba(13,18,30,0.92);
+  border: 1px solid rgba(236,72,153,0.25);
+  border-radius: 10px;
+  padding: 12px;
+  backdrop-filter: blur(16px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.7), 0 0 20px rgba(236,72,153,0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.dental-book-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 9.5px;
+  font-weight: 700;
+  color: #f472b6;
+  border-bottom: 1px solid rgba(236,72,153,0.12);
+  padding-bottom: 6px;
+}
+
+.dental-price-highlight {
+  background: rgba(236,72,153,0.08);
+  border: 1px solid rgba(236,72,153,0.2);
+  border-radius: 6px;
+  padding: 6px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.dental-price-highlight span {
+  font-size: 8px;
+  color: #94a3b8;
+}
+
+.dental-price-highlight strong {
+  font-size: 15px;
+  font-weight: 800;
+  color: #f472b6;
+}
+
+.dental-pay-tag {
+  font-size: 8px !important;
+  color: #64748b !important;
+}
+
+.dental-slot-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4px;
+}
+
+.dental-slot {
+  font-size: 9px;
+  font-weight: 600;
+  text-align: center;
+  padding: 5px 6px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 5px;
+  color: #94a3b8;
+  cursor: pointer;
+}
+
+.active-slot {
+  background: rgba(236,72,153,0.15) !important;
+  border-color: rgba(236,72,153,0.4) !important;
+  color: #f472b6 !important;
+}
+
+.dental-confirm-btn {
+  background: linear-gradient(135deg, #ec4899, #db2777);
+  color: #fff;
+  font-weight: 700;
+  font-size: 10px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 0;
+  cursor: pointer;
+  width: 100%;
+}
+
+.dental-gap-note {
+  font-size: 8px;
+  color: #475569;
+  text-align: center;
+}
+
+/* =========================================================================
+   5. ROASTCRAFT COFFEE — Warm Artisan E-Commerce
+   ========================================================================= */
+.coffee-mini-root {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 430px;
+  display: flex;
+  flex-direction: column;
+  background: #100804;
+  overflow: hidden;
+  font-family: inherit;
+}
+
+.coffee-mini-photo {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.2) saturate(0.7) sepia(0.4);
+  z-index: 0;
+}
+
+.coffee-mini-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, rgba(16,8,4,0.97) 0%, rgba(22,12,4,0.94) 100%);
+  z-index: 1;
+}
+
+.coffee-mini-nav {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  background: rgba(10,5,2,0.85);
+  border-bottom: 1px solid rgba(234,88,12,0.2);
+  flex-shrink: 0;
+}
+
+.coffee-nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.coffee-brand-icon { font-size: 18px; }
+
+.coffee-nav-brand strong {
+  font-size: 10px;
+  font-weight: 800;
+  color: #fed7aa;
+  letter-spacing: 0.04em;
+  display: block;
+}
+
+.coffee-nav-brand span {
+  font-size: 8.5px;
+  color: #78350f;
+  display: block;
+}
+
+.coffee-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.coffee-nav-links span {
+  font-size: 9px;
+  color: #78350f;
+}
+
+.coffee-shop-btn {
+  background: linear-gradient(135deg, #ea580c, #dc2626) !important;
+  color: #fff !important;
+  font-weight: 700 !important;
+  font-size: 9px !important;
+  padding: 3px 9px;
+  border-radius: 4px;
+}
+
+.coffee-mini-body {
+  position: relative;
+  z-index: 3;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 14px;
+  padding: 14px 16px;
+  flex: 1;
+  align-items: center;
+}
+
+.coffee-mini-left { display: flex; flex-direction: column; gap: 8px; }
+
+.coffee-fresh-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 9px;
+  font-weight: 600;
+  color: #fb923c;
+  background: rgba(234,88,12,0.12);
+  border: 1px solid rgba(234,88,12,0.3);
+  padding: 3px 8px;
+  border-radius: 999px;
+  width: fit-content;
+}
+
+.coffee-orange-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #f97316;
+  box-shadow: 0 0 6px #f97316;
+}
+
+.coffee-display-h {
+  font-size: clamp(17px, 2.6vw, 22px);
+  font-weight: 800;
+  color: #fed7aa;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.coffee-orange { color: #f97316; }
+
+.coffee-sub {
+  font-size: 10px;
+  color: #78350f;
+  line-height: 1.5;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.coffee-flavour-row {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.coffee-tag {
+  font-size: 8.5px;
+  font-weight: 600;
+  padding: 3px 8px;
+  background: rgba(234,88,12,0.1);
+  border: 1px solid rgba(234,88,12,0.25);
+  border-radius: 999px;
+  color: #fdba74;
+}
+
+.coffee-options-row { display: flex; gap: 8px; }
+
+.coffee-option-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.coffee-option-group > span {
+  font-size: 8px;
+  color: #78350f;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.coffee-option-btns {
+  display: flex;
+  gap: 4px;
+}
+
+.coffee-opt {
+  font-size: 8.5px;
+  font-weight: 600;
+  padding: 3px 7px;
+  border-radius: 4px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  color: #92400e;
+  cursor: pointer;
+}
+
+.active-opt {
+  background: rgba(234,88,12,0.2) !important;
+  border-color: rgba(234,88,12,0.5) !important;
+  color: #fb923c !important;
+}
+
+.coffee-product-card {
+  background: rgba(15,8,4,0.92);
+  border: 1px solid rgba(234,88,12,0.25);
+  border-radius: 10px;
+  padding: 12px;
+  backdrop-filter: blur(16px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.7), 0 0 20px rgba(234,88,12,0.07);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.coffee-product-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(234,88,12,0.15);
+}
+
+.coffee-batch-tag {
+  font-size: 8px;
+  font-weight: 800;
+  color: #f97316;
+  letter-spacing: 0.06em;
+}
+
+.coffee-roast-tag {
+  font-size: 7.5px;
+  color: #78350f;
+  background: rgba(234,88,12,0.1);
+  padding: 1px 5px;
+  border-radius: 3px;
+}
+
+.coffee-product-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 9.5px;
+  color: #78350f;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  padding-bottom: 4px;
+}
+
+.coffee-product-row strong { color: #fed7aa; font-weight: 600; }
+
+.coffee-price-box {
+  background: rgba(234,88,12,0.1);
+  border: 1px solid rgba(234,88,12,0.2);
+  border-radius: 6px;
+  padding: 6px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.coffee-price-label { font-size: 8px; color: #92400e; }
+
+.coffee-price {
+  font-size: 15px;
+  font-weight: 800;
+  color: #fed7aa;
+  display: block;
+}
+
+.coffee-sub-price {
+  font-size: 8.5px;
+  color: #78350f;
+}
+
+.coffee-orange-txt { color: #f97316; }
+
+.coffee-add-btn {
+  background: linear-gradient(135deg, #ea580c, #dc2626);
+  color: #fff;
+  font-weight: 700;
+  font-size: 10px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 0;
+  cursor: pointer;
+  width: 100%;
+}
+
+.coffee-guarantees {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 8.5px;
+  color: #78350f;
+}
+
+.coffee-mini-footer {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: rgba(0,0,0,0.5);
+  border-top: 1px solid rgba(234,88,12,0.1);
+  font-size: 9px;
+  color: #78350f;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+}
+
+.coffee-foot-sep { color: rgba(234,88,12,0.2); }
+.coffee-foot-orange { color: #f97316; font-weight: 600; }
+
+/* =========================================================================
+   6. TRADIETRACK MOBILE OS — Bold SaaS Tech Green/Dark
+   ========================================================================= */
+.tradie-mini-root {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 430px;
+  display: flex;
+  flex-direction: column;
+  background: #040a0f;
+  overflow: hidden;
+  font-family: inherit;
+}
+
+.tradie-mini-photo {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.1) saturate(0.4);
+  z-index: 0;
+}
+
+.tradie-mini-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(140deg, rgba(4,10,15,0.98) 0%, rgba(2,8,18,0.96) 100%);
+  z-index: 1;
+}
+
+.tradie-mini-nav {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  background: rgba(2,6,12,0.85);
+  border-bottom: 1px solid rgba(16,185,129,0.2);
+  flex-shrink: 0;
+  gap: 12px;
+}
+
+.tradie-nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.tradie-bolt {
+  font-size: 16px;
+  filter: drop-shadow(0 0 6px #10b981);
+}
+
+.tradie-nav-brand strong {
+  font-size: 12px;
+  font-weight: 900;
+  color: #f0fdf4;
+  letter-spacing: -0.01em;
+}
+
+.tradie-nav-sub {
+  font-size: 8.5px;
+  color: #475569;
+  margin-left: 4px;
+}
+
+.tradie-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.tradie-nav-links span {
+  font-size: 9px;
+  color: #475569;
+}
+
+.tradie-trial-btn {
+  background: linear-gradient(135deg, #10b981, #059669) !important;
+  color: #fff !important;
+  font-weight: 700 !important;
+  font-size: 9px !important;
+  padding: 3px 10px;
+  border-radius: 4px;
+}
+
+.tradie-rating-chip {
+  font-size: 8.5px;
+  font-weight: 600;
+  color: #fbbf24;
+  background: rgba(251,191,36,0.08);
+  border: 1px solid rgba(251,191,36,0.2);
+  padding: 2px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.tradie-mini-body {
+  position: relative;
+  z-index: 3;
+  display: grid;
+  grid-template-columns: 1.1fr 0.8fr 0.9fr;
+  gap: 12px;
+  padding: 14px 16px;
+  flex: 1;
+  align-items: center;
+}
+
+.tradie-mini-left { display: flex; flex-direction: column; gap: 8px; }
+
+.tradie-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 9px;
+  font-weight: 600;
+  color: #34d399;
+  background: rgba(16,185,129,0.1);
+  border: 1px solid rgba(16,185,129,0.25);
+  padding: 3px 8px;
+  border-radius: 999px;
+  width: fit-content;
+}
+
+.tradie-green-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 6px #10b981;
+  animation: bondiPulse 2s infinite;
+}
+
+.tradie-display-h {
+  font-size: clamp(16px, 2.5vw, 21px);
+  font-weight: 900;
+  color: #f0fdf4;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  margin: 0;
+}
+
+.tradie-green { color: #10b981; }
+
+.tradie-feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.tradie-feature-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  font-size: 9.5px;
+  color: #64748b;
+  line-height: 1.3;
+}
+
+.tradie-check {
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  background: rgba(16,185,129,0.15);
+  border: 1px solid rgba(16,185,129,0.3);
+  color: #10b981;
+  font-size: 8px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* Phone Mockup */
+.tradie-mini-center { display: flex; justify-content: center; align-items: center; }
+
+.tradie-phone-frame {
+  width: 100px;
+  background: #0d1117;
+  border-radius: 16px;
+  border: 1.5px solid rgba(16,185,129,0.35);
+  box-shadow: 0 12px 36px rgba(0,0,0,0.8), 0 0 20px rgba(16,185,129,0.1);
+  overflow: hidden;
+  padding: 6px 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.tradie-phone-notch {
+  width: 30px;
+  height: 5px;
+  background: rgba(255,255,255,0.12);
+  border-radius: 3px;
+  margin: 0 auto 3px;
+}
+
+.tradie-phone-screen {
+  background: #0b1220;
+  border-radius: 10px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.tradie-screen-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 8px;
+  font-weight: 700;
+  border-bottom: 1px solid rgba(16,185,129,0.12);
+  padding-bottom: 4px;
+  color: #94a3b8;
+}
+
+.tradie-green-txt { color: #34d399 !important; }
+
+.tradie-screen-row {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.tradie-screen-row span { font-size: 7px; color: #475569; }
+.tradie-screen-row strong { font-size: 8.5px; color: #e2e8f0; font-weight: 600; }
+
+.tradie-screen-amount {
+  background: rgba(16,185,129,0.1);
+  border: 1px solid rgba(16,185,129,0.2);
+  border-radius: 5px;
+  padding: 4px 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.tradie-screen-amount span { font-size: 7px; color: #64748b; }
+.tradie-screen-amount strong { font-size: 12px; color: #10b981; font-weight: 800; }
+.tradie-pay-method { font-size: 7px !important; color: #34d399 !important; }
+
+.tradie-screen-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3px;
+}
+
+.tradie-action-btn {
+  font-size: 7.5px;
+  font-weight: 700;
+  padding: 4px 6px;
+  border-radius: 4px;
+  border: 0;
+  cursor: pointer;
+  text-align: center;
+}
+
+.green-btn { background: #10b981; color: #fff; }
+.grey-btn { background: rgba(255,255,255,0.06); color: #64748b; }
+
+/* Right Metric Stack */
+.tradie-mini-right { display: flex; flex-direction: column; justify-content: center; }
+
+.tradie-metric-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.tradie-metric-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 8px;
+  padding: 8px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.highlight-card {
+  background: rgba(16,185,129,0.07) !important;
+  border-color: rgba(16,185,129,0.25) !important;
+}
+
+.tradie-metric-card strong {
+  font-size: 16px;
+  font-weight: 900;
+  color: #10b981;
+  line-height: 1;
+}
+
+.tradie-metric-card span {
+  font-size: 8px;
+  color: #475569;
+}
+
+.tradie-no-cc {
+  font-size: 7.5px !important;
+  color: #34d399 !important;
+  font-weight: 600 !important;
+}
+
+/* =========================================================================
+   RESPONSIVE: TABLET & MOBILE
+   ========================================================================= */
+@media (max-width: 900px) {
+  .apex-mini-body,
+  .bondi-mini-body,
+  .dental-mini-body,
+  .coffee-mini-body {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .apex-mini-right,
+  .dental-mini-right,
+  .coffee-mini-right {
+    display: none;
+  }
+
+  .bondi-terminal-card {
+    display: none;
+  }
+
+  .tradie-mini-body {
+    grid-template-columns: 1fr 0.7fr;
+    gap: 10px;
+  }
+
+  .tradie-mini-right {
+    display: none;
+  }
+
+  .wealth-strategy-row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .apex-stat-row {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .bondi-metric-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .apex-mini-root,
+  .bondi-mini-root,
+  .wealth-mini-root,
+  .dental-mini-root,
+  .coffee-mini-root,
+  .tradie-mini-root {
+    min-height: 340px;
+  }
+
+  .apex-display-h,
+  .bondi-display-h,
+  .wealth-display-h,
+  .dental-display-h,
+  .coffee-display-h,
+  .tradie-display-h {
+    font-size: 16px;
+  }
+
+  .tradie-mini-body {
+    grid-template-columns: 1fr;
+  }
+
+  .tradie-mini-center {
+    display: none;
+  }
+
+  .wealth-strategy-row {
+    grid-template-columns: 1fr;
+  }
+
+  .apex-mini-nav-links,
+  .bondi-nav-right,
+  .wealth-nav-links,
+  .dental-nav-links,
+  .coffee-nav-links,
+  .tradie-nav-links {
+    display: none;
+  }
+
+  .bondi-metric-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .apex-mini-footer,
+  .coffee-mini-footer,
+  .wealth-mini-footer {
+    display: none;
+  }
+}
+
+
 
 /* Bespoke Navigation Header */
 .mini-bespoke-nav {
