@@ -106,7 +106,7 @@ export default async function ServiceDetailPage({
 
       <main style={{ paddingBottom: 100 }}>
         {/* Service Hero */}
-        <section className="contact-page-hero">
+        <section className="service-artistic-hero">
           <div className="contact-hero-ambient" />
           <div className="wrap">
             {/* Breadcrumb */}

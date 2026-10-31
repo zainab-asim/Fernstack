@@ -8,6 +8,7 @@ import MiniSiteCanvas from "@/app/components/MiniSiteCanvas";
 import ClientLandingSiteView from "@/app/components/ClientLandingSiteView";
 import ThemeToggle from "@/app/components/ThemeToggle";
 import FernFooter from "@/app/components/FernFooter";
+import { servicesList } from "@/data/servicesData";
 
 interface WOWService {
   id: string;
@@ -187,6 +188,7 @@ export default function Home() {
   const [city, setCity] = useState<string | null>(null);
   const [selectedPlan, setSelectedPlan] = useState<string>("multi-page-949");
   const [currentSlideIndex, setCurrentSlideIndex] = useState<number>(0);
+  const [activeServiceTab, setActiveServiceTab] = useState<number>(0);
   const [previewSite, setPreviewSite] = useState<ClientSite | null>(null);
   const [previewDevice, setPreviewDevice] = useState<"desktop" | "tablet" | "mobile">(
     "desktop"
@@ -731,77 +733,418 @@ export default function Home() {
           </div>
         </section>
 
-        {/* WOW Services Section */}
+        {/* =========================================================================
+            SERVICES MONOLITH (Expansive Non-AI Architectural Master Container)
+           ========================================================================= */}
         <section className="services-section" id="services" aria-labelledby="services-h">
           <div className="services-ambient-glow" />
           <div className="wrap">
-            <div style={{ textAlign: "center", maxWidth: 760, margin: "0 auto" }}>
+            <div className="services-header-box">
               <span className="services-badge-pill">
                 <span className="services-badge-dot" />
-                Next-Gen Engineering &amp; AI
+                Hand-Crafted Software Disciplines · Australia
               </span>
-              <h2 id="services-h" style={{ fontSize: "clamp(28px, 4vw, 42px)", marginBottom: 14 }}>
-                Bespoke Digital Craftsmanship. <em>Built For Market Dominance.</em>
+              <h2 id="services-h">
+                Architectural Software Disciplines. <em>Engineered for Revenue.</em>
               </h2>
-              <p style={{ color: "var(--dim)", fontSize: 17, lineHeight: 1.6 }}>
-                From high-speed React/Next.js architectures and native apps to autonomous 24/7 AI voice receptionists, we engineer platforms that capture market share.
+              <p>
+                Zero AI-generated templates or sluggish WordPress themes. We hand-write bespoke Next.js web applications, native mobile ecosystems, and autonomous voice agents built for maximum market conversion.
               </p>
             </div>
 
-            <div className="services-grid">
-              {wowServices.map((svc) => (
-                <article key={svc.id} className={`service-card ${svc.badge === "Most Requested" ? "featured" : ""}`}>
-                  <div className="service-top-row">
-                    <div className="service-icon-box">{svc.icon}</div>
-                    {svc.badge && (
-                      <span className="service-hot-badge">{svc.badge}</span>
-                    )}
+            {/* THE BIG EXPANSIVE MASTER MONOLITH CONTAINER */}
+            <div className="services-master-container">
+              {/* Monolith Header Console Bar */}
+              <div className="services-monolith-topbar">
+                <div className="monolith-terminal-tag">
+                  <span className="terminal-live-dot" />
+                  <span className="terminal-title-text">FERNSTACK STUDIO // ARCHITECTURE SUITE</span>
+                  <span className="terminal-div">|</span>
+                  <span className="terminal-sub">Active Discipline: 0{activeServiceTab + 1} of 0{servicesList.length}</span>
+                </div>
+                <div className="monolith-turnaround-badge">
+                  <span>Guaranteed {servicesList[activeServiceTab].turnaroundTime} Delivery</span>
+                  <span className="terminal-deposit">· $0 Upfront Deposit Standard</span>
+                </div>
+              </div>
+
+              {/* Monolith Discipline Navigation Rail */}
+              <div className="services-monolith-nav-rail" role="tablist" aria-label="Engineering Disciplines">
+                {servicesList.map((svc, sIdx) => (
+                  <button
+                    key={svc.id}
+                    type="button"
+                    role="tab"
+                    aria-selected={activeServiceTab === sIdx}
+                    className={`monolith-nav-tab ${activeServiceTab === sIdx ? "active" : ""}`}
+                    onClick={() => setActiveServiceTab(sIdx)}
+                  >
+                    <span className="tab-idx">0{sIdx + 1}</span>
+                    <span className="tab-name">{svc.shortTitle}</span>
+                    {svc.badge === "Most Requested" && <span className="tab-hot-tag">Hot</span>}
+                  </button>
+                ))}
+              </div>
+
+              {/* Monolith Main Stage (Split Layout) */}
+              <div className="services-monolith-stage">
+                {/* Left: Editorial Specification & Tangible Deliverables */}
+                <div className="monolith-stage-left">
+                  <div className="monolith-discipline-eyebrow">
+                    <span className="eyebrow-num">DISCIPLINE 0{activeServiceTab + 1}</span>
+                    <span className="eyebrow-sep">/</span>
+                    <span className="eyebrow-badge">{servicesList[activeServiceTab].badge}</span>
                   </div>
 
-                  <h3 className="service-title">{svc.title}</h3>
-                  <p className="service-desc">{svc.desc}</p>
+                  <h3 className="monolith-discipline-title">
+                    {servicesList[activeServiceTab].title}
+                  </h3>
 
-                  <div className="service-metrics-badge">
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                      <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
-                    </svg>
-                    <span>{svc.metric}: <strong>{svc.metricBold}</strong></span>
+                  <p className="monolith-discipline-overview">
+                    {servicesList[activeServiceTab].overview}
+                  </p>
+
+                  {/* 3 Technical Impact Proof Badges */}
+                  <div className="monolith-metrics-strip">
+                    <div className="monolith-metric-card">
+                      <span className="metric-tag">{servicesList[activeServiceTab].metric}</span>
+                      <strong>{servicesList[activeServiceTab].metricBold}</strong>
+                      <small>{servicesList[activeServiceTab].metricDescription}</small>
+                    </div>
+                    <div className="monolith-metric-card highlight">
+                      <span className="metric-tag">Verified Sales Proof</span>
+                      <strong>{servicesList[activeServiceTab].caseStudyMetric}</strong>
+                      <small>{servicesList[activeServiceTab].salesImpactQuote}</small>
+                    </div>
+                    <div className="monolith-metric-card">
+                      <span className="metric-tag">Investment Starting</span>
+                      <strong>{servicesList[activeServiceTab].pricingStarting}</strong>
+                      <small>Fixed-price · Zero deposit until satisfied</small>
+                    </div>
                   </div>
 
-                  <ul className="service-features-list">
-                    {svc.features.map((feat, fi) => (
-                      <li key={fi}>
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                          <polyline points="20 6 9 17 4 12" />
-                        </svg>
-                        <span>{feat}</span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  <div className="service-tech-pills">
-                    {svc.techStack.map((tech, ti) => (
-                      <span key={ti} className="service-tech-pill">{tech}</span>
-                    ))}
+                  {/* Key Deliverables Matrix */}
+                  <div className="monolith-deliverables-box">
+                    <span className="deliverables-heading">Concrete Deliverables Included:</span>
+                    <ul className="monolith-check-list">
+                      {servicesList[activeServiceTab].deliverables.slice(0, 4).map((d, di) => (
+                        <li key={di}>
+                          <span className="monolith-check-ico">✓</span>
+                          <span>{d}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
 
-                  <div className="service-card-actions-row">
+                  {/* Technology Stack Tags */}
+                  <div className="monolith-tech-stack-row">
+                    <span className="tech-stack-label">Stack:</span>
+                    <div className="tech-stack-chips">
+                      {servicesList[activeServiceTab].techStack.map((tech, ti) => (
+                        <span key={ti} className="monolith-tech-chip">{tech}</span>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Action Buttons Row with Explore */}
+                  <div className="monolith-actions-row">
                     <Link
-                      href={`/services/${serviceSlugMap[svc.id] || "web-development"}`}
-                      className="service-deep-page-link"
+                      href={`/services/${servicesList[activeServiceTab].slug}`}
+                      className="monolith-explore-btn"
                     >
-                      <span>Dedicated Page &amp; Case Study &rarr;</span>
+                      <span>Explore Dedicated {servicesList[activeServiceTab].shortTitle} Page &rarr;</span>
                     </Link>
-                    <a href="#quote" className="service-cta-btn">
-                      <span>Enquire Now</span>
-                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                        <line x1="5" y1="12" x2="19" y2="12" />
-                        <polyline points="12 5 19 12 12 19" />
-                      </svg>
+                    <a
+                      href="#quote"
+                      onClick={() => handlePlanSelect("multi-page-949")}
+                      className="monolith-quote-btn"
+                    >
+                      <span>Instant Fixed Quote ($0 Deposit)</span>
                     </a>
                   </div>
-                </article>
-              ))}
+                </div>
+
+                {/* Right: Live Interactive Technical Anatomy Stage */}
+                <div className="monolith-stage-right">
+                  {/* Discipline 1: Web Engineering */}
+                  {activeServiceTab === 0 && (
+                    <div className="monolith-visual-console web-console">
+                      <div className="console-chrome">
+                        <div className="console-dots"><i /><i /><i /></div>
+                        <span className="console-title">NEXTJS_EDGE_BENCHMARK.TSX</span>
+                        <span className="console-status-live">● 100% AUDIT PASS</span>
+                      </div>
+                      <div className="console-body">
+                        {/* Core Web Vitals Gauge */}
+                        <div className="speed-gauge-card">
+                          <div className="gauge-dial">
+                            <span className="gauge-num">100</span>
+                            <span className="gauge-lbl">LIGHTHOUSE</span>
+                          </div>
+                          <div className="gauge-vitals-grid">
+                            <div className="vital-item">
+                              <span>First Contentful Paint</span>
+                              <strong className="green-txt">0.28s</strong>
+                            </div>
+                            <div className="vital-item">
+                              <span>Largest Contentful Paint</span>
+                              <strong className="green-txt">0.52s</strong>
+                            </div>
+                            <div className="vital-item">
+                              <span>Cumulative Layout Shift</span>
+                              <strong className="green-txt">0.00</strong>
+                            </div>
+                            <div className="vital-item">
+                              <span>Edge Response (Sydney)</span>
+                              <strong className="green-txt">18ms</strong>
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Typed Code Snippet */}
+                        <div className="code-architecture-snippet">
+                          <div className="code-line"><span className="code-kw">import</span> {"{ NextRequest, NextResponse }"} <span className="code-kw">from</span> <span className="code-str">&quot;next/server&quot;</span>;</div>
+                          <div className="code-line"><span className="code-kw">export const</span> runtime = <span className="code-str">&quot;edge&quot;</span>;</div>
+                          <div className="code-line"><span className="code-comment">// Pre-rendered sub-second SSR pipeline</span></div>
+                          <div className="code-line"><span className="code-kw">export async function</span> <span className="code-fn">GET</span>() {"{"}</div>
+                          <div className="code-line indent"><span className="code-kw">return</span> NextResponse.json({"{"} speed: <span className="code-str">&quot;0.28s&quot;</span>, seo: <span className="code-str">&quot;Rank #1 Local&quot;</span> {"}"});</div>
+                          <div className="code-line">{"}"}</div>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Discipline 2: Mobile Apps */}
+                  {activeServiceTab === 1 && (
+                    <div className="monolith-visual-console mobile-console">
+                      <div className="console-chrome">
+                        <div className="console-dots"><i /><i /><i /></div>
+                        <span className="console-title">REACT_NATIVE_DEVICE_SIM.TS</span>
+                        <span className="console-status-live">● 120 FPS NATIVE</span>
+                      </div>
+                      <div className="console-body phone-preview-body">
+                        <div className="mini-phone-device">
+                          <div className="mini-phone-island" />
+                          <div className="mini-phone-ui">
+                            <div className="phone-ui-header">
+                              <strong>TradieTrack Mobile</strong>
+                              <span className="phone-sync-badge">✓ Offline SQLite Sync</span>
+                            </div>
+                            <div className="phone-ui-card">
+                              <span>Tap to Pay on iPhone</span>
+                              <strong>$1,850.00 AUD</strong>
+                              <small>NFC contactless payment processed</small>
+                            </div>
+                            <div className="phone-ui-btn">Pay Confirmed Instant</div>
+                          </div>
+                        </div>
+                        <div className="mobile-spec-sidebar">
+                          <div className="spec-tile">
+                            <span>Engine</span>
+                            <strong>React Native 0.76 + Expo</strong>
+                          </div>
+                          <div className="spec-tile">
+                            <span>Offline DB</span>
+                            <strong>SQLite Local Encryption</strong>
+                          </div>
+                          <div className="spec-tile">
+                            <span>Biometrics</span>
+                            <strong>Apple FaceID &amp; Android Touch</strong>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Discipline 3: AI Voice Agents */}
+                  {activeServiceTab === 2 && (
+                    <div className="monolith-visual-console voice-console">
+                      <div className="console-chrome">
+                        <div className="console-dots"><i /><i /><i /></div>
+                        <span className="console-title">NEURAL_VOICE_STREAM.WS</span>
+                        <span className="console-status-live">● 420MS LATENCY</span>
+                      </div>
+                      <div className="console-body voice-preview-body">
+                        <div className="audio-wave-box">
+                          <span className="audio-live-pill">LIVE CALL IN PROGRESS</span>
+                          <div className="waveform-bars">
+                            {[40, 75, 95, 60, 85, 100, 70, 45, 90, 65, 80, 50, 95, 70, 40].map((h, wi) => (
+                              <span key={wi} className="wave-bar" style={{ height: `${h}%` }} />
+                            ))}
+                          </div>
+                          <span className="waveform-sub">Australian Neural Voice Synthesis · 420ms Response</span>
+                        </div>
+                        <div className="call-transcript-card">
+                          <div className="transcript-line caller">
+                            <b>Caller:</b> <span>Do you have an opening for an emergency quote tomorrow?</span>
+                          </div>
+                          <div className="transcript-line agent">
+                            <b>Agent:</b> <span>G&apos;day! Yes, we have 10:30 AM or 2:15 PM with our senior architect. Would you like me to lock in 10:30 AM for you?</span>
+                          </div>
+                          <div className="calendar-booked-toast">
+                            ✔ Cal.com Event Created &middot; SMS Confirmation Dispatched
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Discipline 4: Workflow AI */}
+                  {activeServiceTab === 3 && (
+                    <div className="monolith-visual-console workflow-console">
+                      <div className="console-chrome">
+                        <div className="console-dots"><i /><i /><i /></div>
+                        <span className="console-title">MULTI_AGENT_PIPELINE.PY</span>
+                        <span className="console-status-live">● 80% TIME SAVED</span>
+                      </div>
+                      <div className="console-body workflow-preview-body">
+                        <div className="workflow-steps-stack">
+                          <div className="flow-step">
+                            <span className="step-badge">STEP 01</span>
+                            <div>
+                              <strong>Unstructured PDF / Invoice Ingestion</strong>
+                              <p>Vision OCR extracts 99.4% structured JSON data</p>
+                            </div>
+                            <span className="flow-done">✓ 0.4s</span>
+                          </div>
+                          <div className="flow-step active">
+                            <span className="step-badge">STEP 02</span>
+                            <div>
+                              <strong>Air-Gapped Private Vector RAG</strong>
+                              <p>Retrieval from enterprise operations manual (SOC-2)</p>
+                            </div>
+                            <span className="flow-done">✓ 1.2s</span>
+                          </div>
+                          <div className="flow-step">
+                            <span className="step-badge">STEP 03</span>
+                            <div>
+                              <strong>Autonomous Proposal Draft &amp; Approval</strong>
+                              <p>Formatted client proposal ready in your CRM inbox</p>
+                            </div>
+                            <span className="flow-done">✓ 2.1s</span>
+                          </div>
+                        </div>
+                        <div className="workflow-savings-banner">
+                          <strong>22 Hours Saved / Week per Team Member</strong>
+                          <span>Turnaround reduced from 3.5 days to 18 minutes</span>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Discipline 5: Headless E-Commerce */}
+                  {activeServiceTab === 4 && (
+                    <div className="monolith-visual-console ecom-console">
+                      <div className="console-chrome">
+                        <div className="console-dots"><i /><i /><i /></div>
+                        <span className="console-title">HEADLESS_SHOPIFY_API.TS</span>
+                        <span className="console-status-live">● +46% AOV LIFT</span>
+                      </div>
+                      <div className="console-body ecom-preview-body">
+                        <div className="ecom-cart-mock">
+                          <div className="cart-mock-head">
+                            <span>Artisan Coffee Roasters</span>
+                            <span className="cart-count">Bag (1)</span>
+                          </div>
+                          <div className="cart-product-row">
+                            <strong>Ethiopia Yirgacheffe G1 500g</strong>
+                            <b>$36.00 AUD</b>
+                          </div>
+                          <div className="cart-upsell-box">
+                            <span className="upsell-tag">+46% AOV DYNAMIC RECOMMENDATION</span>
+                            <p>Add 100x Compostable V60 Filters for 15% off</p>
+                            <button className="cart-upsell-btn">+ Add for $8.50 AUD</button>
+                          </div>
+                          <div className="cart-apple-pay-bar">
+                            <span>Pay Instant 1-Tap Checkout</span>
+                          </div>
+                        </div>
+                        <div className="ecom-telemetry-grid">
+                          <div className="telemetry-box">
+                            <span>Algolia Search</span>
+                            <strong>&lt; 38ms</strong>
+                          </div>
+                          <div className="telemetry-box">
+                            <span>Cart Abandonment</span>
+                            <strong className="green-txt">-38%</strong>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Discipline 6: Cloud DevOps */}
+                  {activeServiceTab === 5 && (
+                    <div className="monolith-visual-console devops-console">
+                      <div className="console-chrome">
+                        <div className="console-dots"><i /><i /><i /></div>
+                        <span className="console-title">EDGE_INFRASTRUCTURE_CLUSTER.YML</span>
+                        <span className="console-status-live">● 99.999% SLA</span>
+                      </div>
+                      <div className="console-body devops-preview-body">
+                        <div className="devops-nodes-grid">
+                          <div className="edge-node">
+                            <span className="node-dot" />
+                            <strong>AWS Sydney (ap-southeast-2)</strong>
+                            <span>8ms Latency · 0 Errors</span>
+                          </div>
+                          <div className="edge-node">
+                            <span className="node-dot" />
+                            <strong>Cloudflare Melbourne Edge</strong>
+                            <span>11ms Latency · DDoS Guard Active</span>
+                          </div>
+                          <div className="edge-node">
+                            <span className="node-dot" />
+                            <strong>Automated PostgreSQL Snapshots</strong>
+                            <span>Hourly Point-in-Time Recovery Active</span>
+                          </div>
+                          <div className="edge-node">
+                            <span className="node-dot" />
+                            <strong>Zero-Downtime GitHub CI/CD</strong>
+                            <span>Build verified in 48s · Auto-Rollback</span>
+                          </div>
+                        </div>
+                        <div className="uptime-strip">
+                          <div className="uptime-bars">
+                            {Array.from({ length: 30 }).map((_, ui) => (
+                              <span key={ui} className="uptime-bar-tick" />
+                            ))}
+                          </div>
+                          <span>100% Uptime over past 90 days across Australian client clusters</span>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </div>
+
+              {/* Bottom 6-Discipline Compact Exploration Strip */}
+              <div className="services-monolith-bottom-strip">
+                <span className="strip-title">EXPLORE ALL ARCHITECTURE DISCIPLINES:</span>
+                <div className="strip-cards-grid">
+                  {servicesList.map((svc, iIdx) => (
+                    <div
+                      key={svc.id}
+                      className={`strip-card ${activeServiceTab === iIdx ? "active" : ""}`}
+                      onClick={() => setActiveServiceTab(iIdx)}
+                    >
+                      <div className="strip-card-top">
+                        <span className="strip-idx">0{iIdx + 1}</span>
+                        <span className="strip-icon">{svc.icon}</span>
+                      </div>
+                      <strong>{svc.shortTitle}</strong>
+                      <span className="strip-metric">{svc.metricBold}</span>
+                      <Link
+                        href={`/services/${svc.slug}`}
+                        className="strip-explore-link"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        <span>Explore Page &rarr;</span>
+                      </Link>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </section>
