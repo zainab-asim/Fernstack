@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import FernFooter from "@/app/components/FernFooter";
 import { realWorldCaseStudies, CaseStudy } from "@/data/caseStudiesData";
 
 export default function CaseStudiesPage() {
@@ -289,27 +290,8 @@ export default function CaseStudiesPage() {
         </section>
       </main>
 
-      {/* Footer */}
-      <footer className="foot">
-        <div className="wrap">
-          <span>
-            &copy; 2026 FernStack · Ste 3/110 Hutt St, Adelaide SA 5000 · info@fernstack.com.au ·{" "}
-            <a href="tel:+61451072412" data-call="footer">
-              0451 072 412
-            </a>
-          </span>
-          <nav aria-label="Legal" style={{ display: "flex", gap: 18, flexWrap: "wrap" }}>
-            <Link href="/" style={{ color: "var(--b1, #059669)", fontWeight: 600 }}>
-              Home
-            </Link>
-            <Link href="/services">Services</Link>
-            <Link href="/case-studies">Case Studies</Link>
-            <Link href="/#work">Recent Work</Link>
-            <Link href="/#pricing">Pricing</Link>
-            <Link href="/contact">Contact</Link>
-          </nav>
-        </div>
-      </footer>
+      {/* WOW Master Footer */}
+      <FernFooter />
     </>
   );
 }

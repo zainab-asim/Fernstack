@@ -7,6 +7,7 @@ import { sampleWebsites, type ClientSite } from "@/data/sampleWebsitesData";
 import MiniSiteCanvas from "@/app/components/MiniSiteCanvas";
 import ClientLandingSiteView from "@/app/components/ClientLandingSiteView";
 import ThemeToggle from "@/app/components/ThemeToggle";
+import FernFooter from "@/app/components/FernFooter";
 
 interface WOWService {
   id: string;
@@ -1859,27 +1860,8 @@ export default function Home() {
         </section>
       </main>
 
-      {/* Footer */}
-      <footer className="foot" ref={footRef}>
-        <div className="wrap">
-          <span>
-            &copy; 2026 FernStack · Ste 3/110 Hutt St, Adelaide SA 5000 ·
-            info@fernstack.com.au ·{" "}
-            <a href="tel:+61451072412" data-call="footer">
-              0451 072 412
-            </a>
-          </span>
-          <nav aria-label="Footer Navigation" style={{ display: "flex", gap: 18, flexWrap: "wrap" }}>
-            <Link href="/" style={{ color: "var(--b1, #059669)", fontWeight: 600 }}>Home</Link>
-            <Link href="/services">Services</Link>
-            <Link href="/case-studies">Case Studies</Link>
-            <Link href="/contact">Contact Page</Link>
-            <a href="#work">Recent Work</a>
-            <a href="#price-h">Pricing</a>
-            <a href="#quote">Free Quote</a>
-          </nav>
-        </div>
-      </footer>
+      {/* WOW Master Footer */}
+      <FernFooter footerRef={footRef} />
 
       {/* Sticky Mobile Bar */}
       <div className={`mbar ${showMbar ? "show" : ""}`} id="mbar" aria-hidden={!showMbar}>
