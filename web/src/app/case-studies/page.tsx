@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import FernFooter from "@/app/components/FernFooter";
+import ThemeToggle from "@/app/components/ThemeToggle";
 import { realWorldCaseStudies, CaseStudy } from "@/data/caseStudiesData";
 
 export default function CaseStudiesPage() {
@@ -72,6 +73,7 @@ export default function CaseStudiesPage() {
                 Contact Us
               </Link>
             </div>
+            <ThemeToggle />
             <a className="top-call" href="tel:+61451072412" data-call="case-studies-header">
               <svg
                 width="15"

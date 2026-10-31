@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
-import ThemeToggle from "./components/ThemeToggle";
 import FloatingChatAssistant from "./components/FloatingChatAssistant";
 
 const poppins = Poppins({
@@ -52,9 +51,8 @@ export default function RootLayout({
       </head>
       <body>
         {children}
-        {/* Floating Quick Theme Toggle & AI Concierge Chat in Bottom Right */}
+        {/* Floating AI Concierge Chat in Bottom Right */}
         <FloatingChatAssistant />
-        <ThemeToggle variant="floating" />
       </body>
     </html>
   );

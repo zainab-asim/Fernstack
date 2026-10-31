@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import FernFooter from "@/app/components/FernFooter";
+import ThemeToggle from "@/app/components/ThemeToggle";
 import { servicesList } from "@/data/servicesData";
 import { realWorldCaseStudies } from "@/data/caseStudiesData";
 import type { Metadata } from "next";
@@ -86,6 +87,7 @@ export default async function ServiceDetailPage({
                 Contact Us
               </Link>
             </div>
+            <ThemeToggle />
             <a className="top-call" href="tel:+61451072412" data-call="service-slug-header">
               <svg
                 width="15"
