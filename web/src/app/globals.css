@@ -2304,6 +2304,2008 @@ em {
 }
 
 /* =====================================================================
+   DEDICATED BESPOKE LANDING PAGE STYLES (6 UNIQUE AWWWARDS DESIGNS)
+===================================================================== */
+.cs-dedicated-landing {
+  width: 100%;
+  color: #f1f5f9;
+  font-family: inherit;
+  line-height: 1.5;
+}
+
+/* Common Interactive Range Sliders */
+.cs-calc-range-slider {
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+  accent-color: #10b981;
+}
+.cs-calc-range-ticks {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: #64748b;
+  margin-top: 6px;
+}
+.cs-calc-success-toast {
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  color: #34d399;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: center;
+  animation: fadeIn 0.3s ease;
+}
+
+/* ---------------------------------------------------------------------
+   1. APEX BUILD & RENOVATIONS (ARCHITECTURAL LUXURY BUILDER)
+   --------------------------------------------------------------------- */
+.cs-apex-wrapper {
+  background: #090c12;
+  color: #f8fafc;
+}
+.cs-apex-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 28px;
+  background: rgba(9, 12, 18, 0.95);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+.cs-apex-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.cs-apex-logo-symbol {
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #f59e0b, #b45309);
+  color: #000;
+  display: grid;
+  place-items: center;
+  font-size: 18px;
+  font-weight: 900;
+}
+.cs-apex-brand strong {
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: #f8fafc;
+  display: block;
+}
+.cs-apex-tagline {
+  font-size: 11px;
+  color: #94a3b8;
+}
+.cs-apex-nav-links {
+  display: flex;
+  gap: 8px;
+}
+.cs-apex-nav-links button {
+  background: transparent;
+  border: 0;
+  color: #94a3b8;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.cs-apex-nav-links button:hover,
+.cs-apex-nav-links button.active {
+  color: #fbbf24;
+  background: rgba(245, 158, 11, 0.1);
+}
+.cs-apex-call-btn {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  color: #000 !important;
+  font-weight: 700;
+  font-size: 13px;
+  padding: 9px 18px;
+  border-radius: 6px;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(245, 158, 11, 0.3);
+}
+.cs-apex-hero {
+  position: relative;
+  min-height: 520px;
+  display: flex;
+  align-items: center;
+  padding: 60px 32px;
+  overflow: hidden;
+}
+.cs-apex-hero-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.2) saturate(0.8);
+  transform: scale(1.05);
+}
+.cs-apex-hero-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(9, 12, 18, 0.98) 0%, rgba(9, 12, 18, 0.7) 100%);
+}
+.cs-apex-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 860px;
+}
+.cs-apex-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(245, 158, 11, 0.12);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  color: #fbbf24;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 5px 14px;
+  border-radius: 999px;
+  margin-bottom: 20px;
+}
+.cs-apex-h1 {
+  font-size: clamp(32px, 4.5vw, 54px);
+  font-weight: 900;
+  color: #f8fafc;
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+  margin: 0 0 16px;
+}
+.cs-apex-h1 em {
+  font-style: normal;
+  background: linear-gradient(135deg, #fbbf24 30%, #d97706 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.cs-apex-lead {
+  font-size: 16px;
+  color: #94a3b8;
+  line-height: 1.6;
+  max-width: 640px;
+  margin-bottom: 28px;
+}
+.cs-apex-hero-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+.cs-apex-btn-primary {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  color: #000;
+  font-weight: 800;
+  font-size: 14.5px;
+  padding: 13px 26px;
+  border-radius: 8px;
+  border: 0;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(245, 158, 11, 0.35);
+  transition: transform 0.15s;
+}
+.cs-apex-btn-primary:hover {
+  transform: translateY(-2px);
+}
+.cs-apex-btn-outline {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #f8fafc !important;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 13px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+}
+.cs-apex-credentials-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+.apex-cred-item b {
+  display: block;
+  font-size: 18px;
+  color: #fbbf24;
+  font-weight: 800;
+}
+.apex-cred-item span {
+  font-size: 11.5px;
+  color: #64748b;
+}
+
+/* Apex Section & Estimator */
+.cs-apex-section {
+  padding: 60px 32px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+.cs-apex-sec-heading {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 40px;
+}
+.cs-sec-eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  color: #fbbf24;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  display: block;
+  margin-bottom: 8px;
+}
+.cs-apex-sec-heading h2 {
+  font-size: clamp(24px, 3.2vw, 36px);
+  font-weight: 800;
+  color: #f8fafc;
+  margin: 0 0 10px;
+}
+.cs-apex-sec-heading p {
+  font-size: 14.5px;
+  color: #94a3b8;
+  margin: 0;
+}
+.cs-apex-calc-container {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 32px;
+  background: rgba(15, 20, 30, 0.9);
+  border: 1px solid rgba(245, 158, 11, 0.2);
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+}
+.cs-calc-label {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #f1f5f9;
+  display: block;
+  margin-bottom: 10px;
+}
+.cs-calc-btn-group {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+.cs-calc-btn-group button {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #94a3b8;
+  font-size: 12.5px;
+  font-weight: 600;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.15s;
+}
+.cs-calc-btn-group button.active {
+  background: rgba(245, 158, 11, 0.15);
+  border-color: #f59e0b;
+  color: #fbbf24;
+}
+.cs-apex-calc-results {
+  background: rgba(8, 11, 16, 0.85);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.apex-results-badge {
+  font-size: 11px;
+  font-weight: 700;
+  color: #fbbf24;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+}
+.apex-price-figure {
+  font-size: clamp(26px, 3.5vw, 36px);
+  font-weight: 900;
+  color: #f59e0b;
+  line-height: 1.1;
+  margin: 6px 0;
+}
+.apex-price-note {
+  font-size: 11.5px;
+  color: #64748b;
+  display: block;
+  margin-bottom: 16px;
+}
+.apex-calc-meta-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 20px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 8px;
+}
+.apex-calc-meta-cell span {
+  font-size: 10.5px;
+  color: #64748b;
+  display: block;
+}
+.apex-calc-meta-cell strong {
+  font-size: 13px;
+  color: #f1f5f9;
+}
+.cs-apex-btn-calc-submit {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  color: #000;
+  font-weight: 800;
+  font-size: 13.5px;
+  padding: 12px 18px;
+  border-radius: 8px;
+  border: 0;
+  cursor: pointer;
+  width: 100%;
+}
+.cs-apex-projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.cs-apex-project-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.cs-apex-project-card:hover,
+.cs-apex-project-card.active {
+  border-color: #f59e0b;
+  background: rgba(245, 158, 11, 0.06);
+  transform: translateY(-3px);
+}
+.cs-apex-project-head {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.apex-proj-tag {
+  font-size: 10.5px;
+  font-weight: 700;
+  color: #f59e0b;
+  background: rgba(245, 158, 11, 0.15);
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+.apex-proj-val {
+  font-size: 11px;
+  color: #34d399;
+  font-weight: 700;
+}
+.cs-apex-project-card h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #f8fafc;
+  margin: 0 0 6px;
+}
+.cs-apex-project-card p {
+  font-size: 12.5px;
+  color: #94a3b8;
+  line-height: 1.45;
+  margin: 0 0 14px;
+}
+.cs-apex-project-footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10.5px;
+  color: #64748b;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+.cs-apex-project-footer strong {
+  color: #fbbf24;
+}
+.cs-apex-process-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+.apex-process-step {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  padding: 20px;
+}
+.apex-step-num {
+  font-size: 24px;
+  font-weight: 900;
+  color: #f59e0b;
+  font-family: monospace;
+  display: block;
+  margin-bottom: 8px;
+}
+.apex-process-step h4 {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #f8fafc;
+  margin: 0 0 6px;
+}
+.apex-process-step p {
+  font-size: 12px;
+  color: #94a3b8;
+  line-height: 1.45;
+  margin: 0;
+}
+.cs-apex-reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.cs-apex-review-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 12px;
+  padding: 20px;
+}
+.cs-apex-stars {
+  color: #fbbf24;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+.cs-apex-review-card p {
+  font-size: 13px;
+  color: #cbd5e1;
+  line-height: 1.5;
+  margin: 0 0 12px;
+  font-style: italic;
+}
+.cs-apex-review-card footer strong {
+  display: block;
+  font-size: 12.5px;
+  color: #f8fafc;
+}
+.cs-apex-review-card footer span {
+  font-size: 11px;
+  color: #64748b;
+}
+.cs-apex-footer {
+  padding: 24px 32px;
+  background: #06080d;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 12px;
+  color: #64748b;
+}
+.cs-apex-foot-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.cs-apex-foot-wrap a { color: #fbbf24; text-decoration: none; }
+
+/* ---------------------------------------------------------------------
+   2. BONDI CLEAN COMMERCIAL FACILITIES (FACILITY OPS & CLINICAL)
+   --------------------------------------------------------------------- */
+.cs-bondi-wrapper {
+  background: #020712;
+  color: #f8fafc;
+}
+.cs-bondi-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 28px;
+  background: rgba(2, 7, 18, 0.95);
+  border-bottom: 1px solid rgba(6, 182, 212, 0.25);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+.cs-bondi-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.cs-bondi-shield {
+  font-size: 24px;
+  filter: drop-shadow(0 0 8px #06b6d4);
+}
+.cs-bondi-brand strong {
+  font-size: 14px;
+  font-weight: 800;
+  color: #f1f5f9;
+  letter-spacing: 0.04em;
+  display: block;
+}
+.cs-bondi-sub {
+  font-size: 10.5px;
+  color: #38bdf8;
+}
+.cs-bondi-nav-links {
+  display: flex;
+  gap: 6px;
+}
+.cs-bondi-nav-links button {
+  background: transparent;
+  border: 0;
+  color: #64748b;
+  font-size: 12.5px;
+  font-weight: 600;
+  padding: 7px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.cs-bondi-nav-links button:hover,
+.cs-bondi-nav-links button.active {
+  color: #22d3ee;
+  background: rgba(6, 182, 212, 0.12);
+}
+.cs-bondi-call-btn {
+  background: rgba(6, 182, 212, 0.15);
+  border: 1px solid rgba(6, 182, 212, 0.4);
+  color: #22d3ee !important;
+  font-weight: 700;
+  font-size: 12.5px;
+  padding: 8px 16px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+.live-pulse {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 8px #10b981;
+  animation: bondiPulse 1.8s infinite;
+}
+.cs-bondi-hero {
+  position: relative;
+  min-height: 480px;
+  display: flex;
+  align-items: center;
+  padding: 50px 32px;
+  overflow: hidden;
+}
+.cs-bondi-hero-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.15) saturate(0.5) hue-rotate(190deg);
+}
+.cs-bondi-hero-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(2, 7, 18, 0.98) 0%, rgba(2, 14, 34, 0.8) 100%);
+}
+.cs-bondi-hero-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 820px;
+}
+.cs-bondi-pill {
+  display: inline-flex;
+  background: rgba(6, 182, 212, 0.12);
+  border: 1px solid rgba(6, 182, 212, 0.3);
+  color: #22d3ee;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  padding: 4px 12px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+}
+.cs-bondi-h1 {
+  font-size: clamp(30px, 4.2vw, 48px);
+  font-weight: 900;
+  color: #f1f5f9;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  margin: 0 0 14px;
+}
+.cs-bondi-h1 em {
+  font-style: normal;
+  color: #06b6d4;
+  text-shadow: 0 0 20px rgba(6, 182, 212, 0.4);
+}
+.cs-bondi-lead {
+  font-size: 15.5px;
+  color: #94a3b8;
+  line-height: 1.6;
+  margin-bottom: 22px;
+  max-width: 660px;
+}
+.cs-bondi-status-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  color: #cbd5e1;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(6, 182, 212, 0.2);
+  padding: 8px 14px;
+  border-radius: 6px;
+  width: fit-content;
+  margin-bottom: 28px;
+}
+.live-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 6px #10b981;
+}
+.cs-bondi-hero-btns {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.cs-bondi-btn-primary {
+  background: linear-gradient(135deg, #0891b2, #0284c7);
+  color: #fff;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 12px 24px;
+  border-radius: 6px;
+  border: 0;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(8, 145, 178, 0.4);
+}
+.cs-bondi-btn-sec {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(6, 182, 212, 0.3);
+  color: #38bdf8 !important;
+  font-weight: 600;
+  font-size: 13.5px;
+  padding: 12px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+}
+.cs-bondi-section {
+  padding: 56px 32px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+.cs-bondi-sec-title {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 36px;
+}
+.bondi-tag {
+  font-size: 10.5px;
+  font-weight: 800;
+  color: #06b6d4;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 6px;
+}
+.cs-bondi-sec-title h2 {
+  font-size: clamp(22px, 3vw, 32px);
+  font-weight: 800;
+  color: #f1f5f9;
+  margin: 0 0 8px;
+}
+.cs-bondi-sec-title p {
+  font-size: 14px;
+  color: #94a3b8;
+  margin: 0;
+}
+.cs-bondi-calc-box {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 28px;
+  background: rgba(3, 10, 24, 0.9);
+  border: 1px solid rgba(6, 182, 212, 0.25);
+  border-radius: 14px;
+  padding: 28px;
+}
+.bondi-lbl {
+  font-size: 13px;
+  font-weight: 700;
+  color: #f1f5f9;
+  display: block;
+  margin-bottom: 8px;
+}
+.bondi-opt-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+.bondi-opt-row button {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #94a3b8;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 9px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.15s;
+}
+.bondi-opt-row button.active {
+  background: rgba(6, 182, 212, 0.15);
+  border-color: #06b6d4;
+  color: #22d3ee;
+}
+.cs-bondi-calc-summary {
+  background: rgba(1, 5, 14, 0.85);
+  border: 1px solid rgba(6, 182, 212, 0.3);
+  border-radius: 10px;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.bondi-summary-head {
+  font-size: 11px;
+  font-weight: 800;
+  color: #06b6d4;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.bondi-price-num {
+  font-size: clamp(28px, 3.8vw, 38px);
+  font-weight: 900;
+  color: #38bdf8;
+  margin: 4px 0;
+}
+.bondi-price-num small {
+  font-size: 13px;
+  color: #64748b;
+  font-weight: 500;
+}
+.bondi-price-sub {
+  font-size: 11px;
+  color: #64748b;
+  display: block;
+  margin-bottom: 16px;
+}
+.bondi-specs-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 6px;
+  margin-bottom: 16px;
+}
+.bondi-spec-col span {
+  font-size: 10px;
+  color: #64748b;
+  display: block;
+}
+.bondi-spec-col strong {
+  font-size: 12px;
+  color: #e2e8f0;
+}
+.cs-bondi-btn-submit {
+  background: linear-gradient(135deg, #0891b2, #0284c7);
+  color: #fff;
+  font-weight: 700;
+  font-size: 13px;
+  padding: 11px 16px;
+  border-radius: 6px;
+  border: 0;
+  cursor: pointer;
+  width: 100%;
+}
+.cs-bondi-tabs-bar {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+.cs-bondi-tabs-bar button {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #94a3b8;
+  font-size: 12.5px;
+  font-weight: 600;
+  padding: 7px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+.cs-bondi-tabs-bar button.active {
+  background: rgba(6, 182, 212, 0.15);
+  border-color: #06b6d4;
+  color: #22d3ee;
+}
+.cs-bondi-checklist-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.bondi-check-card {
+  display: flex;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(6, 182, 212, 0.15);
+  border-radius: 10px;
+  padding: 18px;
+}
+.chk-icon {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(6, 182, 212, 0.15);
+  color: #06b6d4;
+  font-size: 12px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.bondi-check-card strong {
+  display: block;
+  font-size: 13.5px;
+  color: #f1f5f9;
+  margin-bottom: 4px;
+}
+.bondi-check-card p {
+  font-size: 12px;
+  color: #94a3b8;
+  line-height: 1.45;
+  margin: 0;
+}
+.cs-bondi-portal-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(6, 182, 212, 0.2);
+  border-radius: 12px;
+  padding: 28px;
+}
+.portal-screen {
+  background: #000;
+  border: 1px solid rgba(6, 182, 212, 0.4);
+  border-radius: 8px;
+  padding: 16px;
+  font-family: monospace;
+}
+.portal-screen-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  color: #38bdf8;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 10px;
+}
+.pulse-green {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #10b981;
+}
+.log-line {
+  display: flex;
+  gap: 12px;
+  font-size: 11px;
+  color: #64748b;
+  margin-bottom: 6px;
+}
+.log-line strong { color: #cbd5e1; }
+.log-line.success strong { color: #34d399; }
+.cs-bondi-footer {
+  padding: 22px 28px;
+  background: #01040a;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 12px;
+  color: #64748b;
+}
+.cs-bondi-foot-wrap {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* ---------------------------------------------------------------------
+   3. TRUENORTH PRIVATE WEALTH (COLLINS ST, MELBOURNE)
+   --------------------------------------------------------------------- */
+.cs-truenorth-wrapper {
+  background: #050811;
+  color: #f8fafc;
+}
+.cs-truenorth-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 32px;
+  background: rgba(5, 8, 17, 0.95);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+.cs-truenorth-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.cs-truenorth-crest { font-size: 24px; }
+.cs-truenorth-brand strong {
+  font-size: 14.5px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: #f8fafc;
+  display: block;
+}
+.cs-truenorth-sub {
+  font-size: 10.5px;
+  color: #94a3b8;
+}
+.cs-truenorth-nav-links { display: flex; gap: 8px; }
+.cs-truenorth-nav-links button {
+  background: transparent;
+  border: 0;
+  color: #94a3b8;
+  font-size: 12.5px;
+  font-weight: 600;
+  padding: 7px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.cs-truenorth-nav-links button:hover,
+.cs-truenorth-nav-links button.active {
+  color: #fbbf24;
+  background: rgba(251, 191, 36, 0.08);
+}
+.cs-truenorth-call-btn {
+  background: rgba(251, 191, 36, 0.1);
+  border: 1px solid rgba(251, 191, 36, 0.35);
+  color: #fbbf24 !important;
+  font-size: 12.5px;
+  font-weight: 700;
+  padding: 8px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+}
+.cs-truenorth-hero {
+  position: relative;
+  min-height: 520px;
+  display: flex;
+  align-items: center;
+  padding: 60px 32px;
+  overflow: hidden;
+}
+.cs-truenorth-hero-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.2) saturate(0.6);
+}
+.cs-truenorth-hero-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(5, 8, 17, 0.98) 0%, rgba(5, 8, 17, 0.7) 100%);
+}
+.cs-truenorth-hero-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 860px;
+}
+.cs-truenorth-pill {
+  display: inline-flex;
+  background: rgba(251, 191, 36, 0.1);
+  border: 1px solid rgba(251, 191, 36, 0.25);
+  color: #fbbf24;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  padding: 4px 12px;
+  border-radius: 4px;
+  margin-bottom: 18px;
+}
+.cs-truenorth-h1 {
+  font-size: clamp(32px, 4.4vw, 50px);
+  font-weight: 900;
+  color: #f8fafc;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  margin: 0 0 16px;
+}
+.cs-truenorth-h1 em {
+  font-style: normal;
+  color: #fbbf24;
+}
+.cs-truenorth-lead {
+  font-size: 16px;
+  color: #94a3b8;
+  line-height: 1.6;
+  max-width: 660px;
+  margin-bottom: 28px;
+}
+.cs-truenorth-stats-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  padding: 20px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 32px;
+}
+.tn-stat-box b {
+  display: block;
+  font-size: 20px;
+  color: #fbbf24;
+  font-weight: 900;
+}
+.tn-stat-box span {
+  font-size: 11.5px;
+  color: #64748b;
+}
+.cs-truenorth-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+.cs-truenorth-btn-primary {
+  background: linear-gradient(135deg, #fbbf24, #d97706);
+  color: #000;
+  font-weight: 800;
+  font-size: 14px;
+  padding: 12px 24px;
+  border-radius: 6px;
+  border: 0;
+  cursor: pointer;
+}
+.cs-truenorth-btn-sec {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(251, 191, 36, 0.3);
+  color: #f8fafc !important;
+  font-weight: 600;
+  font-size: 13.5px;
+  padding: 12px 22px;
+  border-radius: 6px;
+  text-decoration: none;
+}
+.cs-truenorth-section {
+  padding: 56px 32px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+.cs-truenorth-sec-heading {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 36px;
+}
+.tn-tag {
+  font-size: 11px;
+  font-weight: 800;
+  color: #fbbf24;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 6px;
+}
+.cs-truenorth-sec-heading h2 {
+  font-size: clamp(24px, 3vw, 34px);
+  font-weight: 800;
+  color: #f8fafc;
+  margin: 0 0 8px;
+}
+.cs-truenorth-sec-heading p {
+  font-size: 14.5px;
+  color: #94a3b8;
+  margin: 0;
+}
+.cs-truenorth-calc-card {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 32px;
+  background: rgba(10, 15, 28, 0.9);
+  border: 1px solid rgba(251, 191, 36, 0.25);
+  border-radius: 14px;
+  padding: 30px;
+}
+.tn-lbl {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #f1f5f9;
+  display: block;
+}
+.tn-strat-row { display: grid; gap: 8px; margin-top: 8px; }
+.tn-strat-row button {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #94a3b8;
+  font-size: 12.5px;
+  font-weight: 600;
+  padding: 10px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: left;
+}
+.tn-strat-row button.active {
+  background: rgba(251, 191, 36, 0.12);
+  border-color: #fbbf24;
+  color: #fbbf24;
+}
+.tn-calc-output {
+  background: rgba(5, 8, 17, 0.9);
+  border: 1px solid rgba(251, 191, 36, 0.3);
+  border-radius: 10px;
+  padding: 24px;
+}
+.tn-out-title {
+  font-size: 11px;
+  font-weight: 800;
+  color: #fbbf24;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.tn-proj-val {
+  font-size: clamp(32px, 4.2vw, 44px);
+  font-weight: 900;
+  color: #fbbf24;
+  line-height: 1.1;
+  margin: 8px 0 4px;
+}
+.tn-proj-sub {
+  font-size: 12px;
+  color: #64748b;
+  margin-bottom: 20px;
+}
+.tn-meta-grid { display: grid; gap: 8px; }
+.tn-meta-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 6px;
+  font-size: 12px;
+}
+.tn-meta-item span { color: #64748b; }
+.tn-meta-item strong { color: #f1f5f9; }
+.cs-truenorth-footer {
+  padding: 24px 32px;
+  background: #020409;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 12px;
+  color: #64748b;
+}
+
+/* ---------------------------------------------------------------------
+   4. PULSE DENTAL STUDIO (BRISBANE / JAMES ST) — RADIANT LIGHT LUXURY SPA
+   --------------------------------------------------------------------- */
+.cs-pulse-wrapper {
+  background: linear-gradient(180deg, #fffaf7 0%, #fff1f2 40%, #fdf2f8 100%);
+  color: #1e293b;
+}
+.cs-pulse-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 30px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(244, 63, 94, 0.16);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  box-shadow: 0 4px 20px rgba(244, 63, 94, 0.05);
+}
+.cs-pulse-nav strong { color: #0f172a; font-size: 14px; font-weight: 800; display: block; letter-spacing: 0.02em; }
+.cs-pulse-nav span { color: #f43f5e; font-size: 11px; font-weight: 500; }
+.cs-pulse-nav-links button {
+  background: transparent;
+  border: 0;
+  color: #64748b;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 7px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.cs-pulse-nav-links button:hover,
+.cs-pulse-nav-links button.active {
+  color: #e11d48;
+  background: #fff1f2;
+}
+.cs-pulse-call-btn {
+  background: rgba(244, 63, 94, 0.08);
+  border: 1px solid rgba(244, 63, 94, 0.25);
+  color: #e11d48 !important;
+  font-weight: 700;
+  font-size: 12.5px;
+  padding: 9px 18px;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.cs-pulse-call-btn:hover {
+  background: #f43f5e;
+  color: #fff !important;
+}
+.cs-pulse-btn-primary {
+  background: linear-gradient(135deg, #f43f5e, #e11d48);
+  color: #fff;
+  font-weight: 700;
+  font-size: 13.5px;
+  padding: 12px 24px;
+  border-radius: 999px;
+  border: 0;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(244, 63, 94, 0.35);
+  transition: transform 0.15s;
+}
+.cs-pulse-btn-primary:hover {
+  transform: translateY(-2px);
+}
+.cs-pulse-btn-sec {
+  background: #ffffff;
+  border: 1px solid rgba(244, 63, 94, 0.25);
+  color: #0f172a !important;
+  font-weight: 600;
+  font-size: 13.5px;
+  padding: 12px 22px;
+  border-radius: 999px;
+  text-decoration: none;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+}
+.cs-pulse-hero {
+  position: relative;
+  min-height: 480px;
+  display: flex;
+  align-items: center;
+  padding: 60px 32px;
+  overflow: hidden;
+  background: radial-gradient(circle at 80% 30%, rgba(244, 63, 94, 0.12), transparent 50%),
+              radial-gradient(circle at 10% 70%, rgba(253, 164, 175, 0.15), transparent 45%);
+}
+.cs-pulse-hero-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.18;
+  filter: saturate(1.2);
+}
+.cs-pulse-hero-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 250, 247, 0.94) 0%, rgba(255, 241, 242, 0.8) 100%);
+}
+.cs-pulse-hero-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 820px;
+}
+.cs-pulse-pill {
+  display: inline-flex;
+  background: rgba(244, 63, 94, 0.08);
+  border: 1px solid rgba(244, 63, 94, 0.25);
+  color: #e11d48;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  padding: 4px 14px;
+  border-radius: 999px;
+  margin-bottom: 16px;
+}
+.cs-pulse-h1 {
+  font-size: clamp(32px, 4.2vw, 50px);
+  font-weight: 900;
+  color: #0f172a;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  margin: 0 0 14px;
+}
+.cs-pulse-h1 em {
+  font-style: normal;
+  background: linear-gradient(135deg, #f43f5e 20%, #db2777 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.cs-pulse-lead {
+  font-size: 16px;
+  color: #475569;
+  line-height: 1.6;
+  margin-bottom: 24px;
+  max-width: 660px;
+}
+.cs-pulse-features-strip {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+}
+.pulse-feat-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #ffffff;
+  border: 1px solid rgba(244, 63, 94, 0.2);
+  color: #1e293b;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 999px;
+  box-shadow: 0 2px 8px rgba(244, 63, 94, 0.06);
+}
+.cs-pulse-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+.cs-pulse-section {
+  padding: 60px 32px;
+  border-bottom: 1px solid rgba(244, 63, 94, 0.1);
+}
+.cs-pulse-sec-heading {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 40px;
+}
+.pulse-tag {
+  font-size: 11px;
+  font-weight: 800;
+  color: #e11d48;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 6px;
+}
+.cs-pulse-sec-heading h2 {
+  font-size: clamp(24px, 3.2vw, 36px);
+  font-weight: 900;
+  color: #0f172a;
+  margin: 0 0 10px;
+}
+.cs-pulse-sec-heading p {
+  font-size: 15px;
+  color: #64748b;
+  margin: 0;
+}
+.cs-pulse-calc-card {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 32px;
+  background: #ffffff;
+  border: 1px solid rgba(244, 63, 94, 0.18);
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: 0 24px 60px rgba(244, 63, 94, 0.09);
+}
+.pulse-lbl {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #0f172a;
+  display: block;
+  margin-bottom: 8px;
+}
+.pulse-opt-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.pulse-opt-grid button {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  color: #334155;
+  font-size: 12.5px;
+  font-weight: 600;
+  padding: 12px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.15s;
+}
+.pulse-opt-grid button.active {
+  background: #fff1f2;
+  border-color: #f43f5e;
+  color: #e11d48;
+  box-shadow: 0 2px 10px rgba(244, 63, 94, 0.12);
+}
+.pulse-calc-right {
+  background: linear-gradient(135deg, #fff1f2 0%, #ffe4e6 100%);
+  border: 1px solid #fecdd3;
+  border-radius: 16px;
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.pulse-out-badge {
+  font-size: 11px;
+  font-weight: 800;
+  color: #e11d48;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.pulse-price-num {
+  font-size: clamp(30px, 4vw, 42px);
+  font-weight: 900;
+  color: #be123c;
+  margin: 6px 0;
+  line-height: 1.1;
+}
+.pulse-price-num small { font-size: 14px; color: #64748b; font-weight: 600; }
+.pulse-meta-list { display: grid; gap: 8px; margin: 16px 0; }
+.pulse-meta-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #64748b;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(244, 63, 94, 0.12);
+}
+.pulse-meta-row strong { color: #0f172a; }
+.pulse-slot-btn {
+  background: #ffffff;
+  border: 1px solid #fecdd3;
+  color: #475569;
+  font-size: 11.5px;
+  font-weight: 600;
+  padding: 8px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  flex: 1;
+}
+.pulse-slot-btn.active {
+  background: #f43f5e;
+  color: #fff;
+  border-color: #f43f5e;
+  box-shadow: 0 2px 8px rgba(244, 63, 94, 0.3);
+}
+.cs-pulse-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+.cs-pulse-case-card {
+  background: #ffffff;
+  border: 1px solid rgba(244, 63, 94, 0.15);
+  border-radius: 14px;
+  padding: 22px;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(244, 63, 94, 0.06);
+  transition: all 0.2s;
+}
+.cs-pulse-case-card:hover,
+.cs-pulse-case-card.active {
+  border-color: #f43f5e;
+  background: #fff5f5;
+  transform: translateY(-3px);
+}
+.cs-pulse-case-card h3 {
+  color: #0f172a;
+  font-size: 16px;
+  font-weight: 800;
+  margin: 0 0 6px;
+}
+.cs-pulse-case-card p {
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.5;
+  margin: 0;
+}
+.cs-pulse-footer {
+  padding: 24px 30px;
+  background: #fff5f5;
+  border-top: 1px solid rgba(244, 63, 94, 0.15);
+  font-size: 12.5px;
+  color: #64748b;
+}
+.cs-pulse-foot-wrap {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.cs-pulse-foot-wrap a { color: #e11d48; text-decoration: none; font-weight: 600; }
+
+
+/* ---------------------------------------------------------------------
+   5. ROASTCRAFT COFFEE ROASTERS (FITZROY, MELBOURNE)
+   --------------------------------------------------------------------- */
+.cs-coffee-wrapper,
+.cs-roastcraft-wrapper {
+  background: #0c0805;
+  color: #f8fafc;
+}
+.cs-coffee-nav,
+.cs-roastcraft-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 28px;
+  background: rgba(12, 8, 5, 0.95);
+  border-bottom: 1px solid rgba(249, 115, 22, 0.25);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+.cs-coffee-nav strong { color: #f8fafc; font-size: 14px; font-weight: 800; display: block; }
+.cs-coffee-nav span { color: #fb923c; font-size: 11px; }
+.cs-roastcraft-btn-primary {
+  background: linear-gradient(135deg, #f97316, #ea580c);
+  color: #fff;
+  font-weight: 800;
+  font-size: 13.5px;
+  padding: 11px 20px;
+  border-radius: 6px;
+  border: 0;
+  cursor: pointer;
+}
+.cs-coffee-hero,
+.cs-roastcraft-hero {
+  position: relative;
+  min-height: 480px;
+  display: flex;
+  align-items: center;
+  padding: 50px 32px;
+  overflow: hidden;
+}
+.cs-coffee-hero-bg,
+.cs-roastcraft-hero-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.18) saturate(0.9);
+}
+.cs-coffee-hero-scrim,
+.cs-roastcraft-hero-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(12, 8, 5, 0.98) 0%, rgba(20, 10, 5, 0.8) 100%);
+}
+.cs-coffee-section,
+.cs-roastcraft-section {
+  padding: 56px 32px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+.rc-lbl {
+  font-size: 13px;
+  font-weight: 700;
+  color: #f1f5f9;
+  display: block;
+  margin-bottom: 8px;
+}
+.rc-origins-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+.rc-origin-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 14px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.rc-origin-card.active {
+  background: rgba(249, 115, 22, 0.12);
+  border-color: #f97316;
+}
+.rc-card-head {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+.rc-card-head strong { font-size: 13px; color: #f1f5f9; }
+.rc-cup-tag {
+  font-size: 10px;
+  font-weight: 700;
+  color: #ea580c;
+  background: rgba(249, 115, 22, 0.15);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+.rc-origin-card p {
+  font-size: 11.5px;
+  color: #94a3b8;
+  margin: 0 0 6px;
+}
+.rc-process { font-size: 10px; color: #64748b; }
+.rc-btn-row { display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px; }
+.rc-btn-row button {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #94a3b8;
+  font-size: 11.5px;
+  font-weight: 600;
+  padding: 8px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: left;
+}
+.rc-btn-row button.active {
+  background: rgba(249, 115, 22, 0.15);
+  border-color: #f97316;
+  color: #ea580c;
+}
+.rc-order-card {
+  background: rgba(8, 5, 3, 0.85);
+  border: 1px solid rgba(249, 115, 22, 0.3);
+  border-radius: 10px;
+  padding: 22px;
+}
+.rc-order-head {
+  font-size: 11px;
+  font-weight: 800;
+  color: #f97316;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.rc-price-num {
+  font-size: 32px;
+  font-weight: 900;
+  color: #ea580c;
+  margin: 4px 0;
+}
+.rc-price-strike {
+  font-size: 11.5px;
+  color: #64748b;
+  text-decoration: line-through;
+  display: block;
+  margin-bottom: 12px;
+}
+.rc-summary-list { display: grid; gap: 6px; font-size: 11.5px; }
+.rc-sum-row { display: flex; justify-content: space-between; color: #64748b; padding: 4px 0; border-bottom: 1px solid rgba(255,255,255,0.04); }
+.rc-sum-row strong { color: #f1f5f9; }
+.rc-cart-drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 100;
+  display: flex;
+  justify-content: flex-end;
+}
+.rc-cart-drawer {
+  width: 360px;
+  background: #0f0a06;
+  border-left: 1px solid rgba(249, 115, 22, 0.3);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.cs-coffee-footer {
+  padding: 20px 28px;
+  background: #060402;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 12px;
+  color: #64748b;
+}
+
+/* ---------------------------------------------------------------------
+   6. TRADIETRACK MOBILE OS (FIELD SOFTWARE SAAS)
+   --------------------------------------------------------------------- */
+.cs-tradie-wrapper {
+  background: #04090e;
+  color: #f8fafc;
+}
+.cs-tradie-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 28px;
+  background: rgba(4, 9, 14, 0.95);
+  border-bottom: 1px solid rgba(16, 185, 129, 0.25);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+.cs-tradie-nav strong { color: #f8fafc; font-size: 14px; font-weight: 800; display: block; }
+.cs-tradie-nav span { color: #34d399; font-size: 11px; }
+.cs-tradie-btn-primary {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: #fff;
+  font-weight: 800;
+  font-size: 13.5px;
+  padding: 11px 22px;
+  border-radius: 6px;
+  border: 0;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(16, 185, 129, 0.35);
+}
+.cs-tradie-hero {
+  position: relative;
+  min-height: 480px;
+  display: flex;
+  align-items: center;
+  padding: 50px 32px;
+  overflow: hidden;
+}
+.cs-tradie-hero-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 820px;
+}
+.cs-tradie-pill {
+  display: inline-flex;
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  color: #34d399;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  padding: 4px 12px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+}
+.cs-tradie-h1 {
+  font-size: clamp(30px, 4.2vw, 48px);
+  font-weight: 900;
+  color: #f1f5f9;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  margin: 0 0 14px;
+}
+.cs-tradie-h1 em {
+  font-style: normal;
+  color: #10b981;
+}
+.cs-tradie-lead {
+  font-size: 15.5px;
+  color: #94a3b8;
+  line-height: 1.6;
+  margin-bottom: 24px;
+  max-width: 660px;
+}
+.cs-tradie-stats-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  padding: 16px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 28px;
+}
+.tradie-stat-col b {
+  display: block;
+  font-size: 18px;
+  color: #10b981;
+  font-weight: 900;
+}
+.tradie-stat-col span {
+  font-size: 11px;
+  color: #64748b;
+}
+.cs-tradie-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+.cs-tradie-btn-sec {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  color: #34d399 !important;
+  font-weight: 600;
+  font-size: 13.5px;
+  padding: 11px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+}
+.cs-tradie-section {
+  padding: 56px 32px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+.cs-tradie-sec-heading {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 36px;
+}
+.tradie-tag {
+  font-size: 10.5px;
+  font-weight: 800;
+  color: #10b981;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 6px;
+}
+.cs-tradie-simulator-container {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 32px;
+  align-items: center;
+  background: rgba(6, 12, 18, 0.9);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  border-radius: 14px;
+  padding: 28px;
+}
+.tradie-screen-selector { display: grid; gap: 10px; }
+.tradie-screen-selector button {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #94a3b8;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 12px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.15s;
+}
+.tradie-screen-selector button.active {
+  background: rgba(16, 185, 129, 0.15);
+  border-color: #10b981;
+  color: #34d399;
+}
+.tradie-iphone-chassis {
+  max-width: 380px;
+  margin: 0 auto;
+  background: #000;
+  border: 8px solid #1e293b;
+  border-radius: 36px;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 25px rgba(16, 185, 129, 0.15);
+}
+.iphone-dynamic-island {
+  width: 90px;
+  height: 18px;
+  background: #000;
+  border-radius: 10px;
+  margin: 8px auto 4px;
+}
+.iphone-inner-view {
+  background: #080e18;
+  padding: 16px;
+  min-height: 380px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.app-bar {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  font-weight: 700;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 10px;
+}
+.app-status {
+  background: rgba(16, 185, 129, 0.2);
+  color: #34d399;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+.app-client-box {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+.app-client-box strong { font-size: 12.5px; color: #f1f5f9; display: block; }
+.app-client-box p { font-size: 11px; color: #64748b; margin: 2px 0 0; }
+.app-line-items { display: grid; gap: 6px; margin-bottom: 12px; }
+.app-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11.5px;
+  background: rgba(255, 255, 255, 0.02);
+  padding: 6px 10px;
+  border-radius: 4px;
+}
+.app-item b { color: #cbd5e1; }
+.app-item p { color: #64748b; margin: 0; font-size: 10px; }
+.app-item strong { color: #10b981; }
+.app-total-box {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  font-weight: 800;
+  padding: 10px;
+  background: rgba(16, 185, 129, 0.1);
+  border-radius: 6px;
+  margin-bottom: 12px;
+}
+.app-total-box b { color: #34d399; font-size: 16px; }
+.app-action-btn {
+  background: #10b981;
+  color: #fff;
+  font-weight: 700;
+  font-size: 12.5px;
+  padding: 10px;
+  border-radius: 6px;
+  border: 0;
+  cursor: pointer;
+  width: 100%;
+}
+.app-toast-success {
+  background: rgba(16, 185, 129, 0.2);
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  color: #34d399;
+  font-size: 11.5px;
+  padding: 10px;
+  border-radius: 6px;
+  text-align: center;
+}
+.app-pay-circle {
+  text-align: center;
+  padding: 30px 10px;
+}
+.nfc-wave { font-size: 42px; margin-bottom: 8px; }
+.app-charge-box {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+.app-charge-box b { color: #10b981; font-size: 15px; }
+.cs-tradie-footer {
+  padding: 20px 28px;
+  background: #020508;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 12px;
+  color: #64748b;
+}
+
+/* Responsive Overrides for Client Dedicated Landing */
+@media (max-width: 900px) {
+  .cs-apex-calc-container,
+  .cs-bondi-calc-box,
+  .cs-truenorth-calc-card,
+  .cs-pulse-calc-container,
+  .cs-tradie-simulator-container {
+    grid-template-columns: 1fr !important;
+  }
+  .cs-apex-credentials-strip,
+  .cs-truenorth-stats-row,
+  .cs-tradie-stats-strip,
+  .cs-apex-projects-grid,
+  .cs-apex-process-row,
+  .cs-apex-reviews-grid,
+  .cs-bondi-checklist-grid,
+  .cs-pulse-gallery-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .cs-apex-nav-links,
+  .cs-bondi-nav-links,
+  .cs-truenorth-nav-links {
+    display: none !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .cs-apex-credentials-strip,
+  .cs-truenorth-stats-row,
+  .cs-tradie-stats-strip,
+  .cs-apex-projects-grid,
+  .cs-apex-process-row,
+  .cs-apex-reviews-grid,
+  .cs-bondi-checklist-grid,
+  .cs-pulse-gallery-grid,
+  .rc-origins-grid,
+  .cs-calc-btn-group,
+  .bondi-opt-row,
+  .pulse-opt-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .cs-apex-hero,
+  .cs-bondi-hero,
+  .cs-truenorth-hero,
+  .cs-pulse-hero,
+  .cs-coffee-hero,
+  .cs-tradie-hero {
+    padding: 36px 18px !important;
+    min-height: 380px !important;
+  }
+  .cs-apex-section,
+  .cs-bondi-section,
+  .cs-truenorth-section,
+  .cs-pulse-section,
+  .cs-coffee-section,
+  .cs-tradie-section {
+    padding: 36px 18px !important;
+  }
+}
+
+/* =====================================================================
    PHOTOREALISTIC CLIENT SITE PREVIEW & MINI CANVAS STYLES
 ===================================================================== */
 
@@ -2382,10 +4384,10 @@ em {
 .scrim-pulse-dental {
   background: linear-gradient(
     180deg,
-    rgba(8, 28, 21, 0.93) 0%,
-    rgba(8, 28, 21, 0.65) 30%,
-    rgba(5, 19, 14, 0.93) 75%,
-    rgba(3, 13, 9, 0.99) 100%
+    rgba(255, 250, 247, 0.88) 0%,
+    rgba(255, 241, 242, 0.55) 30%,
+    rgba(255, 241, 242, 0.88) 75%,
+    rgba(253, 242, 248, 0.98) 100%
   );
 }
 
@@ -3440,46 +5442,46 @@ em {
 .wealth-foot-gold { color: #fbbf24; font-weight: 600; }
 
 /* =========================================================================
-   4. PULSE DENTAL STUDIO — Vibrant Healthcare Modern
+   4. PULSE DENTAL STUDIO — Radiant Luxury Aesthetic Clinic & Medical Spa
    ========================================================================= */
-.dental-mini-root {
+.dental-mini-root,
+.radiant-dental-root {
   position: relative;
   width: 100%;
   height: 100%;
   min-height: 430px;
   display: flex;
   flex-direction: column;
-  background: #0d1520;
+  background: linear-gradient(135deg, #fffaf7 0%, #fff1f2 45%, #fdf2f8 100%) !important;
+  color: #1e1b1d !important;
   overflow: hidden;
   font-family: inherit;
 }
 
-.dental-mini-photo {
+.dental-radiant-glow {
   position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-  filter: brightness(0.2) saturate(0.6);
-  z-index: 0;
-}
-
-.dental-mini-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(140deg, rgba(13,21,32,0.97) 0%, rgba(20,10,35,0.95) 100%);
+  top: -60px;
+  right: -60px;
+  width: 280px;
+  height: 280px;
+  background: radial-gradient(circle, rgba(244, 63, 94, 0.16) 0%, transparent 70%);
+  pointer-events: none;
   z-index: 1;
 }
 
-.dental-mini-nav {
+.dental-mini-nav,
+.radiant-dental-nav {
   position: relative;
   z-index: 3;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 10px 16px;
-  background: rgba(10,15,25,0.85);
-  border-bottom: 1px solid rgba(236,72,153,0.2);
+  background: rgba(255, 255, 255, 0.94) !important;
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(244, 63, 94, 0.16) !important;
   flex-shrink: 0;
+  box-shadow: 0 2px 10px rgba(244, 63, 94, 0.04);
 }
 
 .dental-nav-brand {
@@ -3488,19 +5490,23 @@ em {
   gap: 8px;
 }
 
-.dental-brand-icon { font-size: 18px; }
+.dental-brand-icon {
+  font-size: 18px;
+  filter: drop-shadow(0 2px 4px rgba(244, 63, 94, 0.25));
+}
 
 .dental-nav-brand strong {
-  font-size: 10px;
-  font-weight: 800;
-  color: #f8fafc;
+  font-size: 11px;
+  font-weight: 900;
+  color: #0f172a !important;
   letter-spacing: 0.04em;
   display: block;
 }
 
-.dental-nav-brand span {
+.dental-brand-sub-light {
   font-size: 8.5px;
-  color: #64748b;
+  color: #f43f5e !important;
+  font-weight: 600;
   display: block;
 }
 
@@ -3510,25 +5516,34 @@ em {
   gap: 10px;
 }
 
-.dental-nav-links span {
-  font-size: 9px;
-  color: #64748b;
+.dental-hicaps-badge {
+  font-size: 8.5px;
+  color: #059669;
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  padding: 2px 7px;
+  border-radius: 999px;
+  font-weight: 700;
 }
 
-.dental-book-btn {
-  background: linear-gradient(135deg, #ec4899, #db2777) !important;
-  color: #fff !important;
+.radiant-pink-btn {
+  background: linear-gradient(135deg, #f43f5e, #e11d48) !important;
+  color: #ffffff !important;
   font-weight: 700 !important;
   font-size: 9px !important;
-  padding: 3px 9px;
-  border-radius: 4px;
+  padding: 4px 11px;
+  border-radius: 999px;
+  box-shadow: 0 3px 10px rgba(244, 63, 94, 0.3);
+  border: 0;
+  cursor: pointer;
 }
 
-.dental-mini-body {
+.dental-mini-body,
+.radiant-dental-body {
   position: relative;
   z-index: 3;
   display: grid;
-  grid-template-columns: 1.2fr 1fr;
+  grid-template-columns: 1.25fr 1fr;
   gap: 14px;
   padding: 14px 16px;
   flex: 1;
@@ -3537,16 +5552,16 @@ em {
 
 .dental-mini-left { display: flex; flex-direction: column; gap: 8px; }
 
-.dental-badge {
+.radiant-dental-badge {
   display: inline-flex;
   align-items: center;
   gap: 6px;
   font-size: 9px;
-  font-weight: 600;
-  color: #f9a8d4;
-  background: rgba(236,72,153,0.1);
-  border: 1px solid rgba(236,72,153,0.25);
-  padding: 3px 8px;
+  font-weight: 700;
+  color: #e11d48 !important;
+  background: rgba(244, 63, 94, 0.08) !important;
+  border: 1px solid rgba(244, 63, 94, 0.22) !important;
+  padding: 3px 9px;
   border-radius: 999px;
   width: fit-content;
 }
@@ -3555,24 +5570,29 @@ em {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #ec4899;
-  box-shadow: 0 0 6px #ec4899;
+  background: #f43f5e;
+  box-shadow: 0 0 8px #f43f5e;
 }
 
-.dental-display-h {
+.radiant-dental-h {
   font-size: clamp(18px, 2.8vw, 23px);
-  font-weight: 800;
-  color: #f8fafc;
+  font-weight: 900;
+  color: #0f172a !important;
   line-height: 1.15;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.03em;
   margin: 0;
+  text-shadow: none !important;
 }
 
-.dental-pink { color: #f472b6; }
+.dental-pink-gradient {
+  background: linear-gradient(135deg, #f43f5e, #db2777);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
-.dental-sub {
+.radiant-dental-sub {
   font-size: 10px;
-  color: #64748b;
+  color: #475569 !important;
   line-height: 1.5;
   margin: 0;
   display: -webkit-box;
@@ -3581,37 +5601,38 @@ em {
   overflow: hidden;
 }
 
-.dental-treatment-row {
+.radiant-treat-row {
   display: flex;
   gap: 5px;
   flex-wrap: wrap;
 }
 
-.dental-treat-btn {
-  font-size: 9px;
+.radiant-pill {
+  font-size: 8.5px;
   font-weight: 600;
   padding: 4px 9px;
   border-radius: 999px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.1);
-  color: #94a3b8;
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  color: #475569 !important;
   cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
   transition: all 0.15s ease;
 }
 
-.active-treat {
-  background: rgba(236,72,153,0.2) !important;
-  border-color: rgba(236,72,153,0.5) !important;
-  color: #f472b6 !important;
+.radiant-pill.active-treat {
+  background: #f43f5e !important;
+  border-color: #f43f5e !important;
+  color: #ffffff !important;
+  box-shadow: 0 2px 8px rgba(244, 63, 94, 0.35);
 }
 
-.dental-book-card {
-  background: rgba(13,18,30,0.92);
-  border: 1px solid rgba(236,72,153,0.25);
-  border-radius: 10px;
+.radiant-card {
+  background: #ffffff !important;
+  border: 1px solid rgba(244, 63, 94, 0.18) !important;
+  border-radius: 12px;
   padding: 12px;
-  backdrop-filter: blur(16px);
-  box-shadow: 0 16px 40px rgba(0,0,0,0.7), 0 0 20px rgba(236,72,153,0.06);
+  box-shadow: 0 16px 36px rgba(244, 63, 94, 0.08) !important;
   display: flex;
   flex-direction: column;
   gap: 7px;
@@ -3622,31 +5643,32 @@ em {
   align-items: center;
   gap: 6px;
   font-size: 9.5px;
-  font-weight: 700;
-  color: #f472b6;
-  border-bottom: 1px solid rgba(236,72,153,0.12);
+  font-weight: 800;
+  color: #e11d48;
+  border-bottom: 1px solid rgba(244, 63, 94, 0.12);
   padding-bottom: 6px;
 }
 
-.dental-price-highlight {
-  background: rgba(236,72,153,0.08);
-  border: 1px solid rgba(236,72,153,0.2);
-  border-radius: 6px;
+.radiant-price-box {
+  background: #fff1f2 !important;
+  border: 1px solid #fecdd3 !important;
+  border-radius: 8px;
   padding: 6px 8px;
   display: flex;
   flex-direction: column;
   gap: 1px;
 }
 
-.dental-price-highlight span {
+.dental-price-sublabel {
   font-size: 8px;
   color: #94a3b8;
+  font-weight: 500;
 }
 
-.dental-price-highlight strong {
+.dental-price-big {
   font-size: 15px;
-  font-weight: 800;
-  color: #f472b6;
+  font-weight: 900;
+  color: #e11d48 !important;
 }
 
 .dental-pay-tag {
@@ -3661,52 +5683,57 @@ em {
 }
 
 .dental-slot {
-  font-size: 9px;
+  font-size: 8.5px;
   font-weight: 600;
   text-align: center;
   padding: 5px 6px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 5px;
-  color: #94a3b8;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  color: #475569;
   cursor: pointer;
 }
 
 .active-slot {
-  background: rgba(236,72,153,0.15) !important;
-  border-color: rgba(236,72,153,0.4) !important;
-  color: #f472b6 !important;
+  background: #fff1f2 !important;
+  border-color: #f43f5e !important;
+  color: #e11d48 !important;
+  font-weight: 700;
 }
 
-.dental-confirm-btn {
-  background: linear-gradient(135deg, #ec4899, #db2777);
-  color: #fff;
+.radiant-confirm-btn {
+  background: linear-gradient(135deg, #f43f5e, #e11d48) !important;
+  color: #ffffff !important;
   font-weight: 700;
   font-size: 10px;
   padding: 8px 12px;
-  border-radius: 6px;
+  border-radius: 8px;
   border: 0;
   cursor: pointer;
   width: 100%;
+  box-shadow: 0 4px 12px rgba(244, 63, 94, 0.25);
 }
 
 .dental-gap-note {
   font-size: 8px;
-  color: #475569;
+  color: #64748b;
   text-align: center;
 }
 
+
 /* =========================================================================
-   5. ROASTCRAFT COFFEE — Warm Artisan E-Commerce
+   5. ROASTCRAFT COFFEE — Warm Melbourne Artisan Craft Roastery
    ========================================================================= */
-.coffee-mini-root {
+.coffee-mini-root,
+.craft-roaster-root {
   position: relative;
   width: 100%;
   height: 100%;
   min-height: 430px;
   display: flex;
   flex-direction: column;
-  background: #100804;
+  background: #180e07 !important;
+  color: #fef3c7 !important;
   overflow: hidden;
   font-family: inherit;
 }
@@ -3716,26 +5743,27 @@ em {
   inset: 0;
   background-size: cover;
   background-position: center;
-  filter: brightness(0.2) saturate(0.7) sepia(0.4);
+  filter: brightness(0.25) saturate(0.9) sepia(0.3);
   z-index: 0;
 }
 
 .coffee-mini-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(160deg, rgba(16,8,4,0.97) 0%, rgba(22,12,4,0.94) 100%);
+  background: linear-gradient(160deg, rgba(24, 14, 7, 0.95) 0%, rgba(35, 19, 10, 0.92) 100%);
   z-index: 1;
 }
 
-.coffee-mini-nav {
+.coffee-mini-nav,
+.craft-nav {
   position: relative;
   z-index: 3;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 10px 16px;
-  background: rgba(10,5,2,0.85);
-  border-bottom: 1px solid rgba(234,88,12,0.2);
+  background: rgba(20, 11, 5, 0.92) !important;
+  border-bottom: 1px solid rgba(249, 115, 22, 0.25) !important;
   flex-shrink: 0;
 }
 
@@ -3750,34 +5778,40 @@ em {
 .coffee-nav-brand strong {
   font-size: 10px;
   font-weight: 800;
-  color: #fed7aa;
+  color: #fed7aa !important;
   letter-spacing: 0.04em;
   display: block;
 }
 
-.coffee-nav-brand span {
+.craft-nav-sub {
   font-size: 8.5px;
-  color: #78350f;
+  color: #ea580c !important;
   display: block;
+  font-weight: 600;
 }
 
 .coffee-nav-links {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
 }
 
-.coffee-nav-links span {
-  font-size: 9px;
-  color: #78350f;
+.craft-tag-nav {
+  font-size: 8.5px;
+  color: #fdba74;
+  background: rgba(249, 115, 22, 0.12);
+  border: 1px solid rgba(249, 115, 22, 0.25);
+  padding: 2px 7px;
+  border-radius: 999px;
+  font-weight: 600;
 }
 
-.coffee-shop-btn {
-  background: linear-gradient(135deg, #ea580c, #dc2626) !important;
-  color: #fff !important;
+.craft-btn {
+  background: linear-gradient(135deg, #f97316, #ea580c) !important;
+  color: #ffffff !important;
   font-weight: 700 !important;
   font-size: 9px !important;
-  padding: 3px 9px;
+  padding: 3px 10px;
   border-radius: 4px;
 }
 
@@ -3799,10 +5833,10 @@ em {
   align-items: center;
   gap: 6px;
   font-size: 9px;
-  font-weight: 600;
-  color: #fb923c;
-  background: rgba(234,88,12,0.12);
-  border: 1px solid rgba(234,88,12,0.3);
+  font-weight: 700;
+  color: #fdba74;
+  background: rgba(249, 115, 22, 0.15);
+  border: 1px solid rgba(249, 115, 22, 0.35);
   padding: 3px 8px;
   border-radius: 999px;
   width: fit-content;
@@ -3816,20 +5850,21 @@ em {
   box-shadow: 0 0 6px #f97316;
 }
 
-.coffee-display-h {
+.craft-title {
   font-size: clamp(17px, 2.6vw, 22px);
-  font-weight: 800;
-  color: #fed7aa;
+  font-weight: 900;
+  color: #fef3c7 !important;
   line-height: 1.15;
   letter-spacing: -0.02em;
   margin: 0;
 }
 
-.coffee-orange { color: #f97316; }
+.coffee-orange { color: #f97316 !important; }
 
 .coffee-sub {
   font-size: 10px;
-  color: #78350f;
+  color: #fed7aa;
+  opacity: 0.8;
   line-height: 1.5;
   margin: 0;
   display: -webkit-box;
@@ -3848,10 +5883,10 @@ em {
   font-size: 8.5px;
   font-weight: 600;
   padding: 3px 8px;
-  background: rgba(234,88,12,0.1);
-  border: 1px solid rgba(234,88,12,0.25);
+  background: rgba(249, 115, 22, 0.15);
+  border: 1px solid rgba(249, 115, 22, 0.3);
   border-radius: 999px;
-  color: #fdba74;
+  color: #fed7aa;
 }
 
 .coffee-options-row { display: flex; gap: 8px; }
@@ -3864,9 +5899,10 @@ em {
 
 .coffee-option-group > span {
   font-size: 8px;
-  color: #78350f;
+  color: #fdba74;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  font-weight: 700;
 }
 
 .coffee-option-btns {
@@ -3877,27 +5913,26 @@ em {
 .coffee-opt {
   font-size: 8.5px;
   font-weight: 600;
-  padding: 3px 7px;
+  padding: 3px 8px;
   border-radius: 4px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-  color: #92400e;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: #fed7aa;
   cursor: pointer;
 }
 
 .active-opt {
-  background: rgba(234,88,12,0.2) !important;
-  border-color: rgba(234,88,12,0.5) !important;
-  color: #fb923c !important;
+  background: rgba(249, 115, 22, 0.25) !important;
+  border-color: #f97316 !important;
+  color: #ffffff !important;
 }
 
-.coffee-product-card {
-  background: rgba(15,8,4,0.92);
-  border: 1px solid rgba(234,88,12,0.25);
-  border-radius: 10px;
+.craft-product-card {
+  background: rgba(28, 16, 8, 0.94) !important;
+  border: 1px solid rgba(249, 115, 22, 0.35) !important;
+  border-radius: 12px;
   padding: 12px;
-  backdrop-filter: blur(16px);
-  box-shadow: 0 16px 40px rgba(0,0,0,0.7), 0 0 20px rgba(234,88,12,0.07);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.7), 0 0 20px rgba(249,115,22,0.1);
   display: flex;
   flex-direction: column;
   gap: 6px;
@@ -3908,7 +5943,7 @@ em {
   justify-content: space-between;
   align-items: center;
   padding-bottom: 6px;
-  border-bottom: 1px solid rgba(234,88,12,0.15);
+  border-bottom: 1px solid rgba(249, 115, 22, 0.2);
 }
 
 .coffee-batch-tag {
@@ -3920,9 +5955,9 @@ em {
 
 .coffee-roast-tag {
   font-size: 7.5px;
-  color: #78350f;
-  background: rgba(234,88,12,0.1);
-  padding: 1px 5px;
+  color: #fed7aa;
+  background: rgba(249, 115, 22, 0.15);
+  padding: 1px 6px;
   border-radius: 3px;
 }
 
@@ -3930,16 +5965,16 @@ em {
   display: flex;
   justify-content: space-between;
   font-size: 9.5px;
-  color: #78350f;
-  border-bottom: 1px solid rgba(255,255,255,0.04);
+  color: #fdba74;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
   padding-bottom: 4px;
 }
 
-.coffee-product-row strong { color: #fed7aa; font-weight: 600; }
+.coffee-product-row strong { color: #fef3c7; font-weight: 700; }
 
 .coffee-price-box {
-  background: rgba(234,88,12,0.1);
-  border: 1px solid rgba(234,88,12,0.2);
+  background: rgba(249, 115, 22, 0.12);
+  border: 1px solid rgba(249, 115, 22, 0.25);
   border-radius: 6px;
   padding: 6px 8px;
   display: flex;
@@ -3947,32 +5982,33 @@ em {
   gap: 2px;
 }
 
-.coffee-price-label { font-size: 8px; color: #92400e; }
+.coffee-price-label { font-size: 8px; color: #fdba74; }
 
 .coffee-price {
   font-size: 15px;
-  font-weight: 800;
-  color: #fed7aa;
+  font-weight: 900;
+  color: #fef3c7;
   display: block;
 }
 
 .coffee-sub-price {
   font-size: 8.5px;
-  color: #78350f;
+  color: #fed7aa;
 }
 
-.coffee-orange-txt { color: #f97316; }
+.coffee-orange-txt { color: #f97316; font-weight: 700; }
 
-.coffee-add-btn {
-  background: linear-gradient(135deg, #ea580c, #dc2626);
-  color: #fff;
-  font-weight: 700;
+.craft-add-btn {
+  background: linear-gradient(135deg, #f97316, #ea580c) !important;
+  color: #ffffff !important;
+  font-weight: 800;
   font-size: 10px;
   padding: 8px 12px;
   border-radius: 6px;
   border: 0;
   cursor: pointer;
   width: 100%;
+  box-shadow: 0 4px 14px rgba(234, 88, 12, 0.35);
 }
 
 .coffee-guarantees {
@@ -3980,7 +6016,7 @@ em {
   flex-direction: column;
   gap: 2px;
   font-size: 8.5px;
-  color: #78350f;
+  color: #fdba74;
 }
 
 .coffee-mini-footer {
@@ -3990,16 +6026,17 @@ em {
   align-items: center;
   gap: 8px;
   padding: 8px 16px;
-  background: rgba(0,0,0,0.5);
-  border-top: 1px solid rgba(234,88,12,0.1);
+  background: rgba(14, 8, 4, 0.85);
+  border-top: 1px solid rgba(249, 115, 22, 0.15);
   font-size: 9px;
-  color: #78350f;
+  color: #fdba74;
   flex-wrap: wrap;
   flex-shrink: 0;
 }
 
-.coffee-foot-sep { color: rgba(234,88,12,0.2); }
-.coffee-foot-orange { color: #f97316; font-weight: 600; }
+.coffee-foot-sep { color: rgba(249, 115, 22, 0.3); }
+.coffee-foot-orange { color: #f97316; font-weight: 700; }
+
 
 /* =========================================================================
    6. TRADIETRACK MOBILE OS — Bold SaaS Tech Green/Dark
