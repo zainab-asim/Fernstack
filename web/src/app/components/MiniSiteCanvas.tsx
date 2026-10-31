@@ -1,111 +1,88 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import { ClientSite } from "@/data/sampleWebsitesData";
 
 export default function MiniSiteCanvas({ site }: { site: ClientSite }) {
-  // Micro-interaction state
+  // 1. Apex Builder interactive state
   const [apexScope, setApexScope] = useState<string>("Second Storey");
+
+  // 2. Bondi Clean interactive state
+  const [bondiTower, setBondiTower] = useState<string>("Barangaroo Tower 1");
+
+  // 3. TrueNorth Wealth interactive state
+  const [wealthStrategy, setWealthStrategy] = useState<string>("Balanced Growth");
+
+  // 4. Pulse Dental interactive state
   const [dentalTreatment, setDentalTreatment] = useState<string>("Porcelain Veneers");
+
+  // 5. RoastCraft Coffee interactive state
+  const [coffeeBean, setCoffeeBean] = useState<string>("Ethiopia Geisha");
   const [coffeeGrind, setCoffeeGrind] = useState<string>("Whole Bean");
+
+  // 6. TradieTrack interactive state
+  const [tradieTab, setTradieTab] = useState<"quote" | "pay" | "gps">("quote");
 
   return (
     <div
-      className={`mini-site-canvas mini-site-${site.id}`}
+      className={`mini-site-canvas-v2 site-theme-${site.id}`}
       style={
         {
-          "--mc-bg": site.theme.bg,
-          "--mc-accent": site.theme.accent,
-          "--mc-accent-grad": site.theme.accentGrad,
-          "--mc-glow": site.theme.glow,
+          "--site-accent": site.theme.accent,
+          "--site-accent-grad": site.theme.accentGrad,
+          "--site-glow": site.theme.glow,
         } as React.CSSProperties
       }
     >
+      {/* Ambient background glow */}
+      <div className="canvas-ambient-spotlight" />
+
       {/* =========================================================================
-          SITE 1: APEX BUILD & RENOVATIONS
-          Theme: High-End Architectural Builder (Dark Stone, Brushed Gold, Blueprints)
+          SITE 1: APEX BUILD & RENOVATIONS (Luxury Architectural Atelier)
          ========================================================================= */}
       {site.id === "apex-renovations" && (
-        <div className="apex-mini-root">
-          <div className="apex-blueprint-grid" />
-          <div className="apex-gold-line" />
-
-          {/* Top Bar */}
-          <nav className="apex-mini-nav">
-            <div className="apex-mini-brand">
-              <span className="apex-brand-mark">A</span>
+        <div className="canvas-inner-root apex-v2-theme">
+          <header className="canvas-top-nav">
+            <div className="canvas-brand-block">
+              <span className="apex-brand-monogram">A</span>
               <div>
-                <strong>APEX BUILD &amp; RENOVATIONS</strong>
-                <span>Master Builders · Adelaide SA · Lic #BLD291038</span>
+                <strong className="canvas-brand-title">APEX BUILD &amp; RENOVATIONS</strong>
+                <span className="canvas-brand-sub">Adelaide Master Builders · Lic #BLD291038</span>
               </div>
             </div>
-            <div className="apex-mini-nav-links">
-              <span>Extensions</span>
-              <span>Second Storey</span>
-              <span>Kitchens</span>
-              <span className="apex-nav-cta">Free Feasibility</span>
+            <div className="canvas-nav-badges">
+              <span className="canvas-live-badge gold">
+                <span className="status-ping-dot gold" />
+                2026 Master Builders Excellence Award
+              </span>
+              <a href="tel:0882345678" className="canvas-phone-pill" onClick={(e) => e.stopPropagation()}>
+                ☎ (08) 8234 5678
+              </a>
             </div>
-            <span className="apex-phone-tag">☎ (08) 8234 5678</span>
-          </nav>
+          </header>
 
-          {/* Main Body */}
-          <div className="apex-mini-body">
-            {/* Left Content */}
-            <div className="apex-mini-left">
-              <div className="apex-award-pill">
-                <span className="apex-gold-dot" />
-                <span>Master Builders SA · 2026 Excellence Winner</span>
-              </div>
-              <h3 className="apex-display-h">
-                Architectural
-                <br />
-                <em className="apex-gold-em">Perfection.</em>
-                <br />
-                Built for Generations.
+          <div className="canvas-main-grid apex-layout-split">
+            {/* Left: Editorial Hero & Interactive Scope Selector */}
+            <div className="canvas-hero-col">
+              <span className="canvas-category-tag gold">ARCHITECTURAL RESIDENTIAL ATELIER</span>
+              <h3 className="canvas-headline">
+                Architectural Living. <br />
+                <span className="gold-highlight">Built for Generations.</span>
               </h3>
-              <p className="apex-mini-sub">
-                Bespoke second-storey extensions, luxury pavilions &amp; architectural
-                transformations across Adelaide &amp; the Eastern Suburbs.
+              <p className="canvas-subtext">
+                Bespoke second-storey extensions, luxury pavilions, and heritage restorations across Adelaide &amp; Eastern Suburbs.
               </p>
 
-              <div className="apex-materials-row">
-                <span className="apex-mat-chip">🏛️ 3D BIM Modeling</span>
-                <span className="apex-mat-chip">📐 Fixed-Price Contract</span>
-                <span className="apex-mat-chip">🛡️ 10-Yr Structural Warranty</span>
-              </div>
-
-              <div className="apex-stat-row">
-                <div className="apex-stat">
-                  <strong>$45M+</strong>
-                  <span>Delivered</span>
-                </div>
-                <div className="apex-stat-div" />
-                <div className="apex-stat">
-                  <strong>100%</strong>
-                  <span>On-Time</span>
-                </div>
-                <div className="apex-stat-div" />
-                <div className="apex-stat">
-                  <strong>5.0★</strong>
-                  <span>48 Reviews</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Right Cost Card */}
-            <div className="apex-mini-right">
-              <div className="apex-cost-card">
-                <div className="apex-cost-card-header">
-                  <span>📐</span>
-                  <span>Instant Project Cost Guide</span>
-                </div>
-
-                <div className="apex-scope-tags">
-                  {["Second Storey", "Pavilion", "Full Rebuild"].map((scope) => (
+              {/* Interactive Scope Buttons */}
+              <div className="showcase-scope-wrap">
+                <span className="scope-row-title">Select Build Scope:</span>
+                <div className="scope-button-row">
+                  {["Second Storey", "Pavilion", "Heritage Rebuild"].map((scope) => (
                     <button
                       key={scope}
                       type="button"
-                      className={`apex-scope-tag ${apexScope === scope ? "active" : ""}`}
+                      className={`scope-btn ${apexScope === scope ? "active" : ""}`}
                       onClick={(e) => {
                         e.stopPropagation();
                         setApexScope(scope);
@@ -115,571 +92,665 @@ export default function MiniSiteCanvas({ site }: { site: ClientSite }) {
                     </button>
                   ))}
                 </div>
-
-                <div className="apex-cost-row">
-                  <span>Selected Scope</span>
-                  <strong>{apexScope} Extension</strong>
-                </div>
-                <div className="apex-cost-row">
-                  <span>Timeline</span>
-                  <strong>18 – 22 Wks Handover</strong>
-                </div>
-                <div className="apex-cost-price">
-                  <span>Guaranteed Fixed-Price Range</span>
-                  <strong>
-                    {apexScope === "Second Storey"
-                      ? "$580,000 – $640,000"
-                      : apexScope === "Pavilion"
-                      ? "$240,000 – $310,000"
-                      : "$890,000 – $1,250,000"}
-                  </strong>
-                </div>
-                <div className="apex-cost-checks">
-                  <span>✔ Zero variation fees</span>
-                  <span>✔ Dedicated daily supervisor</span>
-                </div>
-                <button className="apex-cost-btn">Request Feasibility Study →</button>
               </div>
-              <div className="apex-stars-badge">
-                <span className="apex-stars">★★★★★</span>
-                <span>5.0 · Adelaide Master Builder of the Year</span>
+
+              <div className="canvas-trust-chips">
+                <span className="trust-chip">📐 3D BIM Walkthroughs</span>
+                <span className="trust-chip">🛡️ Fixed-Price Guarantee</span>
+                <span className="trust-chip">🏛️ 10-Yr Structural Warranty</span>
+              </div>
+            </div>
+
+            {/* Right: Prominent Real Architectural Photo Showcase */}
+            <div className="canvas-photo-showcase-col">
+              <div className="featured-photo-card gold-frame">
+                <div className="photo-card-media">
+                  <Image
+                    src={site.image}
+                    alt="Apex Luxury Residential Architecture"
+                    fill
+                    className="photo-img"
+                    sizes="(max-width: 768px) 100vw, 500px"
+                  />
+                  <div className="photo-scrim-gradient" />
+                  
+                  {/* Floating Architectural Details on the Photo */}
+                  <div className="photo-floating-pill top-left">
+                    <span className="gold-dot-pulse" />
+                    <span>Master Builders SA Excellence Winner</span>
+                  </div>
+
+                  <div className="photo-floating-glass-box bottom-full">
+                    <div className="glass-box-top">
+                      <span className="glass-scope-tag">{apexScope} Extension</span>
+                      <span className="glass-timeline-tag">
+                        {apexScope === "Second Storey" ? "18–22 Wks" : apexScope === "Pavilion" ? "12–16 Wks" : "24–30 Wks"}
+                      </span>
+                    </div>
+                    <div className="glass-box-price-row">
+                      <span className="glass-label">Guaranteed Fixed Contract:</span>
+                      <strong className="glass-price gold-text">
+                        {apexScope === "Second Storey"
+                          ? "$580,000 – $640,000"
+                          : apexScope === "Pavilion"
+                          ? "$240,000 – $310,000"
+                          : "$890,000 – $1,250,000"}
+                      </strong>
+                    </div>
+                    <button type="button" className="glass-cta-btn gold-btn">
+                      Request Feasibility Study &rarr;
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
-          {/* Footer Strip */}
-          <div className="apex-mini-footer">
-            <span>Architectural Grade Materials</span>
-            <span className="apex-foot-div">·</span>
-            <span>Full Council Approval Handled</span>
-            <span className="apex-foot-div">·</span>
-            <span className="apex-foot-gold">apexbuildrenovations.com.au</span>
-          </div>
-
-          <div
-            className="apex-mini-photo"
-            style={{ backgroundImage: `url(${site.image})` }}
-          />
+          <footer className="canvas-bottom-bar">
+            <span><strong>$45M+</strong> High-End Residential Handed Over</span>
+            <span className="bar-bullet">·</span>
+            <span><strong>5.0 ★★★★★</strong> 48 Client Reviews</span>
+            <span className="bar-bullet">·</span>
+            <span className="domain-tag">apexbuildrenovations.com.au</span>
+          </footer>
         </div>
       )}
 
       {/* =========================================================================
-          SITE 2: BONDI CLEAN COMMERCIAL
-          Theme: High-Tech Enterprise Command Center (Cyber Obsidian, Cyan, Radar)
+          SITE 2: BONDI CLEAN COMMERCIAL (Cyber-Precision High-Rise Command Center)
          ========================================================================= */}
       {site.id === "bondi-clean" && (
-        <div className="bondi-mini-root">
-          <div
-            className="bondi-mini-photo"
-            style={{ backgroundImage: `url(${site.image})` }}
-          />
-          <div className="bondi-mini-overlay" />
-
-          {/* Top Bar */}
-          <nav className="bondi-mini-nav">
-            <div className="bondi-nav-left">
-              <span className="bondi-radar-ping">
-                <span className="bondi-ping-core" />
-                <span className="bondi-ping-ring" />
+        <div className="canvas-inner-root bondi-v2-theme">
+          <header className="canvas-top-nav">
+            <div className="canvas-brand-block">
+              <span className="bondi-radar-circle">
+                <span className="radar-ping" />
               </span>
-              <span className="bondi-live-label">LIVE TELEMETRY</span>
-              <span className="bondi-brand-name">BONDI CLEAN FACILITIES</span>
-              <span className="bondi-brand-sep">|</span>
-              <span className="bondi-brand-sub">Sydney CBD High-Rises</span>
+              <div>
+                <strong className="canvas-brand-title">BONDI CLEAN FACILITIES</strong>
+                <span className="canvas-brand-sub">Sydney CBD High-Rise Operations · ISO 9001/14001</span>
+              </div>
             </div>
-            <div className="bondi-nav-right">
-              <span className="bondi-iso-tag">ISO 9001</span>
-              <span className="bondi-iso-tag">ISO 14001</span>
-              <span className="bondi-dispatch-chip">🚨 24/7 Dispatch: (02) 9044 1188</span>
+            <div className="canvas-nav-badges">
+              <span className="canvas-live-badge cyan">
+                <span className="status-ping-dot cyan" />
+                Live Telemetry: 140+ Towers Optimal
+              </span>
+              <a href="tel:0290441188" className="canvas-phone-pill" onClick={(e) => e.stopPropagation()}>
+                🚨 24/7 Dispatch: (02) 9044 1188
+              </a>
             </div>
-          </nav>
+          </header>
 
-          {/* Body */}
-          <div className="bondi-mini-body">
-            <div className="bondi-mini-left">
-              <p className="bondi-eyebrow">Enterprise Facility &amp; Asset Management · Sydney CBD</p>
-              <h3 className="bondi-display-h">
-                Immaculate High-Rises.
-                <br />
-                <span className="bondi-cyan">Zero Operational Downtime.</span>
-              </h3>
-              <p className="bondi-sub">
-                Hospital-grade terminal cleaning &amp; botanical sanitation for 140+ premium commercial towers across Sydney.
-              </p>
+          <div className="canvas-main-grid bondi-layout-split">
+            {/* Left: Prominent High-Rise Tower Photo with Live Telemetry Scanner */}
+            <div className="canvas-photo-showcase-col">
+              <div className="featured-photo-card cyan-frame">
+                <div className="photo-card-media">
+                  <Image
+                    src={site.image}
+                    alt="Bondi Clean Commercial High-Rise Facilities"
+                    fill
+                    className="photo-img"
+                    sizes="(max-width: 768px) 100vw, 500px"
+                  />
+                  <div className="cyan-scanner-beam" />
+                  <div className="photo-scrim-gradient" />
 
-              <div className="bondi-metric-grid">
-                <div className="bondi-metric">
-                  <strong>140+</strong>
-                  <span>Active High-Rises</span>
-                </div>
-                <div className="bondi-metric">
-                  <strong>99.98%</strong>
-                  <span>SLA Audit Pass</span>
-                </div>
-                <div className="bondi-metric">
-                  <strong>2-Hr</strong>
-                  <span>Emergency SLA</span>
-                </div>
-                <div className="bondi-metric">
-                  <strong>100%</strong>
-                  <span>Botanical Seal</span>
+                  <div className="photo-floating-pill top-left cyan-glass">
+                    <span className="cyan-dot-pulse" />
+                    <span>{bondiTower} · MONITORED</span>
+                  </div>
+
+                  <div className="photo-floating-glass-box bottom-full cyan-glass-box">
+                    <div className="telemetry-stat-row">
+                      <div className="telem-item">
+                        <span>Air Particulate</span>
+                        <strong className="cyan-text">0.02 ppm (HEPA Pass)</strong>
+                      </div>
+                      <div className="telem-item">
+                        <span>Terminal Clean</span>
+                        <strong className="text-green">100% Disinfected</strong>
+                      </div>
+                      <div className="telem-item">
+                        <span>Emergency SLA</span>
+                        <strong className="cyan-text">45-Min Rapid Active</strong>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
 
-            <div className="bondi-mini-right">
-              <div className="bondi-terminal-card">
-                <div className="bondi-terminal-header">
-                  <div className="bondi-terminal-title">
-                    <span className="bondi-terminal-dot" />
-                    <span>BARANGAROO TOWER 1 · L38</span>
-                  </div>
-                  <span className="bondi-time-badge">STATUS: OPTIMAL</span>
+            {/* Right: Enterprise Controls & Tower Switcher */}
+            <div className="canvas-hero-col">
+              <span className="canvas-category-tag cyan">COMMERCIAL FACILITY &amp; ASSET CARE</span>
+              <h3 className="canvas-headline">
+                Immaculate Towers. <br />
+                <span className="cyan-highlight">Zero Operational Downtime.</span>
+              </h3>
+              <p className="canvas-subtext">
+                Hospital-grade terminal sanitation and corporate facility management for Sydney CBD commercial towers and financial institutions.
+              </p>
+
+              <div className="showcase-scope-wrap">
+                <span className="scope-row-title">Active Monitored Tower:</span>
+                <div className="scope-button-row">
+                  {["Barangaroo Tower 1", "Martin Place 50", "Crown Sydney L22"].map((tower) => (
+                    <button
+                      key={tower}
+                      type="button"
+                      className={`scope-btn cyan-btn-tab ${bondiTower === tower ? "active" : ""}`}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setBondiTower(tower);
+                      }}
+                    >
+                      {tower.split(" ")[0]}
+                    </button>
+                  ))}
                 </div>
-                <div className="bondi-terminal-row">
-                  <span>Terminal Clean</span>
-                  <strong className="bondi-green">✓ 100% Botanical Disinfected</strong>
-                </div>
-                <div className="bondi-terminal-row">
-                  <span>HEPA Air Particle</span>
-                  <strong>0.02 ppm (Clean Room)</strong>
-                </div>
-                <div className="bondi-terminal-bar">
-                  <span>SLA Compliance</span>
-                  <div className="bondi-bar-track">
-                    <div className="bondi-bar-fill" style={{ width: "98.4%" }} />
-                  </div>
-                  <span className="bondi-green">98.4%</span>
-                </div>
-                <div className="bondi-terminal-footer">
-                  <span>✔ Police-cleared teams</span>
-                  <span>✔ $20M Public Liability</span>
-                </div>
+              </div>
+
+              <div className="card-action-row" style={{ marginTop: 8 }}>
+                <button type="button" className="card-action-btn cyan-btn">
+                  <span>Request Enterprise Facility Audit &rarr;</span>
+                </button>
+                <span className="card-guarantee-note">✓ Triple ISO 9001 / 14001 / 45001 Certified</span>
               </div>
             </div>
           </div>
+
+          <footer className="canvas-bottom-bar">
+            <span><strong>99.98%</strong> Audit Pass Across 140+ Towers</span>
+            <span className="bar-bullet">·</span>
+            <span><strong>5.0 ★★★★★</strong> 112 Commercial Reviews</span>
+            <span className="bar-bullet">·</span>
+            <span className="domain-tag">bondicleansydney.com.au</span>
+          </footer>
         </div>
       )}
 
       {/* =========================================================================
-          SITE 3: TRUENORTH PRIVATE WEALTH
-          Theme: Quiet Luxury Family Office (Deep Navy & Champagne Gold)
+          SITE 3: TRUENORTH WEALTH & ADVISORY (Swiss Private Wealth & Family Office)
          ========================================================================= */}
       {site.id === "truenorth-wealth" && (
-        <div className="wealth-mini-root">
-          <div
-            className="wealth-mini-photo"
-            style={{ backgroundImage: `url(${site.image})` }}
-          />
-          <div className="wealth-mini-overlay" />
-
-          <nav className="wealth-mini-nav">
-            <div className="wealth-nav-brand">
-              <span className="wealth-crest">🏛️</span>
+        <div className="canvas-inner-root wealth-v2-theme">
+          <header className="canvas-top-nav">
+            <div className="canvas-brand-block">
+              <span className="wealth-shield-icon">🛡️</span>
               <div>
-                <strong>TRUENORTH PRIVATE WEALTH</strong>
-                <span>Fiduciary Family Office · Est. 2009 · AFSL 482 211</span>
+                <strong className="canvas-brand-title">TRUENORTH ADVISORY PARTNERS</strong>
+                <span className="canvas-brand-sub">Private Wealth &amp; Family Office · AFSL #491204</span>
               </div>
             </div>
-            <div className="wealth-nav-links">
-              <span>Sydney · Melbourne · Singapore</span>
-              <span className="wealth-consult-btn">Initiate Dialogue</span>
+            <div className="canvas-nav-badges">
+              <span className="canvas-live-badge blue">
+                <span className="status-ping-dot blue" />
+                Fiduciary Non-Commission Mandate
+              </span>
+              <a href="tel:0391228800" className="canvas-phone-pill" onClick={(e) => e.stopPropagation()}>
+                (03) 9122 8800
+              </a>
             </div>
-          </nav>
+          </header>
 
-          <div className="wealth-mini-hero">
-            <div className="wealth-discreet-badge">
-              <span className="wealth-gold-bar" />
-              By Private Introduction Only
-              <span className="wealth-gold-bar" />
-            </div>
-            <h3 className="wealth-display-h">
-              Preserving Generational Wealth
-              <br />
-              <em className="wealth-gold-em">With Absolute Discretion.</em>
-            </h3>
-            <p className="wealth-sub">
-              Comprehensive fiduciary wealth stewardship &amp; private equity allocation for ultra-high-net-worth
-              families &amp; estates exceeding $3M.
-            </p>
+          <div className="canvas-main-grid truenorth-layout-split">
+            {/* Left: Wealth Preservation Narrative & Interactive Strategy */}
+            <div className="canvas-hero-col">
+              <span className="canvas-category-tag blue">PRIVATE WEALTH &amp; FAMILY OFFICE</span>
+              <h3 className="canvas-headline">
+                Preserving Capital. <br />
+                <span className="blue-highlight">Across Generations.</span>
+              </h3>
+              <p className="canvas-subtext">
+                Fiduciary investment architecture, cross-border tax governance, and private asset growth for high-net-worth Australian families.
+              </p>
 
-            <div className="wealth-strategy-row">
-              <div className="wealth-strategy-card">
-                <strong>Capital Preservation</strong>
-                <span>12.4% p.a. (15-yr avg)</span>
-                <div className="wealth-strategy-bar" style={{ background: "linear-gradient(90deg, #fbbf24, #d97706)", width: "75%" }} />
+              <div className="showcase-scope-wrap">
+                <span className="scope-row-title">Select Investment Mandate:</span>
+                <div className="scope-button-row">
+                  {["Preservation", "Balanced Growth", "Yield Focus"].map((strat) => (
+                    <button
+                      key={strat}
+                      type="button"
+                      className={`scope-btn blue-btn-tab ${wealthStrategy.includes(strat.split(" ")[0]) ? "active" : ""}`}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setWealthStrategy(strat);
+                      }}
+                    >
+                      {strat}
+                    </button>
+                  ))}
+                </div>
               </div>
-              <div className="wealth-strategy-card active-strategy">
-                <strong>Balanced Multi-Asset</strong>
-                <span>18.7% p.a. (15-yr avg)</span>
-                <div className="wealth-strategy-bar" style={{ background: "linear-gradient(90deg, #fbbf24, #f59e0b)", width: "88%" }} />
-                <span className="wealth-active-tag">Recommended</span>
+
+              <div className="canvas-trust-chips">
+                <span className="trust-chip">💼 $320M+ Private AUM</span>
+                <span className="trust-chip">⚖️ 100% Non-Commission Fiduciary</span>
+                <span className="trust-chip">📈 +18.4% 3-Yr Net CAGR</span>
               </div>
-              <div className="wealth-strategy-card">
-                <strong>Private Alpha Fund</strong>
-                <span>27.2% p.a. (15-yr avg)</span>
-                <div className="wealth-strategy-bar" style={{ background: "linear-gradient(90deg, #f59e0b, #ef4444)", width: "100%" }} />
+            </div>
+
+            {/* Right: Framed Private Advisory Photo with Live Projected Returns Card */}
+            <div className="canvas-photo-showcase-col">
+              <div className="featured-photo-card blue-frame">
+                <div className="photo-card-media">
+                  <Image
+                    src={site.image}
+                    alt="TrueNorth Advisory Private Family Office"
+                    fill
+                    className="photo-img"
+                    sizes="(max-width: 768px) 100vw, 500px"
+                  />
+                  <div className="photo-scrim-gradient" />
+
+                  <div className="photo-floating-pill top-left blue-glass">
+                    <span className="blue-dot-pulse" />
+                    <span>Fiduciary Non-Commission Asset Model</span>
+                  </div>
+
+                  <div className="photo-floating-glass-box bottom-full blue-glass-box">
+                    <div className="glass-box-top">
+                      <span className="glass-scope-tag">{wealthStrategy}</span>
+                      <span className="glass-timeline-tag blue-text">
+                        {wealthStrategy === "Preservation" ? "6.5% Net CAGR" : wealthStrategy.includes("Balanced") ? "8.2% Net CAGR" : "10.8% Net CAGR"}
+                      </span>
+                    </div>
+                    <div className="glass-box-price-row">
+                      <span className="glass-label">15-Yr Projected Growth ($3.5M Basis):</span>
+                      <strong className="glass-price blue-text">
+                        {wealthStrategy === "Preservation"
+                          ? "$8,950,000 AUD"
+                          : wealthStrategy.includes("Balanced")
+                          ? "$11,480,000 AUD"
+                          : "$16,200,000 AUD"}
+                      </strong>
+                    </div>
+                    <button type="button" className="glass-cta-btn blue-btn">
+                      Schedule Confidential Review &rarr;
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
-          <div className="wealth-mini-footer">
-            <span>🏆 AFA Award Winner 2024</span>
-            <span className="wealth-foot-sep">·</span>
-            <span>$2.4B Assets Under Guidance</span>
-            <span className="wealth-foot-sep">·</span>
-            <span>100% Independent Fiduciary</span>
-            <span className="wealth-foot-sep">·</span>
-            <span className="wealth-foot-gold">★★★★★ 5.0 (63 Private Reviews)</span>
-          </div>
+          <footer className="canvas-bottom-bar">
+            <span><strong>$320M+</strong> Managed for 180 Families</span>
+            <span className="bar-bullet">·</span>
+            <span><strong>ASIC AFSL Licensed</strong></span>
+            <span className="bar-bullet">·</span>
+            <span className="domain-tag">truenorthadvisory.com.au</span>
+          </footer>
         </div>
       )}
 
       {/* =========================================================================
-          SITE 4: PULSE DENTAL STUDIO
-          Theme: Radiant Luxury Aesthetic Clinic & Spa (Warm Alabaster & Blush Rose)
-                 RADICALLY DIFFERENT: Crisp, Luminous, High-Fashion Healthcare
+          SITE 4: PULSE DENTAL & AESTHETIC SUITES (Luxury Boutique Cosmetic Spa)
          ========================================================================= */}
       {site.id === "pulse-dental" && (
-        <div className="dental-mini-root radiant-dental-root">
-          <div className="dental-radiant-glow" />
-
-          {/* Top Bar */}
-          <nav className="dental-mini-nav radiant-dental-nav">
-            <div className="dental-nav-brand">
-              <span className="dental-brand-icon">✨</span>
+        <div className="canvas-inner-root dental-v2-theme">
+          <header className="canvas-top-nav">
+            <div className="canvas-brand-block">
+              <span className="dental-tooth-icon">✨</span>
               <div>
-                <strong>PULSE DENTAL STUDIO</strong>
-                <span className="dental-brand-sub-light">Surry Hills · Sydney · Cosmetic Studio</span>
+                <strong className="canvas-brand-title">PULSE DENTAL &amp; AESTHETIC SUITES</strong>
+                <span className="canvas-brand-sub">Modern Smile Architecture · North Adelaide</span>
               </div>
             </div>
-            <div className="dental-nav-links">
-              <span className="dental-hicaps-badge">HICAPS Instant Rebate</span>
-              <span className="dental-book-btn radiant-pink-btn">Book VIP Consult</span>
+            <div className="canvas-nav-badges">
+              <span className="canvas-live-badge mint">
+                <span className="status-ping-dot mint" />
+                Available Today: 2:15 PM Open Slot
+              </span>
+              <a href="tel:0883621144" className="canvas-phone-pill" onClick={(e) => e.stopPropagation()}>
+                (08) 8362 1144
+              </a>
             </div>
-          </nav>
+          </header>
 
-          {/* Main Body */}
-          <div className="dental-mini-body radiant-dental-body">
-            <div className="dental-mini-left">
-              <div className="dental-badge radiant-dental-badge">
-                <span className="dental-pink-dot" />
-                <span>Sydney&#39;s Premier Cosmetic Studio · 5.0★ 156 Reviews</span>
+          <div className="canvas-main-grid pulse-layout-split">
+            {/* Left: Framed Boutique Clinic & Smile Suite Photo */}
+            <div className="canvas-photo-showcase-col">
+              <div className="featured-photo-card mint-frame">
+                <div className="photo-card-media">
+                  <Image
+                    src={site.image}
+                    alt="Pulse Aesthetic Dental Clinic Suites"
+                    fill
+                    className="photo-img"
+                    sizes="(max-width: 768px) 100vw, 500px"
+                  />
+                  <div className="photo-scrim-gradient" />
+
+                  <div className="photo-floating-pill top-left mint-glass">
+                    <span className="mint-dot-pulse" />
+                    <span>3D Digital Smile Scan Included ($350 Value)</span>
+                  </div>
+
+                  <div className="photo-floating-glass-box bottom-full mint-glass-box">
+                    <div className="glass-box-top">
+                      <span className="glass-scope-tag">{dentalTreatment}</span>
+                      <span className="glass-timeline-tag mint-text">Next Opening: Today 2:15 PM</span>
+                    </div>
+                    <div className="glass-box-price-row">
+                      <span className="glass-label">Interest-Free Plan:</span>
+                      <strong className="glass-price mint-text">
+                        {dentalTreatment === "Porcelain Veneers"
+                          ? "$149 / Week"
+                          : dentalTreatment === "Clear Aligners"
+                          ? "$49 / Week"
+                          : "$19 / Week"}
+                      </strong>
+                    </div>
+                    <button type="button" className="glass-cta-btn mint-btn">
+                      Reserve 2:15 PM Smile Consultation &rarr;
+                    </button>
+                  </div>
+                </div>
               </div>
-              <h3 className="dental-display-h radiant-dental-h">
-                Artistry for Your Smile.
-                <br />
-                <span className="dental-pink-gradient">Painless. Flawless.</span>
+            </div>
+
+            {/* Right: Luxury Hospitality & Treatment Options */}
+            <div className="canvas-hero-col">
+              <span className="canvas-category-tag mint">BOUTIQUE AESTHETIC DENTISTRY</span>
+              <h3 className="canvas-headline">
+                Smile Architecture. <br />
+                <span className="mint-highlight">Precision Without Anxiety.</span>
               </h3>
-              <p className="dental-sub radiant-dental-sub">
-                World-class porcelain veneers, Invisalign Pro &amp; full smile reconstruction in a serene, spa-like studio.
+              <p className="canvas-subtext">
+                Experience spa-grade hospitality, 3D smile design simulations, and painless porcelain veneers with zero dental anxiety.
               </p>
 
-              {/* Treatment Buttons */}
-              <div className="dental-treatment-row radiant-treat-row">
-                {["Porcelain Veneers", "Invisalign Pro", "Laser Whitening", "Implants"].map((treat) => (
-                  <button
-                    key={treat}
-                    type="button"
-                    className={`dental-treat-btn radiant-pill ${dentalTreatment === treat ? "active-treat" : ""}`}
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      setDentalTreatment(treat);
-                    }}
-                  >
-                    {treat}
-                  </button>
-                ))}
+              <div className="showcase-scope-wrap">
+                <span className="scope-row-title">Select Cosmetic Procedure:</span>
+                <div className="scope-button-row">
+                  {["Porcelain Veneers", "Clear Aligners", "Laser Whitening"].map((treatment) => (
+                    <button
+                      key={treatment}
+                      type="button"
+                      className={`scope-btn mint-btn-tab ${dentalTreatment === treatment ? "active" : ""}`}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setDentalTreatment(treatment);
+                      }}
+                    >
+                      {treatment.split(" ")[0]}
+                    </button>
+                  ))}
+                </div>
               </div>
-            </div>
 
-            {/* Right Booking Card */}
-            <div className="dental-mini-right">
-              <div className="dental-book-card radiant-card">
-                <div className="dental-book-header">
-                  <span>📅</span>
-                  <span>Book Free 3D Smile Simulation</span>
-                </div>
-                <div className="dental-price-highlight radiant-price-box">
-                  <span className="dental-price-sublabel">
-                    {dentalTreatment === "Porcelain Veneers"
-                      ? "Porcelain Veneers from"
-                      : dentalTreatment === "Invisalign Pro"
-                      ? "Invisalign Pro from"
-                      : "Laser Whitening from"}
-                  </span>
-                  <strong className="dental-price-big">
-                    {dentalTreatment === "Porcelain Veneers"
-                      ? "$790 / tooth"
-                      : dentalTreatment === "Invisalign Pro"
-                      ? "$4,900 Full Course"
-                      : "$590 Same-Day"}
-                  </strong>
-                  <span className="dental-pay-tag">or $49/wk interest-free</span>
-                </div>
-                <div className="dental-slot-grid">
-                  <div className="dental-slot active-slot">Thu 10:30 AM</div>
-                  <div className="dental-slot">Fri 9:00 AM</div>
-                  <div className="dental-slot">Fri 2:15 PM</div>
-                  <div className="dental-slot">Sat 10:00 AM</div>
-                </div>
-                <button className="dental-confirm-btn radiant-confirm-btn">Reserve Appointment →</button>
-                <span className="dental-gap-note">★ HICAPS same-day gap claims processed</span>
+              <div className="canvas-trust-chips">
+                <span className="trust-chip">✨ 3D Digital Smile Previews</span>
+                <span className="trust-chip">🕊️ Sleep Dentistry Available</span>
+                <span className="trust-chip">⭐ 5.0 Rating (240+ Reviews)</span>
               </div>
             </div>
           </div>
+
+          <footer className="canvas-bottom-bar">
+            <span><strong>2,800+</strong> Smiles Transformed</span>
+            <span className="bar-bullet">·</span>
+            <span><strong>5.0 ★★★★★</strong> 240+ Verified Reviews</span>
+            <span className="bar-bullet">·</span>
+            <span className="domain-tag">pulsedentaladelaide.com.au</span>
+          </footer>
         </div>
       )}
 
       {/* =========================================================================
-          SITE 5: ROASTCRAFT COFFEE ROASTERS
-          Theme: Melbourne Artisan Craft Roastery (Warm Amber, Espresso, Craft Paper)
+          SITE 5: ROASTCRAFT SPECIALTY COFFEE (Artisan Roastery & E-Commerce)
          ========================================================================= */}
       {site.id === "roastcraft-coffee" && (
-        <div className="coffee-mini-root craft-roaster-root">
-          <div
-            className="coffee-mini-photo"
-            style={{ backgroundImage: `url(${site.image})` }}
-          />
-          <div className="coffee-mini-overlay" />
-
-          {/* Roaster Nav */}
-          <nav className="coffee-mini-nav craft-nav">
-            <div className="coffee-nav-brand">
-              <span className="coffee-brand-icon">☕</span>
+        <div className="canvas-inner-root coffee-v2-theme">
+          <header className="canvas-top-nav">
+            <div className="canvas-brand-block">
+              <span className="coffee-cup-icon">☕</span>
               <div>
-                <strong>ROASTCRAFT COFFEE ROASTERS</strong>
-                <span className="craft-nav-sub">Fitzroy, Melbourne · Cup Score 91.5+</span>
+                <strong className="canvas-brand-title">ROASTCRAFT SPECIALTY ROASTERS</strong>
+                <span className="canvas-brand-sub">Small-Batch Micro-Lot Roastery · Melbourne &amp; Adelaide</span>
               </div>
             </div>
-            <div className="coffee-nav-links">
-              <span className="craft-tag-nav">Direct Trade Only</span>
-              <span className="coffee-shop-btn craft-btn">Shop Fresh Roasts</span>
+            <div className="canvas-nav-badges">
+              <span className="canvas-live-badge amber">
+                <span className="status-ping-dot amber" />
+                Batch #88 Roasted 48h Ago
+              </span>
+              <span className="canvas-phone-pill amber-pill">
+                Free Express Over $50
+              </span>
             </div>
-          </nav>
+          </header>
 
-          {/* Main Content */}
-          <div className="coffee-mini-body">
-            <div className="coffee-mini-left">
-              <div className="coffee-fresh-badge">
-                <span className="coffee-orange-dot" />
-                <span>Roasted to Order · Dispatched Within 24hrs</span>
-              </div>
-              <h3 className="coffee-display-h craft-title">
-                Ethiopia Yirgacheffe G1
-                <br />
-                <span className="coffee-orange">Micro-Lot Batch #88.</span>
+          <div className="canvas-main-grid coffee-layout-split">
+            {/* Left: Roastery Manifesto & Bean Selector */}
+            <div className="canvas-hero-col">
+              <span className="canvas-category-tag amber">SINGLE-ORIGIN MICRO-LOT COFFEE</span>
+              <h3 className="canvas-headline">
+                Roasted Tuesday. <br />
+                <span className="amber-highlight">Delivered Thursday.</span>
               </h3>
-              <p className="coffee-sub">
-                Cup Score 91.5. Tasting notes of candied peach, jasmine florals &amp; wild orange blossom honey. Shade-ripened at 2,150m.
+              <p className="canvas-subtext">
+                Direct-trade specialty beans ethically sourced from high-altitude micro-farms in Ethiopia, Colombia, and Guatemala.
               </p>
 
-              {/* Sensory Flavour Tags */}
-              <div className="coffee-flavour-row">
-                <span className="coffee-tag">🌸 Jasmine Blossom No. 04</span>
-                <span className="coffee-tag">🍑 White Peach No. 11</span>
-                <span className="coffee-tag">🍯 Wild Honey No. 22</span>
+              <div className="showcase-scope-wrap">
+                <span className="scope-row-title">Select Origin Micro-Lot:</span>
+                <div className="scope-button-row">
+                  {["Ethiopia Geisha", "Yirgacheffe Honey", "Guatemala Reserve"].map((bean) => (
+                    <button
+                      key={bean}
+                      type="button"
+                      className={`scope-btn amber-btn-tab ${coffeeBean === bean ? "active" : ""}`}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setCoffeeBean(bean);
+                      }}
+                    >
+                      {bean.split(" ")[0]}
+                    </button>
+                  ))}
+                </div>
               </div>
 
-              {/* Grind Selector */}
-              <div className="coffee-options-row">
-                <div className="coffee-option-group">
-                  <span>Grind Profile:</span>
-                  <div className="coffee-option-btns">
-                    {["Whole Bean", "Espresso", "Filter / V60"].map((g) => (
-                      <button
-                        key={g}
-                        type="button"
-                        className={`coffee-opt ${coffeeGrind === g ? "active-opt" : ""}`}
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          setCoffeeGrind(g);
-                        }}
-                      >
-                        {g}
-                      </button>
-                    ))}
-                  </div>
-                </div>
+              <div className="canvas-trust-chips">
+                <span className="trust-chip">🌱 100% Home Compostable Bags</span>
+                <span className="trust-chip">🔥 Cup Score 91.5+ Guaranteed</span>
+                <span className="trust-chip">🚚 Australia-Wide Express Delivery</span>
               </div>
             </div>
 
-            {/* Right Product Card */}
-            <div className="coffee-mini-right">
-              <div className="coffee-product-card craft-product-card">
-                <div className="coffee-product-header">
-                  <span className="coffee-batch-tag">MICRO-LOT BATCH #88</span>
-                  <span className="coffee-roast-tag">Roasted 48h Ago</span>
-                </div>
-                <div className="coffee-product-row">
-                  <span>Origin &amp; Altitude</span>
-                  <strong>Yirgacheffe G1 · 2,150m</strong>
-                </div>
-                <div className="coffee-product-row">
-                  <span>Process</span>
-                  <strong>Natural Shade Grown</strong>
-                </div>
-                <div className="coffee-price-box">
-                  <div>
-                    <span className="coffee-price-label">250g Artisan Valve Bag</span>
-                    <strong className="coffee-price">$24.00 AUD</strong>
+            {/* Right: Tactile Coffee Photo with Flavor Notes Overlay & 1-Tap Apple Pay */}
+            <div className="canvas-photo-showcase-col">
+              <div className="featured-photo-card amber-frame">
+                <div className="photo-card-media">
+                  <Image
+                    src={site.image}
+                    alt="RoastCraft Specialty Artisan Coffee"
+                    fill
+                    className="photo-img"
+                    sizes="(max-width: 768px) 100vw, 500px"
+                  />
+                  <div className="photo-scrim-gradient" />
+
+                  {/* Flavor Notes Floating Banner */}
+                  <div className="photo-floating-pill top-left amber-glass">
+                    <span>Notes: {coffeeBean.includes("Geisha") ? "Bergamot · Jasmine · Peach" : coffeeBean.includes("Honey") ? "Blueberry · Lemon · Cocoa" : "Dark Chocolate · Fig · Almond"}</span>
                   </div>
-                  <div className="coffee-sub-price">
-                    <span>Subscribe: <strong className="coffee-orange-txt">$20.40 AUD (-15%)</strong></span>
+
+                  <div className="photo-floating-glass-box bottom-full amber-glass-box">
+                    <div className="glass-box-top">
+                      <span className="glass-scope-tag">{coffeeBean} (250g)</span>
+                      <span className="glass-timeline-tag amber-text">Roasted 48h Ago</span>
+                    </div>
+                    <div className="glass-box-price-row">
+                      <span className="glass-label">Fresh Roast Bag:</span>
+                      <strong className="glass-price amber-text">
+                        {coffeeBean.includes("Geisha") ? "$36.00 AUD" : "$28.00 AUD"}
+                        <small className="sub-discount-text"> (Sub: -15%)</small>
+                      </strong>
+                    </div>
+                    <button type="button" className="glass-cta-btn amber-btn">
+                      Pay Instant 1-Tap Checkout &rarr;
+                    </button>
                   </div>
-                </div>
-                <button className="coffee-add-btn craft-add-btn">☕ Add to Coffee Bag</button>
-                <div className="coffee-guarantees">
-                  <span>✔ 100% Home compostable</span>
-                  <span>✔ Free express &gt; $60</span>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Trust Strip */}
-          <div className="coffee-mini-footer">
-            <span><strong>18,000kg+</strong> Specialty Roasted</span>
-            <span className="coffee-foot-sep">·</span>
-            <span><strong>Cup Score 91.5+</strong></span>
-            <span className="coffee-foot-sep">·</span>
-            <span>Australia-Wide Express</span>
-            <span className="coffee-foot-sep">·</span>
-            <span className="coffee-foot-orange">★★★★★ 5.0 (410+ Reviews)</span>
-          </div>
+          <footer className="canvas-bottom-bar">
+            <span><strong>18,000kg+</strong> Roasted for 4,200 Subscribers</span>
+            <span className="bar-bullet">·</span>
+            <span><strong>5.0 ★★★★★</strong> 410+ Reviews</span>
+            <span className="bar-bullet">·</span>
+            <span className="domain-tag">roastcraftcoffee.com.au</span>
+          </footer>
         </div>
       )}
 
       {/* =========================================================================
-          SITE 6: TRADIETRACK MOBILE OS
-          Theme: High-Energy Mobile SaaS (Electric Emerald & Floating iPhone Hardware)
+          SITE 6: TRADIETRACK / FIELDFLOW PRO (High-Velocity Field Service App)
          ========================================================================= */}
       {site.id === "tradietrack-mobile" && (
-        <div className="tradie-mini-root saas-tradie-root">
-          <div
-            className="tradie-mini-photo"
-            style={{ backgroundImage: `url(${site.image})` }}
-          />
-          <div className="tradie-mini-overlay" />
-
-          {/* SaaS Nav */}
-          <nav className="tradie-mini-nav saas-nav">
-            <div className="tradie-nav-brand">
-              <span className="tradie-bolt">⚡</span>
-              <strong>TradieTrack OS</strong>
-              <span className="tradie-nav-sub">Field Software for Aussie Tradies</span>
-            </div>
-            <div className="tradie-nav-links">
-              <span>Xero &amp; MYOB Two-Way Sync</span>
-              <span className="tradie-trial-btn saas-trial-btn">Start 30-Day Free Trial</span>
-            </div>
-            <span className="tradie-rating-chip">⭐ 4.9 App Store · 6,500+ Tradies</span>
-          </nav>
-
-          {/* Three-column SaaS Layout */}
-          <div className="tradie-mini-body">
-            {/* Left Feature List */}
-            <div className="tradie-mini-left">
-              <div className="tradie-badge">
-                <span className="tradie-green-dot" />
-                <span>60-Second Invoicing · Tap-to-Pay · Live Van GPS</span>
+        <div className="canvas-inner-root tradie-v2-theme">
+          <header className="canvas-top-nav">
+            <div className="canvas-brand-block">
+              <span className="tradie-bolt-icon">⚡</span>
+              <div>
+                <strong className="canvas-brand-title">FIELDFLOW &amp; TRADIETRACK PRO</strong>
+                <span className="canvas-brand-sub">Field Service Operations OS · Built for Aussie Tradies</span>
               </div>
-              <h3 className="tradie-display-h">
-                Run Your Trade
-                <br />
-                <span className="tradie-green">From Your Pocket.</span>
+            </div>
+            <div className="canvas-nav-badges">
+              <span className="canvas-live-badge green">
+                <span className="status-ping-dot green" />
+                6,500+ Active Tradies on Job Sites
+              </span>
+              <span className="canvas-phone-pill green-pill">
+                Xero &amp; MYOB Two-Way Sync
+              </span>
+            </div>
+          </header>
+
+          <div className="canvas-main-grid tradie-layout-split">
+            {/* Left: Trade Operations Narrative & Mode Selector */}
+            <div className="canvas-hero-col">
+              <span className="canvas-category-tag green">FIELD OPERATIONS &amp; INVOICING APP</span>
+              <h3 className="canvas-headline">
+                Run Your Trade. <br />
+                <span className="green-highlight">Right From Your Pocket.</span>
               </h3>
-              <ul className="tradie-feature-list">
-                <li>
-                  <span className="tradie-check">✓</span>
-                  <span>Instant PDF quotes &amp; contracts signed on doorstep</span>
-                </li>
-                <li>
-                  <span className="tradie-check">✓</span>
-                  <span>Tap-to-Pay on iPhone (no card terminal needed)</span>
-                </li>
-                <li>
-                  <span className="tradie-check">✓</span>
-                  <span>Live van GPS tracking &amp; instant client arrival SMS</span>
-                </li>
-                <li>
-                  <span className="tradie-check">✓</span>
-                  <span>Auto-sync invoices &amp; receipts to Xero &amp; MYOB</span>
-                </li>
-              </ul>
-            </div>
+              <p className="canvas-subtext">
+                Instant doorstep PDF quotes, tap-to-pay on iPhone with zero hardware, live GPS fleet dispatch, and automated Xero reconciliation.
+              </p>
 
-            {/* Center App Mockup Card */}
-            <div className="tradie-mini-center">
-              <div className="tradie-phone-frame saas-phone-frame">
-                <div className="tradie-phone-notch" />
-                <div className="tradie-phone-screen">
-                  <div className="tradie-screen-header">
-                    <span>TradieTrack</span>
-                    <span className="tradie-green-txt">Job #4092 ✅</span>
-                  </div>
-                  <div className="tradie-screen-row">
-                    <span>Client</span>
-                    <strong>James H. · North Adelaide</strong>
-                  </div>
-                  <div className="tradie-screen-row">
-                    <span>Work Scope</span>
-                    <strong>Emergency Gas Hot Water Repair</strong>
-                  </div>
-                  <div className="tradie-screen-amount">
-                    <span>Total Collected</span>
-                    <strong>$840.00 AUD</strong>
-                    <span className="tradie-pay-method">via Apple Pay Tap-to-Pay ✓</span>
-                  </div>
-                  <div className="tradie-screen-actions">
-                    <button className="tradie-action-btn green-btn">Send Invoice</button>
-                    <button className="tradie-action-btn grey-btn">Next Job GPS</button>
-                  </div>
+              <div className="showcase-scope-wrap">
+                <span className="scope-row-title">Interactive App Feature:</span>
+                <div className="scope-button-row">
+                  {[
+                    { id: "quote", label: "Doorstep Quote" },
+                    { id: "pay", label: "Tap-to-Pay" },
+                    { id: "gps", label: "Van Fleet GPS" },
+                  ].map((tab) => (
+                    <button
+                      key={tab.id}
+                      type="button"
+                      className={`scope-btn green-btn-tab ${tradieTab === tab.id ? "active" : ""}`}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setTradieTab(tab.id as "quote" | "pay" | "gps");
+                      }}
+                    >
+                      {tab.label}
+                    </button>
+                  ))}
                 </div>
+              </div>
+
+              <div className="canvas-trust-chips">
+                <span className="trust-chip">⚡ 60-Second Invoicing on Site</span>
+                <span className="trust-chip">💳 Tap-to-Pay (Apple &amp; Google Pay)</span>
+                <span className="trust-chip">📍 Real-Time Van GPS Dispatch</span>
               </div>
             </div>
 
-            {/* Right Metric Cards */}
-            <div className="tradie-mini-right">
-              <div className="tradie-metric-stack">
-                <div className="tradie-metric-card">
-                  <strong>6,500+</strong>
-                  <span>Active Aussie Tradies</span>
-                </div>
-                <div className="tradie-metric-card">
-                  <strong>14 hrs</strong>
-                  <span>Saved on Admin / Wk</span>
-                </div>
-                <div className="tradie-metric-card highlight-card">
-                  <strong>30-Day</strong>
-                  <span>Risk-Free Trial</span>
-                  <span className="tradie-no-cc">No Credit Card Needed</span>
+            {/* Right: Real Trade Work Van Photo with Inset Live Phone App Card */}
+            <div className="canvas-photo-showcase-col">
+              <div className="featured-photo-card green-frame">
+                <div className="photo-card-media">
+                  <Image
+                    src={site.image}
+                    alt="TradieTrack Field Operations Fleet"
+                    fill
+                    className="photo-img"
+                    sizes="(max-width: 768px) 100vw, 500px"
+                  />
+                  <div className="photo-scrim-gradient" />
+
+                  <div className="photo-floating-pill top-left green-glass">
+                    <span className="green-dot-pulse" />
+                    <span>Works 100% Offline with Auto Cloud Sync</span>
+                  </div>
+
+                  <div className="photo-floating-glass-box bottom-full green-glass-box">
+                    {tradieTab === "quote" && (
+                      <div className="phone-preview-stack">
+                        <div className="glass-box-top">
+                          <span className="glass-scope-tag">Job #8942 · Emergency Repair</span>
+                          <span className="glass-timeline-tag text-green">Signed by Client ✓</span>
+                        </div>
+                        <div className="glass-box-price-row">
+                          <span className="glass-label">Doorstep Quote Approved:</span>
+                          <strong className="glass-price green-text">$1,850.00 AUD (Fixed)</strong>
+                        </div>
+                      </div>
+                    )}
+                    {tradieTab === "pay" && (
+                      <div className="phone-preview-stack">
+                        <div className="glass-box-top">
+                          <span className="glass-scope-tag">Tap to Pay on iPhone</span>
+                          <span className="glass-timeline-tag text-green">Settled in Bank ✓</span>
+                        </div>
+                        <div className="glass-box-price-row">
+                          <span className="glass-label">Apple Pay Contactless:</span>
+                          <strong className="glass-price green-text">$1,850.00 AUD Paid</strong>
+                        </div>
+                      </div>
+                    )}
+                    {tradieTab === "gps" && (
+                      <div className="phone-preview-stack">
+                        <div className="glass-box-top">
+                          <span className="glass-scope-tag">Fleet Van #2 (Burnside)</span>
+                          <span className="glass-timeline-tag text-green">Arriving in 12 Mins</span>
+                        </div>
+                        <div className="glass-box-price-row">
+                          <span className="glass-label">Route Optimization:</span>
+                          <strong className="glass-price green-text">+38% Fuel &amp; Time Saved</strong>
+                        </div>
+                      </div>
+                    )}
+                    <button type="button" className="glass-cta-btn green-btn">
+                      Start 30-Day Free Trial &rarr;
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+
+          <footer className="canvas-bottom-bar">
+            <span><strong>14 hrs / Wk</strong> Saved on Paperwork</span>
+            <span className="bar-bullet">·</span>
+            <span><strong>4.9 ★★★★★</strong> 1,450+ App Store Reviews</span>
+            <span className="bar-bullet">·</span>
+            <span className="domain-tag">fieldflowtradie.com.au</span>
+          </footer>
         </div>
       )}
-
-      {/* Hover Interactive Simulator Launch Overlay */}
-      <div className="mini-site-interactive-overlay">
-        <span className="mini-site-overlay-btn">
-          <svg
-            width="15"
-            height="15"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2.5"
-          >
-            <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
-          </svg>
-          Open Live Interactive Prototype
-        </span>
-        <span className="mini-site-overlay-hint">
-          Includes live calculators, interactive tools &amp; responsive simulator
-        </span>
-      </div>
     </div>
   );
 }
