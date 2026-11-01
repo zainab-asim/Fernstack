@@ -50,16 +50,16 @@ export interface ClientSite {
 export const sampleWebsites: ClientSite[] = [
   {
     id: "apex-renovations",
-    name: "Apex Build & Renovations",
-    concept: "Bespoke Architectural Builders · Adelaide",
-    domain: "apexbuildrenovations.com.au",
+    name: "The Home of Heritage",
+    concept: "Australia's Heritage Property & Architectural Restoration Portal",
+    domain: "thehomeofheritage.com.au",
     image: "/img/showcase/apex_hero.jpg",
-    badge: "Master Builders SA · 2026 Excellence Winner",
-    headlineMain: "Architectural Perfection.",
-    headlineHighlight: "Built For Generations.",
+    badge: "National Heritage Trust · 2026 Architectural Winner",
+    headlineMain: "Preserving Australia's",
+    headlineHighlight: "Most Iconic Heritage Homes.",
     headlineEnd: "",
     subheadline:
-      "Specializing in luxury second-storey extensions, bespoke architectural reconfigurations, and mastercraft renovations across Adelaide and the Eastern Suburbs.",
+      "Specializing in Victorian, Edwardian, and Federation estate restorations, stone masonry, and timber craftsmanship across Sydney, Melbourne, Adelaide & Hobart.",
     phone: "(08) 8234 5678",
     rating: "5.0 ★★★★★ (48 Google Reviews)",
     ratingCount: 48,
@@ -67,7 +67,7 @@ export const sampleWebsites: ClientSite[] = [
     license: "Master Builders Lic #BLD291038",
     hours: "Mon to Fri 7:00am to 5:30pm, Sat by Appt",
     address: "Adelaide CBD & Eastern Suburbs, SA",
-    featureTitle: "The Apex Fixed-Price Architecture Guarantee",
+    featureTitle: "The Home of Heritage Conservation & Build Standard",
     featureDesc:
       "From initial 3D BIM modeling to handover, you receive guaranteed completion dates and rigid cost control with zero hidden variation fees.",
     featureChecks: [
@@ -126,7 +126,7 @@ export const sampleWebsites: ClientSite[] = [
         name: "Marcus & Sarah Sterling",
         location: "Glenelg, SA",
         time: "Reviewed 2 weeks ago",
-        text: "Apex Build exceeded every expectation on our 1920s bungalow. They kept the site immaculate, finished 2 weeks early, and the finish is museum quality.",
+        text: "The Home of Heritage exceeded every expectation on our 1920s heritage bungalow. They kept the site immaculate, finished 2 weeks early, and the finish is museum quality.",
       },
       {
         name: "Dr. Andrew Harrison",
@@ -143,7 +143,7 @@ export const sampleWebsites: ClientSite[] = [
     ],
     testimonial: {
       quote:
-        "Apex Build completely transformed our 1920s heritage bungalow into a breathtaking entertainer's home. The craftsmanship and attention to detail were second to none.",
+        "The Home of Heritage completely transformed our 1920s heritage bungalow into a breathtaking entertainer's home. The craftsmanship and attention to detail were second to none.",
       author: "Mark & Sarah Jenkins, Glenelg Beach",
     },
     theme: {
@@ -163,16 +163,16 @@ export const sampleWebsites: ClientSite[] = [
   },
   {
     id: "bondi-clean",
-    name: "Bondi Clean Commercial Facilities",
-    concept: "Commercial Facilities & Clean Ops · Sydney",
-    domain: "bondicleansydney.com.au",
+    name: "Capital Commercial Cleaning",
+    concept: "Enterprise Facility Asset Care & Commercial Cleaning · Sydney & US Metros",
+    domain: "capitalcleaning.com.au",
     image: "/img/showcase/bondi_hero.jpg",
     badge: "Triple ISO Certified · 100% Eco-Neutral",
     headlineMain: "Immaculate Workspaces.",
     headlineHighlight: "Zero Downtime Facility Care.",
     headlineEnd: "",
     subheadline:
-      "Hospital-grade commercial cleaning, corporate facility management, and green-star sanitation for Sydney CBD high-rises and medical suites.",
+      "Hospital-grade commercial cleaning, corporate facility management, and green-star sanitation for high-rises and enterprise headquarters across Sydney, Melbourne, and Brisbane.",
     phone: "(02) 9044 1188",
     rating: "5.0 ★★★★★ (112 Google Reviews)",
     ratingCount: 112,
@@ -180,7 +180,7 @@ export const sampleWebsites: ClientSite[] = [
     license: "NSW Commercial Facilities Master Lic #NSW88310",
     hours: "24/7/365 On-Demand & Nightly Operations",
     address: "Sydney CBD & Eastern Suburbs, NSW",
-    featureTitle: "The Bondi Clean 65-Point White Glove Standard",
+    featureTitle: "The Capital Commercial Cleaning 65-Point Protocol",
     featureDesc:
       "Every site is systematically maintained by security-cleared cleaning teams using non-toxic botanical hospital grade sanitizers with full digital audit logs.",
     featureChecks: [
@@ -239,13 +239,13 @@ export const sampleWebsites: ClientSite[] = [
         name: "Marcus Vance",
         location: "Barangaroo, Sydney",
         time: "Reviewed 3 weeks ago",
-        text: "Bondi Clean transformed the hygiene and visual presentation of our 12-floor corporate HQ. The digital QR logs provide absolute accountability.",
+        text: "Capital Commercial Cleaning transformed the hygiene and visual presentation of our 12-floor corporate HQ. The digital QR logs provide absolute accountability.",
       },
       {
         name: "Dr. Chloe Martin",
         location: "Bondi Junction",
         time: "Reviewed 1 month ago",
-        text: "Clinical cleaning requires zero compromise. Bondi Clean meets our surgical infection-control standards every single night.",
+        text: "Clinical cleaning requires zero compromise. Capital Commercial Cleaning meets our surgical infection-control standards every single night.",
       },
       {
         name: "Liam O'Connor",
@@ -256,7 +256,7 @@ export const sampleWebsites: ClientSite[] = [
     ],
     testimonial: {
       quote:
-        "Bondi Clean took over our 12-storey Barangaroo office facility. The difference in hygiene, air quality, and daily presentation was immediate and noticeable to all partners.",
+        "Capital Commercial Cleaning took over our 12-storey Barangaroo office facility. The difference in hygiene, air quality, and daily presentation was immediate and noticeable to all partners.",
       author: "Marcus Vance, Operations Director, Barangaroo",
     },
     theme: {
@@ -389,16 +389,16 @@ export const sampleWebsites: ClientSite[] = [
   },
   {
     id: "pulse-dental",
-    name: "Pulse Modern Cosmetic Dentistry",
-    concept: "Cosmetic Dentistry & Smile Studio · Brisbane",
-    domain: "pulsedentalstudio.com.au",
+    name: "Pacific Smiles Dental",
+    concept: "Australia's Trusted Local Dental Network · 110+ Clinics",
+    domain: "pacificsmilesdental.com.au",
     image: "/img/showcase/pulse_hero.jpg",
-    badge: "AHPRA Accredited · Digital Smile Design Studio",
-    headlineMain: "Transformative Smiles.",
-    headlineHighlight: "Painless Digital Dentistry.",
+    badge: "110+ Dental Clinics · Open 7 Days · Emergency Dentist Near You",
+    headlineMain: "Your Local Dentist.",
+    headlineHighlight: "Care for the Whole Family.",
     headlineEnd: "",
     subheadline:
-      "Handcrafted ultra-thin porcelain veneers, Invisalign clear aligners, and laser smile makeovers in a calming, spa-inspired Brisbane boutique suite.",
+      "Local family, emergency, and cosmetic dental care with weekend hours and 110+ locations across Australia. Child Dental Benefits (CDBS) bulk billing, porcelain veneers, and clear aligners.",
     phone: "(07) 3211 4455",
     rating: "5.0 ★★★★★ (284 Google Reviews)",
     ratingCount: 284,
@@ -482,7 +482,7 @@ export const sampleWebsites: ClientSite[] = [
     ],
     testimonial: {
       quote:
-        "I spent years hiding my smile in photos. Dr. Claire and the Pulse team created 8 custom veneers that look completely natural. The entire experience was pain-free and luxurious.",
+        "I spent years hiding my smile in photos. The Pacific Smiles Dental team created 8 custom veneers that look completely natural. The entire experience was gentle, pain-free and convenient.",
       author: "Jessica Caldwell, New Farm",
     },
     theme: {

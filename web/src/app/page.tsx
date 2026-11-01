@@ -1123,6 +1123,24 @@ export default function Home() {
 
                     <div className="slide-canvas-viewport">
                       <MiniSiteCanvas site={sampleWebsites[currentSlideIndex]} />
+
+                      {/* On Hover: Glowing Green Open Full View Pill */}
+                      <div
+                        className="slide-hover-green-overlay"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          openClientPreview(sampleWebsites[currentSlideIndex]);
+                        }}
+                      >
+                        <div className="slide-hover-green-pill">
+                          <span className="slide-green-ping-dot" />
+                          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                            <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                          </svg>
+                          <span>Open Full View</span>
+                        </div>
+                        <span className="slide-hover-subtext">Click to preview full interactive website</span>
+                      </div>
                     </div>
 
                     <figcaption className="slide-card-caption">
@@ -1149,14 +1167,15 @@ export default function Home() {
                         </Link>
                         <button
                           type="button"
-                          className="btn btn-grad"
+                          className="btn btn-green-glow"
                           onClick={(e) => {
                             e.stopPropagation();
                             openClientPreview(sampleWebsites[currentSlideIndex]);
                           }}
-                          style={{ minHeight: 42, padding: "9px 20px", fontSize: 13.5 }}
+                          style={{ minHeight: 42, padding: "9px 22px", fontSize: 13.5 }}
                         >
-                          <span>Launch Live Draft ↗</span>
+                          <span className="green-btn-dot" />
+                          <span>Open Full View ↗</span>
                         </button>
                       </div>
                     </figcaption>

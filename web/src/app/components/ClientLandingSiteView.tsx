@@ -137,8 +137,8 @@ export default function ClientLandingSiteView({
             <div className="cs-apex-brand">
               <span className="cs-apex-logo-symbol">📐</span>
               <div>
-                <strong>APEX BUILD &amp; RENOVATIONS</strong>
-                <span className="cs-apex-tagline">Architectural Transformations · Adelaide</span>
+                <strong>THE HOME OF HERITAGE</strong>
+                <span className="cs-apex-tagline">This Old Home is New · Australia's Heritage Restoration Portal</span>
               </div>
             </div>
 
@@ -191,15 +191,15 @@ export default function ClientLandingSiteView({
             <div className="cs-apex-hero-scrim" />
             <div className="cs-apex-hero-content">
               <div className="cs-apex-badge-pill">
-                <span className="gold-dot" /> Master Builders SA · 2026 Excellence Winner
+                <span className="gold-dot" /> National Heritage Trust &amp; AIA · 2026 Preservation Winner
               </div>
               <h1 className="cs-apex-h1">
-                Architectural Perfection. <br />
-                <em>Built For Generations.</em>
+                This Old Home Is New. <br />
+                <em>Preserved For Generations.</em>
               </h1>
               <p className="cs-apex-lead">
-                Specializing in luxury second-storey extensions, bespoke architectural reconfigurations,
-                and mastercraft renovations across Adelaide, Stirling, and the Eastern Suburbs.
+                Specializing in iconic Federation restoration, Victorian sandstone conservation,
+                and sympathetic contemporary additions across Sydney, Melbourne, Adelaide &amp; Hobart.
               </p>
               <div className="cs-apex-hero-actions">
                 <button
@@ -220,20 +220,20 @@ export default function ClientLandingSiteView({
               {/* 4 Architectural Proof Badges */}
               <div className="cs-apex-credentials-strip">
                 <div className="apex-cred-item">
-                  <b>$45M+ Delivered</b>
-                  <span>Luxury Residential SA</span>
+                  <b>$45M+ Restored</b>
+                  <span>Heritage Residential AU</span>
                 </div>
                 <div className="apex-cred-item">
-                  <b>100% On-Time</b>
-                  <span>Guaranteed Handover</span>
+                  <b>100% Heritage Approved</b>
+                  <span>Conservation Code Signed</span>
                 </div>
                 <div className="apex-cred-item">
-                  <b>Lic #BLD291038</b>
-                  <span>Master Builders &amp; HIA</span>
+                  <b>Lic #HER921038</b>
+                  <span>National Heritage Guild</span>
                 </div>
                 <div className="apex-cred-item">
-                  <b>10-Year Warranty</b>
-                  <span>Structural Workmanship</span>
+                  <b>25-Year Guarantee</b>
+                  <span>Masonry &amp; Slate Guild</span>
                 </div>
               </div>
             </div>
@@ -243,9 +243,9 @@ export default function ClientLandingSiteView({
           <section className="cs-apex-section" id="apex-calculator-sec">
             <div className="cs-apex-sec-heading">
               <span className="cs-sec-eyebrow">Interactive Feasibility Tool</span>
-              <h2>Instant Build &amp; Extension Cost Estimator</h2>
+              <h2>Heritage Estate Restorations &amp; Extension Cost Estimator</h2>
               <p>
-                Get a transparent ballpark budget and timeline estimation tailored to Adelaide council regulations and current construction rates.
+                Get a transparent feasibility budget and conservation timeline tailored to Australian Heritage Trust standards and council conservation guidelines.
               </p>
             </div>
 
@@ -359,7 +359,7 @@ export default function ClientLandingSiteView({
 
                 {apexQuoteSent ? (
                   <div className="cs-calc-success-toast">
-                    ✔ Feasibility Request Logged! An Apex architectural director will call within 24 hours.
+                    ✔ Feasibility Request Logged! A Home of Heritage architectural director will call within 24 hours.
                   </div>
                 ) : (
                   <button
@@ -367,7 +367,7 @@ export default function ClientLandingSiteView({
                     className="cs-apex-btn-calc-submit"
                     onClick={() => setApexQuoteSent(true)}
                   >
-                    Lock In Fixed-Price Feasibility Consultation &rarr;
+                    Lock In Heritage Feasibility Assessment &rarr;
                   </button>
                 )}
               </div>
@@ -378,8 +378,8 @@ export default function ClientLandingSiteView({
           <section className="cs-apex-section">
             <div className="cs-apex-sec-heading">
               <span className="cs-sec-eyebrow">Portfolio</span>
-              <h2>Selected Architectural Transformations</h2>
-              <p>Explore recent luxury residential projects completed across Adelaide's premier suburbs.</p>
+              <h2>Selected Australian Heritage Restorations</h2>
+              <p>Explore iconic historic estates preserved across Sydney, Melbourne, Adelaide &amp; Hobart.</p>
             </div>
 
             <div className="cs-apex-projects-grid">
@@ -407,31 +407,31 @@ export default function ClientLandingSiteView({
           {/* 4 Guarantees */}
           <section className="cs-apex-section cs-apex-guarantees-sec">
             <div className="cs-apex-sec-heading">
-              <span className="cs-sec-eyebrow">The Apex Difference</span>
-              <h2>The 4 Pillars of Architectural Confidence</h2>
-              <p>Why Adelaide families trust Apex with their most significant residential investments.</p>
+              <span className="cs-sec-eyebrow">The Heritage Standard</span>
+              <h2>The 4 Pillars of Heritage Preservation</h2>
+              <p>Why Australian families trust The Home of Heritage with their most cherished properties.</p>
             </div>
 
             <div className="cs-apex-process-row">
               <div className="apex-process-step">
                 <span className="apex-step-num">01</span>
-                <h4>Fixed-Price Contract</h4>
-                <p>Every beam, fixture, and labor hour is detailed upfront. Zero unexpected builder variations.</p>
+                <h4>Fixed-Price Heritage Contract</h4>
+                <p>Every stonemason hour, timber joint, and heritage approval fee locked upfront. Zero surprises.</p>
               </div>
               <div className="apex-process-step">
                 <span className="apex-step-num">02</span>
-                <h4>3D BIM Laser Modeling</h4>
-                <p>Virtual walkthrough before ground is broken to eliminate clashes with council regulations.</p>
+                <h4>Photogrammetry &amp; 3D Laser Mapping</h4>
+                <p>Millimeter-accurate 3D digital scans of historic facades and load-bearing masonry.</p>
               </div>
               <div className="apex-process-step">
                 <span className="apex-step-num">03</span>
-                <h4>Weekly Drone &amp; VIP Portal</h4>
-                <p>Live progress reports, high-res aerial drone photos, and schedule tracking every Friday.</p>
+                <h4>Master Artisan Craftsmanship</h4>
+                <p>Accredited stonemasons, lime mortars, stained glass restoration, and slate roof specialists.</p>
               </div>
               <div className="apex-process-step">
                 <span className="apex-step-num">04</span>
-                <h4>10-Year Mastercraft Warranty</h4>
-                <p>Full 10-year structural warranty backed by South Australian Master Builders registration.</p>
+                <h4>25-Year Heritage Warranty</h4>
+                <p>Comprehensive structural and material heritage protection warranty backed by national guild standards.</p>
               </div>
             </div>
           </section>
@@ -441,7 +441,7 @@ export default function ClientLandingSiteView({
             <div className="cs-apex-sec-heading">
               <span className="cs-sec-eyebrow">Client Endorsements</span>
               <h2>Verified Homeowner Experiences</h2>
-              <p>Rated 5.0★ across 64+ luxury residential projects in South Australia.</p>
+              <p>Rated 5.0★ across 86+ heritage restoration projects across Australia.</p>
             </div>
 
             <div className="cs-apex-reviews-grid">
@@ -462,10 +462,10 @@ export default function ClientLandingSiteView({
           <footer className="cs-apex-footer">
             <div className="cs-apex-foot-wrap">
               <div>
-                <strong>Apex Build &amp; Renovations</strong> &middot; Master Builders Lic #BLD291038 &middot; {site.address}
+                <strong>The Home of Heritage Pty Ltd</strong> &middot; Master Conservation Lic #HER921038 &middot; {site.address}
               </div>
               <div>
-                Phone: <a href={`tel:${site.phone.replace(/\s+/g, "")}`}>{site.phone}</a> &middot; info@apexbuildrenovations.com.au
+                Phone: <a href={`tel:${site.phone.replace(/\s+/g, "")}`}>{site.phone}</a> &middot; concierge@thehomeofheritage.com.au
               </div>
             </div>
           </footer>
@@ -482,8 +482,8 @@ export default function ClientLandingSiteView({
             <div className="cs-bondi-brand">
               <div className="cs-bondi-shield">🛡️</div>
               <div>
-                <strong>BONDI CLEAN COMMERCIAL FACILITIES</strong>
-                <span className="cs-bondi-sub">Triple ISO Certified Commercial Operations · Sydney</span>
+                <strong>CAPITAL COMMERCIAL CLEANING &amp; FACILITIES</strong>
+                <span className="cs-bondi-sub">Triple ISO Certified Enterprise Facility Asset Care · Sydney &amp; US Metros</span>
               </div>
             </div>
 
@@ -529,20 +529,20 @@ export default function ClientLandingSiteView({
             <div className="cs-bondi-hero-scrim" />
             <div className="cs-bondi-hero-inner">
               <div className="cs-bondi-pill">
-                <span>ISO 9001 · ISO 14001 · ISO 45001 ACCREDITED</span>
+                <span>ISO 9001 · ISO 14001 · ISO 45001 ACCREDITED · SYDNEY CBD &amp; US METROS</span>
               </div>
               <h1 className="cs-bondi-h1">
-                Immaculate Workspaces. <br />
+                Immaculate Corporate Workspaces. <br />
                 <em>Zero Downtime Facility Care.</em>
               </h1>
               <p className="cs-bondi-lead">
-                Hospital-grade commercial cleaning, corporate facility management, and green-star sanitation
-                for Sydney CBD high-rises, Barangaroo towers, and specialist medical suites.
+                Hospital-grade commercial cleaning, high-rise facility asset care, and green-star sanitation
+                for Sydney CBD towers, Melbourne financial districts, and US executive corporate offices.
               </p>
 
               <div className="cs-bondi-status-bar">
                 <span className="live-dot" />
-                <strong>Live Fleet Ops:</strong> 142 active Sydney sites &middot; 100% digital QR check-in compliance verified tonight
+                <strong>Live Fleet Ops:</strong> 142 active Sydney CBD &amp; US corporate high-rises &middot; 100% digital QR check-in compliance verified tonight
               </div>
 
               <div className="cs-bondi-hero-btns">
@@ -684,7 +684,7 @@ export default function ClientLandingSiteView({
 
                 {bondiRfpSent ? (
                   <div className="cs-calc-success-toast">
-                    ✔ Formal Commercial RFP Generated! A Bondi Clean commercial director will email the documentation within 2 hours.
+                    ✔ Formal Commercial RFP Generated! A Capital Cleaning enterprise director will email the documentation within 2 hours.
                   </div>
                 ) : (
                   <button
@@ -849,7 +849,7 @@ export default function ClientLandingSiteView({
               <div className="portal-right">
                 <div className="portal-screen">
                   <div className="portal-screen-head">
-                    <span className="pulse-green" /> <strong>Site #SYD-4091 &middot; Barangaroo Tower 2</strong>
+                    <span className="pulse-green" /> <strong>Site #SYD-4091 &middot; Sydney Financial Centre Tower</strong>
                   </div>
                   <div className="portal-screen-body">
                     <div className="log-line">
@@ -880,10 +880,10 @@ export default function ClientLandingSiteView({
           <footer className="cs-bondi-footer">
             <div className="cs-bondi-foot-wrap">
               <div>
-                <strong>Bondi Clean Commercial Facilities</strong> &middot; ABN 48 619 204 881 &middot; {site.address}
+                <strong>Capital Commercial Cleaning &amp; Facilities</strong> &middot; Enterprise Asset Care &middot; Sydney &amp; US Metros
               </div>
               <div>
-                24/7 Operations: (02) 9044 1188 &middot; ops@bondicleancommercial.com.au
+                24/7 Operations Command: 1300 227 482 &middot; enterprise@capitalcleaning.com.au
               </div>
             </div>
           </footer>
@@ -1182,8 +1182,8 @@ export default function ClientLandingSiteView({
             <div className="cs-pulse-brand">
               <span className="cs-pulse-gem">💎</span>
               <div>
-                <strong>PULSE MODERN COSMETIC DENTISTRY</strong>
-                <span className="cs-pulse-sub">Boutique Smile Studio · James St, Fortitude Valley</span>
+                <strong>PACIFIC SMILES DENTAL</strong>
+                <span className="cs-pulse-sub">Australia's Trusted Local Dental Network · 110+ Modern Clinics</span>
               </div>
             </div>
 
@@ -1219,7 +1219,7 @@ export default function ClientLandingSiteView({
             </div>
 
             <a href="tel:0738541900" className="cs-pulse-call-btn">
-              <span>Book James St: (07) 3854 1900</span>
+              <span>Book Today: 13 13 17 (7 Days)</span>
             </a>
           </nav>
 
@@ -1229,15 +1229,15 @@ export default function ClientLandingSiteView({
             <div className="cs-pulse-hero-scrim" />
             <div className="cs-pulse-hero-inner">
               <div className="cs-pulse-pill">
-                <span>BRISBANE'S LEADING 3D DIGITAL SMILE STUDIO</span>
+                <span>110+ AUSTRALIAN CLINICS · 7 DAYS EMERGENCY CARE · CDBS BULK BILLED</span>
               </div>
               <h1 className="cs-pulse-h1">
-                Architectural Smiles. <br />
-                <em>Unapologetic Confidence.</em>
+                Exceptional Dental Care. <br />
+                <em>Making Healthy Smiles Everyday.</em>
               </h1>
               <p className="cs-pulse-lead">
-                Bespoke porcelain veneers, Invisalign Diamond studio, and painless smile transformations
-                designed with 3D digital facial mapping on James Street.
+                From gentle family check-ups and emergency dental care to custom porcelain veneers
+                and clear aligners. Open 7 days with emergency appointments reserved daily across Australia.
               </p>
 
               <div className="cs-pulse-features-strip">
@@ -1438,8 +1438,8 @@ export default function ClientLandingSiteView({
           <section className="cs-pulse-section">
             <div className="cs-pulse-sec-heading">
               <span className="pulse-tag">Results Gallery</span>
-              <h2>Real Brisbane Smile Transformations</h2>
-              <p>Explore real patient results achieved by Dr. Julian &amp; our cosmetic ceramicists.</p>
+              <h2>Real Patient Smiles &amp; Transformations</h2>
+              <p>Explore real patient results achieved across 110+ Pacific Smiles Dental clinics nationwide.</p>
             </div>
 
             <div className="cs-pulse-gallery-grid">
@@ -1468,10 +1468,10 @@ export default function ClientLandingSiteView({
           <footer className="cs-pulse-footer">
             <div className="cs-pulse-foot-wrap">
               <div>
-                <strong>Pulse Modern Cosmetic Dentistry</strong> &middot; ABN 72 901 843 112 &middot; {site.address}
+                <strong>Pacific Smiles Dental</strong> &middot; Australia's Trusted Dental Care Network &middot; 110+ Clinics Nationwide
               </div>
               <div>
-                James St Studio: (07) 3854 1900 &middot; concierge@pulsedentistry.com.au
+                Central Bookings: 13 13 17 (7 Days) &middot; info@pacificsmilesdental.com.au
               </div>
             </div>
           </footer>
