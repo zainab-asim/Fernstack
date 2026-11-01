@@ -1077,10 +1077,10 @@ export default function Home() {
                     aria-selected={currentSlideIndex === idx}
                     className={`site-pill-tab ${currentSlideIndex === idx ? "active" : ""}`}
                     onClick={() => setCurrentSlideIndex(idx)}
-                    title={`Slide to ${site.name}`}
+                    title={`Slide 0${idx + 1}`}
                   >
                     <span className="pill-index">0{idx + 1}</span>
-                    <span className="pill-label">{site.name.split(" ")[0]}</span>
+                    <span className="pill-label">Slide 0{idx + 1}</span>
                   </button>
                 ))}
               </div>
@@ -1107,7 +1107,7 @@ export default function Home() {
                   <figure
                     className="site slide-featured-card"
                     onClick={() => openClientPreview(sampleWebsites[currentSlideIndex])}
-                    title={`Click to open full interactive landing page for ${sampleWebsites[currentSlideIndex].name}`}
+                    title="Click to open full interactive landing page"
                   >
                     <div className="chrome" aria-hidden="true">
                       <div className="chrome-dots">
@@ -1115,7 +1115,6 @@ export default function Home() {
                         <i />
                         <i />
                       </div>
-                      <span className="chrome-url">https://{sampleWebsites[currentSlideIndex].domain}</span>
                       <span className="chrome-slide-badge">
                         0{currentSlideIndex + 1} / 0{sampleWebsites.length}
                       </span>
@@ -1145,14 +1144,8 @@ export default function Home() {
 
                     <figcaption className="slide-card-caption">
                       <div className="slide-caption-meta">
-                        <div className="caption-client-title">
-                          <b>{sampleWebsites[currentSlideIndex].name}</b>
-                          <span className="caption-client-badge">
-                            {sampleWebsites[currentSlideIndex].badge}
-                          </span>
-                        </div>
-                        <span className="caption-client-concept">
-                          {sampleWebsites[currentSlideIndex].concept}
+                        <span className="caption-client-badge">
+                          {sampleWebsites[currentSlideIndex].badge}
                         </span>
                       </div>
 

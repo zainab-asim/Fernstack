@@ -51,7 +51,7 @@ export default function MiniSiteCanvas({ site }: { site: ClientSite }) {
               <span className="heritage-crest">🏛️</span>
               <div>
                 <strong className="heritage-brand-name">THE HOME OF HERITAGE</strong>
-                <span className="heritage-brand-sub">This Old Home is New · Australia&apos;s Heritage Restoration Archive</span>
+                
               </div>
             </div>
             <div className="heritage-top-tags">
@@ -143,8 +143,8 @@ export default function MiniSiteCanvas({ site }: { site: ClientSite }) {
                   <span>100% Council Approved</span>
                 </div>
                 <div className="heritage-cred-item">
-                  <b>thehomeofheritage.com.au</b>
-                  <span>Official Portal</span>
+                  <b>100% Fixed-Price</b>
+                  <span>Guaranteed Handover</span>
                 </div>
               </div>
             </div>
@@ -163,7 +163,7 @@ export default function MiniSiteCanvas({ site }: { site: ClientSite }) {
             <div className="capital-command-left">
               <span className="capital-radar-dot" />
               <strong>CAPITAL COMMERCIAL CLEANING &amp; FACILITIES</strong>
-              <span className="capital-command-sub">Enterprise Asset Care · Sydney CBD &amp; US Metros</span>
+              
             </div>
             <div className="capital-live-telemetry">
               <span className="capital-pulse-badge">
@@ -264,7 +264,7 @@ export default function MiniSiteCanvas({ site }: { site: ClientSite }) {
                   <span className="spec-dot" /> 45-Min Emergency Bio-Spill Response
                 </div>
                 <div className="spec-badge">
-                  <span className="spec-dot" /> capitalcleaning.com.au
+                  <span className="spec-dot" /> Verified Zero Downtime
                 </div>
               </div>
             </div>
@@ -283,7 +283,7 @@ export default function MiniSiteCanvas({ site }: { site: ClientSite }) {
               <span className="wealth-crest-monogram">TN</span>
               <div>
                 <strong className="wealth-brand-text">TRUENORTH PRIVATE WEALTH &amp; ADVISORY</strong>
-                <span className="wealth-brand-sub">Collins Street, Melbourne · Fiduciary Family Office</span>
+                
               </div>
             </div>
             <div className="wealth-header-badges">
@@ -394,7 +394,7 @@ export default function MiniSiteCanvas({ site }: { site: ClientSite }) {
               <span className="pacific-smile-icon">✨</span>
               <div>
                 <strong className="pacific-brand-name">PACIFIC SMILES DENTAL</strong>
-                <span className="pacific-brand-sub">Australia&apos;s Trusted Dental Network · 110+ Clinics Nationwide</span>
+                
               </div>
             </div>
             <div className="pacific-header-info">
@@ -512,7 +512,7 @@ export default function MiniSiteCanvas({ site }: { site: ClientSite }) {
               <span className="coffee-flame-icon">🔥</span>
               <div>
                 <strong className="coffee-brand-title">ROASTCRAFT SPECIALTY ROASTERS</strong>
-                <span className="coffee-brand-sub">Fitzroy Roastery · Direct Trade Micro-Lots</span>
+                
               </div>
             </div>
             <div className="coffee-top-badges">
@@ -628,7 +628,7 @@ export default function MiniSiteCanvas({ site }: { site: ClientSite }) {
               <span className="tradie-bolt-badge">⚡</span>
               <div>
                 <strong className="tradie-brand-title">TRADIETRACK PRO</strong>
-                <span className="tradie-brand-sub">Aussie Tradie Job Dispatch &amp; Instant Invoicing Platform</span>
+                
               </div>
             </div>
             <div className="tradie-top-status">
